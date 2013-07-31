@@ -1,0 +1,30 @@
+.nav.top-bar
+  %ul.title-area
+    %li
+      OAUC logo
+    %li.divider
+  .top-bar-section
+    %a{href:'#'}
+      Summer 2013 Menu
+    %a{href:'#'}
+      Cupcake Creator
+    %a{href:'#'}
+      Cupcake Game
+    %a{href:'#'}
+      About
+    %a{href:'#'}
+      Contact
+    %ul.right
+      - if user_signed_in? 
+        %li
+          %ul.has-dropdown
+            = current_user.name
+            %ul.dropdown
+              %li
+                = link_to 'My Account', edit_user_registration_path
+                = link_to 'Sign Out', destroy_user_session_path 
+        %a{href: '#'}
+          Cart
+      - else
+        %a{href: '/users/sign_in'}
+          Sign In

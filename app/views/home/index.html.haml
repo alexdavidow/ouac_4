@@ -1,0 +1,59 @@
+= link_to "Connect with Twitter", user_omniauth_authorize_path(:twitter)
+- if (twitter = current_user && current_user.identities.where(provider: 'twitter').first)
+  %div
+    <a href=#{twitter.url} target='_blank'>#{image_tag twitter.image}
+
+  
+.row
+  .large-12.columns
+    %ul#slider{'data-orbit' => true}
+      %li
+        %img{src: 'http://zuyusartistry.com/images/future-kill-Kramer-close.jpg'}/
+      %li
+        %img{src: "http://graffitiglam.files.wordpress.com/2013/02/marschells-4.jpg"}/
+      %li
+        %img{src: "http://wp2.structurestudios.com/wp-content/uploads/2012/04/2687.jpg"}/
+      %li
+        %img{:src => "http://2.bp.blogspot.com/_jzF7ScTmBDs/TMSf6fZzbdI/AAAAAAAAABs/uCHp_L_j9Mg/s1600/Guitar+Mural+Uckfield.jpg"}/
+
+.row
+  .large-4.columns        
+    %img{:src => "/cupcake_platter.png"}
+      %h4 This will be seasonal menu
+  .large-4.columns        
+    %img{:src => "/cupcake-size.jpg"}
+      %h4 This will be cupcake creator game
+  .large-4.columns        
+    %img{:src => "/cupcake_cross_section.jpeg"}
+      %h4 This will be falling cupcake game        
+  
+
+
+
+
+
+
+
+
+
+    / .slideshow-wrapper
+    /   .orbit-container.orbit-stack-on-small
+    /     / %ul.orbit-slides-container{:data => {:options => "pause_on_hover:false; timer_speed:5000;", :orbit => ""}}
+    /     %ul#slider{'data-orbit' => true}
+    /       %li.active{:data => {:'orbit-slide' => ""}}
+    /         %img{:src => "/IMG_0676.JPG"}
+    /           .orbit-caption Image 1
+    /       %li
+    /         %img{:src => "/cupcake_cross_section.jpeg"}
+    /           .orbit-caption Image 2 
+    /     %a.orbit-prev{:href=>"#"}
+    /       %span
+    /     %a.orbit-next{:href=>"#"}
+    /       %span        
+    /     .orbit-timer
+    /       %span
+    /         .orbit-progress
+
+    /   .orbit-bullets
+    /     %li.active{:data => {:'orbit-slide-number' => "1"}}
+    /     %li{:data => {:'orbit-slide-number' => "2"}}
