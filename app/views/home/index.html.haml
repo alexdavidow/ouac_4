@@ -1,20 +1,18 @@
 = link_to "Connect with Twitter", user_omniauth_authorize_path(:twitter)
 - if (twitter = current_user && current_user.identities.where(provider: 'twitter').first)
   %div
-    <a href=#{twitter.url} target='_blank'>#{image_tag twitter.image}
+    %a{:href => "\#{twitter.url}", :target => "_blank"}#{image_tag twitter.image}
 
   
 .row
   .large-12.columns
     %ul#slider{'data-orbit' => true}
       %li
-        %img{src: 'http://zuyusartistry.com/images/future-kill-Kramer-close.jpg'}/
+        %img{src:"/IMG_0676.JPG"}
       %li
-        %img{src: "http://graffitiglam.files.wordpress.com/2013/02/marschells-4.jpg"}/
+        %img{src: "/pretty-cupcake.jpg"}/
       %li
-        %img{src: "http://wp2.structurestudios.com/wp-content/uploads/2012/04/2687.jpg"}/
-      %li
-        %img{:src => "http://2.bp.blogspot.com/_jzF7ScTmBDs/TMSf6fZzbdI/AAAAAAAAABs/uCHp_L_j9Mg/s1600/Guitar+Mural+Uckfield.jpg"}/
+        %img{src:"/cupcake_cross_section.jpeg"}
 
 .row
   .large-4.columns        
