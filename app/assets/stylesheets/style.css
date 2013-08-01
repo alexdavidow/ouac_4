@@ -31,8 +31,8 @@
   text-align: left;
   background-color: #f4b6c3;
   color: #e51f30;
-  height: 
 }
+
 #scoreboard {
   height: 400px;
   width: 200px;
@@ -101,10 +101,10 @@
   color: #F17D92;
 }
 .frosting_text {
- color: #00a384; 
+  color: #00a384; 
 }
 .ic_text {
-  color: ##fbe400;
+  color: #fbe400;
 }
 .cookie_text {
   color: #ec7124;
@@ -168,24 +168,23 @@
   border: none;
 }
 
-h4 {
+/*h4 {
   color: #006ab5;
 
-}
+}*/
 .square {
   height: 500px;
   margin: 0 auto;
   width: 600px;
   position: relative;
   border: 1px dashed #ff5697;
-  /*background-image: url('/texture2.jpg');*/
   float: right;
   margin-left: auto;
   margin-right: auto;
   float: right;
   background-color: white;
-
 }
+
 #baloons {
   height: 100px;
   width: 70px;
@@ -198,7 +197,7 @@ h4 {
   border: 1px dashed yellow;
   margin: 0 auto;
   text-align: center;
-  background-color: white
+  background-color: white;
 }
 
 .ingredient {
