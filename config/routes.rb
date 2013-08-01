@@ -15,6 +15,9 @@ Ouac4::Application.routes.draw do
   get 'lose' => 'cupcakes#lose'
   get 'sessions/new' => 'sessions#new'
   get 'menu' => 'home#menu'
+  get 'contact' => 'home#contact'
+  # make post 'contact' destination (email address?)
+  get 'about' => 'home#about'
   post 'sessions' => 'sessions#create'
   delete 'logout' => 'sessions#destroy'
 
