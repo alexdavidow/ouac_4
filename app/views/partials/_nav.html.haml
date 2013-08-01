@@ -7,24 +7,20 @@
     %ul.inline-list
       %li.divider
       %li
-        %a{href:'#'}
-          Summer 2013 Menu
+        = link_to 'Summer 2013 Menu', menu_path
       %li.divider
       %li
         %a{href:'#'}
           Cupcake Creator
       %li.divider
       %li
-        %a{href:'#'}
-          Cupcake Game
+        = link_to 'Cupcake Game!', cupcakes_path
       %li.divider
       %li
-        %a{href:'#'}
-          About
+        = link_to 'About', about_path
       %li.divider
       %li
-        %a{href:'#'}
-          Contact
+        = link_to 'Contact', contact_path
       %li.divider
     %ul.right
       - if user_signed_in? 
