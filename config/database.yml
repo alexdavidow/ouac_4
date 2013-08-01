@@ -1,24 +1,18 @@
 development:
   adapter: postgresql
-  encoding: unicode
-  database: ouac_development
-  host: localhost
-  username: alexdavidow
+  database: oauc
   pool: 5
+  timeout: 5000
+  host: localhost
+  username: frank
+  password: 'password'
 
-# test: &test
 test:
   adapter: postgresql
-  encoding: unicode
-  database: ouac_test
-  host: localhost
-  username: alexdavidow
+  database: oauc_test
   pool: 5
+  timeout: 5000
+  host: localhost
+  username: frank
+  password: 'password'
 
-production:
-  adapter: postgresql
-  encoding: unicode
-  database: ouac_production
-  host: localhost
-  username: alexdavidow
-  pool: 5
