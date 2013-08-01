@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130730020318) do
+ActiveRecord::Schema.define(version: 20130801185234) do
 
   create_table "cookies", force: true do |t|
     t.string   "name"
@@ -62,6 +62,21 @@ ActiveRecord::Schema.define(version: 20130730020318) do
     t.string   "token"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "products", force: true do |t|
+    t.string   "name"
+    t.integer  "price"
+    t.string   "image"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "shopping_carts", force: true do |t|
+    t.integer  "total_price"
+    t.integer  "num_of_items"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "toppings", force: true do |t|
