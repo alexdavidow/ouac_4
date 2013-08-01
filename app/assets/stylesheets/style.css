@@ -231,3 +231,22 @@ h4 {
   font-size: 28px;
 }
 
+#user-profile-pic {
+  display: inline-block;
+}
+
+#user-profile-pic img {
+  width: 200px;
+  height: 200px;
+  border: 1px solid black;
+}
+
+#user-info-container {
+  display: inline-block;
+}
+
+#user-button-list {
+  border: 1px dashed black;
+  height: 200px;
+  width: 200px;
+}

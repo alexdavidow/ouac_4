@@ -33,7 +33,7 @@
             = current_user.email
           %ul.dropdown
             %li
-              = link_to 'My Account', user_path(current_user.id)
+              = link_to('My Account', user_path(current_user.id))
             %li.divider
             %li
               = link_to 'Sign Out', destroy_user_session_path, method: :delete 
