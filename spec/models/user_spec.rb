@@ -27,12 +27,13 @@ describe User do
 
   describe 'validation' do
     # validation tests not accounting for integer in total_score or admin boolean
-    it { should validate_presence_of(:name)}
+    it { should validate_presence_of(:email)}
     it { should validate_presence_of(:total_score)}
   end
 
   describe 'assocation' do
     it { should have_many(:identities)}
     it { should have_many(:cupcakes)}
+    it { should have_one(:shopping_cart)}
   end
 end

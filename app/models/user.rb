@@ -28,11 +28,12 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable, :omniauthable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me, :identities, :admin, :total_score
+  attr_accessible :email, :shopping_cart_id, :password, :password_confirmation, :remember_me, :identities, :admin, :name, :total_score
   # attr_accessible :title, :body
 
   has_many :identities
   has_many :cupcakes
+  has_one :shopping_cart
 
   # validates_presence_of :total_score
 
