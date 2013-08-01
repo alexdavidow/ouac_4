@@ -99,7 +99,7 @@ function create_ingredient_element(){
     case (1):
       var rand_pick = Math.floor(Math.random()*4)+0
       ingredient.text(cookies_data_object[rand_pick].name); 
-      ingredient.css('background-image', 'cookies_data_object[rand_pick].image').addClass('falling_cookie');
+      ingredient.css('background-image', cookies_data_object[rand_pick].image).addClass('falling_cookie');
       break;
     case (2): 
       var rand_pick = Math.floor(Math.random()*4)+0

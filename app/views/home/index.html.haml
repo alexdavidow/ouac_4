@@ -1,3 +1,4 @@
+/ let's move these lines (through line 5) to the navbar or set it up so if are logged in thru twitter, the link doesn't show.
 = link_to "Connect with Twitter", user_omniauth_authorize_path(:twitter)
 - if (twitter = current_user && current_user.identities.where(provider: 'twitter').first)
   %div
@@ -16,14 +17,18 @@
 
 .row
   .large-4.columns        
-    %img{:src => "/cupcake_platter.png"}
-      %h4 This will be seasonal menu
+    %a{:href => "/menu"}
+      %img{:src => "/cupcake_platter.png"}
+        %a{:href => "/menu"}
+          %h4 This will be seasonal menu
   .large-4.columns        
     %img{:src => "/cupcake-size.jpg"}
       %h4 This will be cupcake creator game
   .large-4.columns        
-    %img{:src => "/cupcake_cross_section.jpeg"}
-      %h4 This will be falling cupcake game        
+    %a{:href => "/cupcakes"}
+      %img{:src => "/cupcake_cross_section.jpeg"}
+        %a{:href => "/cupcakes"}
+          %h4 This will be falling cupcake game        
   
 
 
