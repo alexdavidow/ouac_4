@@ -4,9 +4,12 @@
     <meta content="text.html; charset=UTF-8" http-equiv="Content-type">
   </head>
   <body>
-    <%= @user.email %>:
-    <h1>This is a warning to your pusher account</h1>
-    <p>Your account has reached its limit, please upgrade to a paid plan: <%= @url %></p>
+    <%= @user.name %>:
+    <h1>Thank you for your feedback</h1>
+    <p>Please visit us again soon <%= @url %></p>
+    <%= image_tag attachments['ouac-logo.png'].url %>
+
+    <!-- all the above is just in case we want to send an email to a submitter, or we could use this as a template for new user conf email -->
 
   </body>
 </html>

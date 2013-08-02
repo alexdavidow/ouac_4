@@ -17,6 +17,17 @@ Ouac4::Application.routes.draw do
   get 'sessions/new' => 'sessions#new'
   get 'menu' => 'home#menu'
   get 'contact' => 'home#contact'
+  post 'contact' => 'home#submit_contact'
+
+  # resources :home, only: [:index] do
+  #   collection do
+  #     get :menu, as: 'menu'
+  #     get :contact
+  #     get :about
+  #     post :index
+  #   end
+  # end
+
   # make post 'contact' destination (email address?)
   get 'about' => 'home#about'
   post 'sessions' => 'sessions#create'

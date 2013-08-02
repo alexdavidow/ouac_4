@@ -1,6 +1,6 @@
 %h3 I'd love to hear from you!
 
-= form_tag do 
+= form_tag(contact_path, method: "post", remote: true) do 
   = label_tag :name
   = text_field_tag :name
   = label_tag :company
@@ -8,9 +8,9 @@
   = label_tag :email
   = email_field_tag :email
   = label_tag :"phone number"
-  = phone_field_tag :"phone number"
+  = phone_field_tag :"phone_number"
   = label_tag :"Thoughts, Feelings or Concerns"
-  = text_area_tag :"Thoughts, Feelings or Concerns"
+  = text_area_tag :"Comments"
   = submit_tag :"send message"
 
 
