@@ -1,4 +1,5 @@
 class ShoppingCart < ActiveRecord::Base
   attr_accessible :user_id, :user, :total_price, :num_of_items
-  has_one :user
+  belongs_to :user
+  has_many :product_order
 end

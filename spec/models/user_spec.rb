@@ -23,7 +23,7 @@
 require 'spec_helper'
 
 describe User do
-  subject(:user) {User.new(name: 'alex', admin: true, total_score: 0)}
+  subject(:user) {User.new(name: 'alex', email: '123@abc.com', password: '12345678', password_confirmation: '12345678',admin: true, total_score: nil)}
 
   describe 'validation' do
     # validation tests not accounting for integer in total_score or admin boolean

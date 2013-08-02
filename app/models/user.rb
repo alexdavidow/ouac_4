@@ -35,7 +35,7 @@ class User < ActiveRecord::Base
   has_many :cupcakes
   has_one :shopping_cart
 
-  # validates_presence_of :total_score
+  validates_presence_of :total_score
 
   def self.find_for_twitter_oauth(auth, user)
     identity = user.identities.where(provider: auth.provider).first
