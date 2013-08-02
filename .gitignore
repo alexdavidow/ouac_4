@@ -14,6 +14,7 @@
 /log/*.log
 /tmp
 *.yml
+config/database.yml
 
 # Ignore vim files :3
 *.swp
