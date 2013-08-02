@@ -1,16 +1,13 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
 
 Cupcake.delete_all
 Cookie.delete_all
 Topping.delete_all
 Frosting.delete_all
 IceCream.delete_all
+Product.delete_all
+ProductOrder.delete_all
+ShoppingCart.delete_all
+User.delete_all
 
 cc1 = Cupcake.create(name: 'Mint Chocolate Chip', current_score: 0, image: "https://www.dropbox.com/sh/f8bj10tfye3rhcr/MEWXChzOBA#f:IMG_0805.JPG")
 cc2 = Cupcake.create(name: 'Salted Caramel', current_score: 1, image: "https://www.dropbox.com/sh/f8bj10tfye3rhcr/MEWXChzOBA#f:IMG_0805.JPG")
@@ -37,3 +34,10 @@ ic2 = IceCream.create(name: 'coffee', color: 'brown', image: "https://www.dropbo
 ic3 = IceCream.create(name: 'toasted marshmallow', color: 'white', image: "https://www.dropbox.com/sh/f8bj10tfye3rhcr/MEWXChzOBA#f:IMG_0805.JPG")
 ic4 = IceCream.create(name: 'chocolate', color: 'brown', image: "https://www.dropbox.com/sh/f8bj10tfye3rhcr/MEWXChzOBA#f:IMG_0805.JPG")
 
+icc1 = Product.create(name: 'tiramisu', price: '$25', quantity: '10')
+icc2 = Product.create(name: 'Salted Caramel', price: '$25', quantity: '10')
+
+u1 = User.create(name: 'alex', email: 'Example@Example.com', password: '12345678', password_confirmation: '12345678')
+alex = User.create(name: 'alex', email: 'alex.davidow@gmail', password: 'password', password_confirmation: 'password', admin: true)
+
+sc1 = ShoppingCart.create(user_id: "#{u1.id}", user: u1 )
