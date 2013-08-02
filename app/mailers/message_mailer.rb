@@ -13,7 +13,7 @@ class MessageMailer < ActionMailer::Base
     # if i want an attachment
     image_url = Rails.root + 'public/ouac-logo.png'
     attachments.inline['ouac-logo.png'] = File.read(image_url)
-    mail(to: @user.email, subject: 'New Feedback Submission')
+    mail(to: 'onceuponacupcakenyc@gmail.com', subject: 'New Feedback Submission')
     # attachments["ouac-logo.png"] = File.read("#{Rails.root}/public/images/ouac-logo.png")
     # the Rails.root bit may be extranneous but what ryan bates did. Also, see above.
   end
