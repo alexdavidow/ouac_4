@@ -1,17 +1,17 @@
 development:
   adapter: postgresql
   encoding: unicode
-  database: ouac_development
+  database: oauc
   host: localhost
-  username: alexdavidow
-  password: 
+  username: frank
+  password: 'password'
   pool: 5
 
 test:
   adapter: postgresql
   encoding: unicode
-  database: ouac_test   
+  database: oauc_test  
   host: localhost
-  username: alexdavidow
-  password: 
+  username: frank
+  password: 'password'
   pool: 5
