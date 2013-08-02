@@ -1,5 +1,5 @@
 class ProductOrdersController < ApplicationController
-  before_filter user_signed_in?
+  before_filter :user_signed_in?
 
   def index
   end
@@ -17,13 +17,14 @@ class ProductOrdersController < ApplicationController
     )
 
    charge = Stripe::Charge.create(
-     :customer    => customer.id,
-     :amount      => @amount,
+     :customer => customer.id,
+     :amount  =>  @amount,
      :description => 'Rails Stripe customer',
-     :currency    => 'usd'
+     :currency  => 'usd'
    )
 
-   rescue Stripe::CardError => e
+   
+   rescue Stripe::CardError => e 
     flash[:error] = e.message
     redirect_to charges_path
   end

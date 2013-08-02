@@ -3,7 +3,7 @@ class Product < ActiveRecord::Base
   has_many :product_orders
   has_one :shopping_carts, through: :product_orders
 
-  before_destroy ensure_not_referenced_by_order
+  before_destroy :ensure_not_referenced_by_order
 
   private
 
