@@ -17,6 +17,7 @@ gem 'devise'
 gem 'omniauth-twitter'
 gem 'omniauth-facebook'
 gem 'haml'
+gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 
 gem 'sass-rails', '~> 4.0.0'
 gem 'coffee-rails', '~> 4.0.0'
