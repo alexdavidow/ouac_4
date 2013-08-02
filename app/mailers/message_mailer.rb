@@ -3,7 +3,6 @@ class MessageMailer < ActionMailer::Base
   default to: "onceuponacupcakenyc@gmail.com"
 
   def contact_submit(params)
-    # or is this where the view(contact_submit.html.erb) gets the parameters?
     @name = params[:name]
     @company = params[:company]
     @email = params[:email]

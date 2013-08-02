@@ -2,8 +2,11 @@ describe 'ShoppingCartController' do
 describe 'basic cart functions' do
  # A user must be able to add items to their shopping cart
  it 'should add items to itself' do
-  pending
   # User will click a button
+  @product = Product.
+  @cart = ShoppingCart.create(user_id: "#{user.id}")
+  @product_order = ProductOrder.create(shopping_cart_id: "#{@cart.id}", product_id: "#{@product.id}")
+  @cart.push(item)
  end
  # A user must be able to update the quantity of items in their shopping cart
  it 'should update the quantity of items within itself' do
