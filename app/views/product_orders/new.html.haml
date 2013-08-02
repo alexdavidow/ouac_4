@@ -1,11 +1,8 @@
-= form_tag new_product_order_path do
+= form_tag product_orders_path, :remote => true do
   %article
     %label.amount
       %span Amount: $5.00
-%script{:src => "https://checkout.stripe.com/v2/checkout.js",
-        :class => "stripe-button",
-        :'data-label' => product.name,
-        :'data-amount' => product.cost * 100,
-        :'data-key' => Rails.configuration.stripe[:publishable_key]}
+
+  %script.stripe-button{ :src => "https://checkout.stripe.com/v2/checkout.js", "data-amount" => "500", "data-description" => "A month's subscription", "data-key" => Rails.configuration.stripe[:publishable_key] }
 
 = form_tag product_orders_path(product), :remote => true do end
