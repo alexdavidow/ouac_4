@@ -2,10 +2,9 @@ require 'spec_helper'
 
 describe ShoppingCart do
   before do
-    @cart = ShoppingCart.new
-    @user = User.new(email: 'Example@Example.com', name: 'User', password: '12345678', password_confirmation: '12345678')
+    @cart = ShoppingCart.create
+    @user = User.create(email: 'Example@Example.com', name: 'User', password: '12345678', password_confirmation: '12345678')
     @user.shopping_cart = @cart
-    puts @user.shopping_cart
   end
   # Insert tests for shopping cart model here
   # A shopping cart must be constructed properly
@@ -22,8 +21,8 @@ describe ShoppingCart do
 
     it 'can have a product order associated with it' do
       product = ProductOrder.new
-      @cart.product_order << product
-      @cart.product_order.include?(product).should be_true
+      @cart.product_orders << product
+      @cart.product_orders.include?(product).should be_true
     end
   end
 end
