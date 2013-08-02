@@ -11,6 +11,10 @@ Ouac4::Application.routes.draw do
   resources :frostings, :only => [:index, :new, :create, :destroy]
   resources :toppings, :only => [:index, :new, :create, :destroy]
   resources :ice_creams, :only => [:index, :new, :create, :destroy]
+  resources :shopping_cart, :only => [:show, :create, :new, :destroy]
+  resources :product_orders
+  resources :products
+
   delete 'users/delete/.:id' => 'users#destroy', as: 'delete_user'
   get 'win' => 'cupcakes#win'
   get 'lose' => 'cupcakes#lose'
