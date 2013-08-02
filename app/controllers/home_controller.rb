@@ -20,8 +20,7 @@ class HomeController < ApplicationController
     MessageMailer.contact_submit(params).deliver
   end
 
-  # def my_form_email(params)
-  #   # is there where the view(contact_submit.html.erb) gets the parameters?
+  # def contact_submit(params)
   #   @name = params[:name]
   #   @company = params[:company]
   #   @email = params[:email]
@@ -29,14 +28,5 @@ class HomeController < ApplicationController
   #   @comments = params[:comments]
   #   mail(to: 'onceuponacupcakenyc@gmail.com', subject: 'New Contact Submission')
   # end
-
-  def contact_submit(params)
-    @name = params[:name]
-    @company = params[:company]
-    @email = params[:email]
-    @phone_number = params[:phone_number]
-    @comments = params[:comments]
-    mail(to: 'onceuponacupcakenyc@gmail.com', subject: 'New Contact Submission')
-  end
 
 end
