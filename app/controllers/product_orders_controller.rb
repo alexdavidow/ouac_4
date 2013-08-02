@@ -16,12 +16,11 @@ class ProductOrdersController < ApplicationController
       :card  => params[:stripeToken]
     )
 
-   charge = Stripe::Charge.create(
-     :customer => customer.id,
-     :amount  =>  @amount,
-     :description => 'Rails Stripe customer',
-     :currency  => 'usd'
-   )
+   charge = Stripe::Charge.create(customer: customer.id, 
+    amount: @amount, 
+    description: 'Rails Stripe customer', 
+    currency: 'usd'
+   )
 
    
    rescue Stripe::CardError => e 
