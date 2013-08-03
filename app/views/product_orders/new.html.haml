@@ -5,4 +5,4 @@
 
   %script.stripe-button{ :src => "https://checkout.stripe.com/v2/checkout.js", "data-amount" => "500", "data-description" => "A month's subscription", "data-key" => Rails.configuration.stripe[:publishable_key] }
 
-= form_tag product_orders_path(product), :remote => true do end
+/ = form_tag product_orders_path(product), :remote => true do end

@@ -34,8 +34,8 @@ ic2 = IceCream.create(name: 'coffee', color: 'brown', image: "https://www.dropbo
 ic3 = IceCream.create(name: 'toasted marshmallow', color: 'white', image: "https://www.dropbox.com/sh/f8bj10tfye3rhcr/MEWXChzOBA#f:IMG_0805.JPG")
 ic4 = IceCream.create(name: 'chocolate', color: 'brown', image: "https://www.dropbox.com/sh/f8bj10tfye3rhcr/MEWXChzOBA#f:IMG_0805.JPG")
 
-icc1 = Product.create(name: 'tiramisu', price: '$25', quantity: '10')
-icc2 = Product.create(name: 'Salted Caramel', price: '$25', quantity: '10')
+icc1 = Product.create(name: 'Cookies and Cream', price: '$25', quantity: '10')
+icc2 = Product.create(name: 'Rice Krispy Treat', price: '$25', quantity: '10')
 
 u1 = User.create(name: 'alex', email: 'Example@Example.com', password: '12345678', password_confirmation: '12345678')
 alex = User.create(name: 'alex', email: 'alex.davidow@gmail', password: 'password', password_confirmation: 'password', admin: true)
