@@ -13,15 +13,12 @@
 
 ActiveRecord::Schema.define(version: 20130803195836) do
 
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
-
   create_table "cookies", force: true do |t|
     t.string   "name"
     t.string   "color"
     t.integer  "cupcake_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.text     "image"
   end
 
@@ -29,8 +26,8 @@ ActiveRecord::Schema.define(version: 20130803195836) do
     t.string   "name"
     t.integer  "current_score"
     t.integer  "user_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
     t.text     "image"
   end
 
@@ -38,8 +35,8 @@ ActiveRecord::Schema.define(version: 20130803195836) do
     t.string   "name"
     t.string   "color"
     t.integer  "cupcake_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.text     "image"
   end
 
@@ -47,8 +44,8 @@ ActiveRecord::Schema.define(version: 20130803195836) do
     t.string   "name"
     t.string   "color"
     t.integer  "cupcake_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.text     "image"
   end
 
@@ -63,8 +60,8 @@ ActiveRecord::Schema.define(version: 20130803195836) do
     t.string   "image"
     t.string   "url"
     t.string   "token"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "product_orders", force: true do |t|
@@ -98,8 +95,8 @@ ActiveRecord::Schema.define(version: 20130803195836) do
     t.string   "name"
     t.string   "color"
     t.integer  "cupcake_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.text     "image"
   end
 
@@ -117,8 +114,8 @@ ActiveRecord::Schema.define(version: 20130803195836) do
     t.string   "name"
     t.boolean  "admin"
     t.integer  "total_score",            default: 0
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
     t.string   "confirmation_token"
     t.string   "unconfirmed_email"
     t.datetime "confirmation_sent_at"

@@ -5,7 +5,11 @@ Ouac4::Application.routes.draw do
 
   devise_for :users, :controllers => {:omniauth_callbacks => "users/omniauth_callbacks"}
 
-  resources :users, only: [:show, :destroy]
+  scope shallow_path: "user" do
+    resources :users, only: [:show, :destroy] do
+      resources :shopping_carts, only: [:show], shallow: true
+    end
+  end
   resources :cupcakes
   resources :cookies, :only => [:index, :new, :create, :destroy]
   resources :frostings, :only => [:index, :new, :create, :destroy]

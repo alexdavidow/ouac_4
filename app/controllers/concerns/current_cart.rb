@@ -1,12 +1,13 @@
 module CurrentCart
   extend ActiveSupport::Concern
 
-  private
-
   def current_cart
-    @cart = ShoppingCart.find(params[:cart_id])
-    rescue
-    @cart = ShoppingCart.create
-    sessions[:cart_id] = cart.id
+    # @cart = current_user.shopping_cart # Relies on current_user helper. Bad practice to create a dependecy on another helper.
+      user = User.find(params[:id])
+      if user.shopping_cart
+        @cart = user.shopping_cart
+      else
+        @cart = ShoppingCart.new(user: user, user_id: user.id)
+      end
   end
 end

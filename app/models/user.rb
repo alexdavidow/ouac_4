@@ -7,7 +7,8 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable, :omniauthable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :shopping_cart_id, :password, :password_confirmation, :remember_me, :identities, :admin, :name, :total_score
+  attr_accessible :email, :shopping_cart_id, :password, :password_confirmation, :remember_me, 
+                  :identities, :admin, :name, :total_score
   # attr_accessible :title, :body
 
   has_many :identities
@@ -15,6 +16,11 @@ class User < ActiveRecord::Base
   has_one :shopping_cart
 
   validates_presence_of :total_score
+
+  # Before creation of a new user, create a new shopping cart and associate them
+  after_create :create_cart
+
+  private
 
   def self.find_for_twitter_oauth(auth, user)
     identity = user.identities.where(provider: auth.provider).first
@@ -42,5 +48,9 @@ class User < ActiveRecord::Base
       user.save!
     end
     user
+  end
+
+  def create_cart
+    self.shopping_cart = ShoppingCart.new(user_id: self.id, user: self)
   end
 end

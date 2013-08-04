@@ -34,8 +34,7 @@
             %li
               = link_to 'Sign Out', destroy_user_session_path, method: :delete 
         %li
-          %a{href: '#'}
-            Cart
+          = link_to 'Cart', shopping_cart_path(current_user.shopping_cart.id)
       - else
         %li
           =link_to 'Sign In', new_user_session_path

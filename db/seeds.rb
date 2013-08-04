@@ -1,4 +1,3 @@
-
 Cupcake.delete_all
 Cookie.delete_all
 Topping.delete_all
