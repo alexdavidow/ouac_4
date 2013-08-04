@@ -7,4 +7,5 @@
 //= require foundation
 //= require cupcakes
 //= require underscore
+//= require products
 

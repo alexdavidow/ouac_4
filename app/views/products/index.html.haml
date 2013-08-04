@@ -1,15 +1,16 @@
 .row
   .small-4.columns#cupcake_display_div
     %img{:src => "/cupcake_platter.png"}
+    %h4 
     %button Buy
     %i.general.foundicon-up-arrow
     %i.general.foundicon-down-arrow
-  .small-4.columns
-    %p Everything they do is so dramatic and flamboyant. It just makes me want to set myself on fire. I know what an erection feels like, Michael. No, it's the opposite. It's like my heart is getting hard. The only thing I found in the fridge was a dead dove in a bag. Gob: You didn't eat that, did you? She wanted to look 48. I nearly airbrushed her into oblivion. Ended up checking "albino" on the form.    
-.row
+  .small-8.columns.display_desc Everything they do is so dramatic and flamboyant. It just makes me want to set myself on fire. I know what an erection feels like, Michael. No, it's the opposite. It's like my heart is getting hard. The only thing I found in the fridge was a dead dove in a bag. Gob: You didn't eat that, did you? She wanted to look 48. I nearly airbrushed her into oblivion. Ended up checking "albino" on the form.  
+ 
+.row#all_menu_items
   - @products.each do |p|
-    .small-3.columns{:id => "item_#{p.id}"}
-      %img.menu_item{:src => "#{p.image}"}
+    %a.small-3.columns.menu_item{:id => "item_#{p.id}"}
+      %img{:src => "#{p.image}"}
       %h4 #{p.name}
       %p #{p.description}
       %p #{p.id}
