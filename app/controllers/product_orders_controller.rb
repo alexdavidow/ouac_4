@@ -9,20 +9,12 @@ class ProductOrdersController < ApplicationController
   end
 
   def create
-    # Amount in cents
-    # @amount = 500
+    # Trying to add a product to product_order for buy button action (from agile book)
+    # @cart = current_cart
+    # product = Product.find(params[:product_id])
+    # @product_order = @cart.product_orders.build
+    # @product_order.product = product
 
-    # customer = Stripe::Customer.create(
-    #   :email => 'example@stripe.com',
-    #   :card  => params[:stripeToken]
-    # )
-
-    # charge = Stripe::Charge.create(
-    #   :customer => customer.id,
-    #   :amount  =>  @amount,
-    #   :description => 'Rails Stripe customer',
-    #   :currency  => 'usd'
-    # )
     Stripe.api_key = "sk_test_cJQzROjrK9TQz7EtOq34wFOO"
 
     token = params[:stripeToken]

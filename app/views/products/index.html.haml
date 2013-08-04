@@ -1,3 +1,6 @@
+%script
+  = render partial: 'partials/js/products.js'
+  
 .row
   .small-4.columns#cupcake_display_div
     %img{:src => "/cupcake_platter.png"}
@@ -9,11 +12,13 @@
  
 .row#all_menu_items
   - @products.each do |p|
-    %a.small-3.columns.menu_item{":data-id" => "#{p.id}"}
+    .small-3.columns.menu_item{":data-id" => "#{p.id}"}
       %img{:src => "#{p.image}"}
       %h4 #{p.name}
       %p.hidden #{p.description}
       %p.hidden #{p.id}
+      / button creates undefined variable product error message
+      / = button_to 'Add to Cart', product_orders_path(product_id: product)
 
 .row
   .small-12.columns
