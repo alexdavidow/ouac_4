@@ -23,7 +23,6 @@ Ouac4::Application.routes.draw do
   get 'win' => 'cupcakes#win'
   get 'lose' => 'cupcakes#lose'
   get 'sessions/new' => 'sessions#new'
-  get 'menu' => 'home#menu'
   get 'contact' => 'home#contact'
   post 'contact' => 'home#submit_contact'
   get 'about' => 'home#about'
