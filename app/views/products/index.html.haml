@@ -9,7 +9,7 @@
  
 .row#all_menu_items
   - @products.each do |p|
-    %a.small-3.columns.menu_item{:id => "item_#{p.id}"}
+    %a.small-3.columns.menu_item{":data-id" => "#{p.id}"}
       %img{:src => "#{p.image}"}
       %h4 #{p.name}
       %p.hidden #{p.description}

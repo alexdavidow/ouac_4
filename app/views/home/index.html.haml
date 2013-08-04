@@ -1,9 +1,3 @@
-/ let's move these lines (through line 5) to the navbar or set it up so if are logged in thru twitter, the link doesn't show.
-= link_to "Connect with Twitter", user_omniauth_authorize_path(:twitter)
-- if (twitter = current_user && current_user.identities.where(provider: 'twitter').first)
-  %div
-    %a{:href => "\#{twitter.url}", :target => "_blank"}#{image_tag twitter.image}
-
   
 .row
   .large-12.columns
