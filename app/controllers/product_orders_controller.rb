@@ -2,9 +2,6 @@ class ProductOrdersController < ApplicationController
   before_filter :authenticate_user!
   include CurrentCart
 
-  def index
-  end
-
   def new
   end
 
@@ -31,10 +28,8 @@ class ProductOrdersController < ApplicationController
   def update
   end
 
-  def show
-  end
-
   def destroy
+    ProductOrder.find(params[:id]).delete 
   end
 
   def stripe_payment
