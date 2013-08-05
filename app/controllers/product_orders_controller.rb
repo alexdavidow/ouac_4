@@ -30,6 +30,7 @@ class ProductOrdersController < ApplicationController
 
   def destroy
     ProductOrder.find(params[:id]).delete 
+    redirect_to :back
   end
 
   def stripe_payment
