@@ -1,17 +1,23 @@
 %h1
   This is the shopping cart! If you see this page, you have a place to add items you wish to purchase!
 
+%h1 
+  User ID: 
 %h1
   = current_user.id
 
-%h1
+%h1 
+  Shopping Cart ID: 
+%h1 
   = current_user.shopping_cart.id
 
 - unless @cart.product_orders.empty?
   - @cart.product_orders.each do |item|
     = item.name
     = item.quantity
-    = item.price
+    = item.price   
 - else
   %h3
     You have no items in your cart.
+
+= button_to "Checkout", new_product_order_path, method: :get
