@@ -13,9 +13,10 @@
 
 - unless @cart.product_orders.empty?
   - @cart.product_orders.each do |item|
-    = item.name
+    = item.product.name
     = item.quantity
-    = item.price   
+    = item.product.price
+    
 - else
   %h3
     You have no items in your cart.
