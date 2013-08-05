@@ -1,10 +1,20 @@
 function selectItem(itemId){
   // use item id as data-attribute to find item in db for AJAX call
+  // $('.menu_item [data-id='+@products.id+']')
+  $.ajax({
+    type:"GET", 
+    data: {"id": $("menu_item").data("id")},
+    url: "/products/"+data.id+"",
+    success: function(data){
+      $("#cupcake_display_div").html(data).removeClass('hidden');
+    }
+
+  })
   // empty the current picture div for the cupcake display
   // repopulate the display with the image attr of the selected cupcake
   // create price div and update it with the price attr of the selected cupcake
 }
 
-$(function({
-    
+$(document).ready(function(){
+  $(".menu_item").on('click', selectItem)  
 });
