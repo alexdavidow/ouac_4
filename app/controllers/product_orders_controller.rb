@@ -36,10 +36,11 @@ class ProductOrdersController < ApplicationController
     Stripe.api_key = "sk_test_cJQzROjrK9TQz7EtOq34wFOO"
 
     token = params[:stripeToken]
+    @payment = current_cart.total_price
 
     begin
       charge = Stripe::Charge.create(
-        :amount => 1500,
+        :amount => @payment,
         :currency => "usd",
         :card => token,
         :description => "payinguser@example.com"
