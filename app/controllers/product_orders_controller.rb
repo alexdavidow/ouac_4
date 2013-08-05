@@ -6,14 +6,13 @@ class ProductOrdersController < ApplicationController
   end
 
   def new
-    render :new
   end
 
   def create
     if current_cart
       cart = current_cart
-      item = ProductOrder.find(params[:id])
-      cart.product_orders << item
+      product = ProductOrder.find(params[:id])
+      cart.product_orders.build(product_order: product)
       respond_to do |format|
         format.html { redirect_to shopping_cart_path, notice: "You have successfully added #{item.name} to your cart." }
         #format.json ------- ### Add for AJAX call 
@@ -21,7 +20,6 @@ class ProductOrdersController < ApplicationController
     else
       flash[:error] = "There was a problem adding the item to your cart. Please refresh and try again."
     end
-
   end
 
   def edit
