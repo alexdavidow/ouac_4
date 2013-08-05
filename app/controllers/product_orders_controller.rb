@@ -29,12 +29,15 @@ class ProductOrdersController < ApplicationController
   end
 
   def update
+    redirect_to :back
   end
 
   def show
   end
 
   def destroy
+    ProductOrder.find(params[:id]).delete
+    redirect_to :back
   end
 
   def stripe_payment
