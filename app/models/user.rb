@@ -13,7 +13,7 @@ class User < ActiveRecord::Base
 
   has_many :identities
   has_many :cupcakes
-  has_one :shopping_cart
+  has_one :shopping_cart, dependent: :destroy
 
   validates_presence_of :total_score
 
@@ -53,4 +53,5 @@ class User < ActiveRecord::Base
   def create_cart
     self.shopping_cart = ShoppingCart.new(user_id: self.id, user: self)
   end
+
 end
