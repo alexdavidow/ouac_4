@@ -2,9 +2,6 @@ class ProductOrdersController < ApplicationController
   before_filter :authenticate_user!
   include CurrentCart
 
-  def index
-  end
-
   def new
   end
 
@@ -32,11 +29,8 @@ class ProductOrdersController < ApplicationController
     redirect_to :back
   end
 
-  def show
-  end
-
   def destroy
-    ProductOrder.find(params[:id]).delete
+    ProductOrder.find(params[:id]).delete 
     redirect_to :back
   end
 

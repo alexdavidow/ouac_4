@@ -14,13 +14,9 @@ class ShoppingCart < ActiveRecord::Base
     else
       current_item = product_orders.build(product_id: product_id)
     # return the item
-    current_item
     end
+    current_item
   end
 
-  def remove_item
-    # find product_order by id, set it to variable current_item
-    # destroy object in cart 
-  end
 
 end
