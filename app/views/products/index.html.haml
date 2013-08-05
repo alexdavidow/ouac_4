@@ -2,7 +2,7 @@
   = render partial: 'partials/js/products.js'
 
 .row
-  .small-4.columns#cupcake_display_div
+  .small-4.columns.cupcake_display_div
     %img{:src => "/cupcake_platter.png"}
     %h4 
     = button_to 'Add to Cart', product_orders_path(product_id: 18)
@@ -12,10 +12,10 @@
  
 .row#all_menu_items
   - @products.each do |p|
-    .small-3.columns.menu_item{":data-id" => "#{p.id}"}
+    .small-3.columns.menu_item{:"data-id" => "#{p.id}"}
       %img{:src => "#{p.image}"}
       %h4 #{p.name}
-      %p.hidden #{p.description}
+      %p.hidden.description #{p.description}
       %p.hidden #{p.id}
 
 .row
