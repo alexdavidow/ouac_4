@@ -1,14 +1,30 @@
 
 - unless @cart.product_orders.empty?
   - @cart.product_orders.each do |item|
-    = item.product.name
-    = item.quantity
-    = item.product.price
-    = form_tag(product_order_path(:id => item.id), method: "patch") do
-      = text_field_tag :quantity
-      = submit_tag :"update quantity"
-    = button_to "Delete Item", product_order_path(:id => item.id), method: :delete
-
+    %table
+      %thead
+        %th
+        %th
+          Item Name
+        %th
+          Price (per Dozen)
+        %th
+          Quantity
+        %th
+      %tbody
+        %tr
+          %td
+            Item Image
+          %td
+            = item.product.name
+          %td
+            = item.product.price
+          %td
+            = form_tag(product_order_path(:id => item.id), method: "patch") do
+              = text_field_tag :quantity, item.quantity
+              = submit_tag :"update quantity"
+          %td
+            = button_to "Delete Item", product_order_path(:id => item.id), method: :delete
 - else
   %h3
     You have no items in your cart.

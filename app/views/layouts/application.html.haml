@@ -8,8 +8,12 @@
   %body
     #container
       = render partial: 'partials/nav'
-      %p.notification
-      %p.error
+      - if flash[:notice]
+        .notice
+          = flash[:notice]
+      - if flash[:error]
+        .error
+          = flash[:error]
     .row#content
       = yield
       :javascript

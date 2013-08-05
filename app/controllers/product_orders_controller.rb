@@ -12,8 +12,8 @@ class ProductOrdersController < ApplicationController
       item = cart.add_item(product.id) 
       respond_to do |format|
       if item.save!
-          format.html { redirect_to shopping_cart_path(current_cart.id), notice: "You have successfully added #{product.name} to your cart." }
-          #format.json ------- ### Add for AJAX call 
+          format.html { redirect_to shopping_cart_path(current_cart.id)}#, flash[:notice]= ("You have successfully added #{product.name} to your cart.") }
+          format.json { data.id } 
       else
         format.html { render :index }
         flash[:error] = "There was a problem adding the item to your cart. Please refresh and try again."

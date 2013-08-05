@@ -19,6 +19,20 @@ function selectItem(itemId){
   // create price div and update it with the price attr of the selected cupcake
 }
 
+function addItemToCart(item_id){
+   $.ajax({
+     type: "POST", 
+     data: {"id": item_id},
+     dataType: 'script',
+     url: "<%= product_orders_path %>"
+     success: function(){
+       notice_div = $('<div>');
+
+     }
+     error:
+   })
+}
+
 $(document).ready(function(){
   $(".menu_item").on('click', selectItem)  
 });
