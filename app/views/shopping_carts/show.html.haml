@@ -1,6 +1,12 @@
 %h1
   This is the shopping cart! If you see this page, you have a place to add items you wish to purchase!
 
+%h1
+  = current_user.id
+
+%h1
+  = current_user.shopping_cart.id
+
 - unless @cart.product_orders.empty?
   - @cart.product_orders.each do |item|
     = item.name
