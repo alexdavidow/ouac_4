@@ -12,9 +12,12 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema.define(version: 20130805164103) do
+<<<<<<< HEAD
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+=======
+>>>>>>> 84a218a28e84c1f8d8f45ee7b9f875ba14c42aa8
 
   create_table "cookies", force: true do |t|
     t.string   "name"

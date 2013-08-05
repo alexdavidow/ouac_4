@@ -1,6 +1,6 @@
 class ShoppingCart < ActiveRecord::Base
   attr_accessible :user_id, :user, :total_price, :num_of_items
-  belongs_to :user, dependent: :destroy
+  has_one :user
   has_many :product_orders, dependent: :destroy
 
   def add_item(product_id)

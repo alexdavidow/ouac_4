@@ -1,6 +1,10 @@
-function selectItem(itemId){
-  display_cupcake = $(this).clone().addClass('cupcake_display_div')
-  cupcake_description = $(this).children('.description').clone().removeClass('hidden').addClass('display_desc')
+function selectItem(){
+  var itemID = $(this).data('product_id');
+  console.log(itemID);
+  $('#buy-button').data('product_id', itemID);
+  console.log($('#buy-button').data());
+  display_cupcake = $(this).clone().addClass('cupcake_display_div');
+  cupcake_description = $(this).children('.description').clone().removeClass('hidden').addClass('display_desc');
   $('.cupcake_display_div').replaceWith(display_cupcake)
   $('.display_desc').replaceWith(cupcake_description)
 
@@ -19,6 +23,20 @@ function selectItem(itemId){
   // create price div and update it with the price attr of the selected cupcake
 }
 
+function addItemToCart(){
+  var item_id = $(this).data('product_id');
+  $.ajax({
+    type: "POST", 
+    data: {"product_id": item_id},
+    dataType: 'script',
+    url: "<%= product_orders_path %>",
+    success: function(){
+      console.log('AJAX SUCCESS');
+     }
+   });
+}
+
 $(document).ready(function(){
-  $(".menu_item").on('click', selectItem)  
+  $(".menu_item").on('click', selectItem); 
+  $('#buy-button').on('click', addItemToCart);
 });
