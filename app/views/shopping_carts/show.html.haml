@@ -1,19 +1,13 @@
-%h1 
-  User ID: 
-%h1
-  = current_user.id
-
-%h1 
-  Shopping Cart ID: 
-%h1 
-  = current_user.shopping_cart.id
 
 - unless @cart.product_orders.empty?
   - @cart.product_orders.each do |item|
     = item.product.name
     = item.quantity
     = item.product.price
-    = button_to "Delete Item", product_order_path(:id => item.product.id), method: :delete
+    = form_tag(product_order_path(:id => item.id), method: "patch") do
+      = text_field_tag :quantity
+      = submit_tag :"update quantity"
+    = button_to "Delete Item", product_order_path(:id => item.id), method: :delete
 
 - else
   %h3
