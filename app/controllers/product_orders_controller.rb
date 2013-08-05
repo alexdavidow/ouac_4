@@ -43,6 +43,8 @@ class ProductOrdersController < ApplicationController
   end
 
   def stripe_payment
+    Stripe.api_key = Rails.configuration.stripe[:secret_key]
+
     token = params[:stripeToken]
     @decimal_amount = 25
     @payment = (@decimal_amount * 100).to_i
@@ -54,7 +56,7 @@ class ProductOrdersController < ApplicationController
         :card => token,
         :description => "payinguser@example.com"
       )
-
+      redirect_to contact_path
     rescue Stripe::CardError => e
       flash[:error] = e.message
       redirect_to products_path

@@ -1,0 +1,9 @@
+function token_generated(e, token){
+  e.preventDefault();
+  $(this).parent().append("<input type='hidden' name='token' value=" + token.id + ">").submit();
+  console.log(token.id);
+}
+
+$(document).ready(function() {
+  $('body').on('token', '.stripe-button', token_generated);
+});
