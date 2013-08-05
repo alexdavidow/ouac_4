@@ -8,9 +8,10 @@
       = text_field_tag :quantity
       = submit_tag :"update quantity"
     = button_to "Delete Item", product_order_path(:id => item.id), method: :delete
+    = button_to "Checkout", new_product_order_path, method: :get
 
 - else
   %h3
     You have no items in your cart.
 
-= button_to "Checkout", new_product_order_path, method: :get
+

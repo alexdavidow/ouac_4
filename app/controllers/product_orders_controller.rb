@@ -35,10 +35,9 @@ class ProductOrdersController < ApplicationController
   end
 
   def stripe_payment
-    Stripe.api_key = "sk_test_cJQzROjrK9TQz7EtOq34wFOO"
-
     token = params[:stripeToken]
-    @payment = current_cart.total_price
+    @decimal_amount = 25
+    @payment = (@decimal_amount * 100).to_i
 
     begin
       charge = Stripe::Charge.create(

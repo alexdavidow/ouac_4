@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130801210615) do
+ActiveRecord::Schema.define(version: 20130805164103) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,8 +20,8 @@ ActiveRecord::Schema.define(version: 20130801210615) do
     t.string   "name"
     t.string   "color"
     t.integer  "cupcake_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.text     "image"
   end
 
@@ -29,8 +29,8 @@ ActiveRecord::Schema.define(version: 20130801210615) do
     t.string   "name"
     t.integer  "current_score"
     t.integer  "user_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
     t.text     "image"
   end
 
@@ -38,8 +38,8 @@ ActiveRecord::Schema.define(version: 20130801210615) do
     t.string   "name"
     t.string   "color"
     t.integer  "cupcake_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.text     "image"
   end
 
@@ -47,8 +47,8 @@ ActiveRecord::Schema.define(version: 20130801210615) do
     t.string   "name"
     t.string   "color"
     t.integer  "cupcake_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.text     "image"
   end
 
@@ -63,14 +63,14 @@ ActiveRecord::Schema.define(version: 20130801210615) do
     t.string   "image"
     t.string   "url"
     t.string   "token"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "product_orders", force: true do |t|
     t.integer  "shopping_cart_id"
     t.integer  "product_id"
-    t.integer  "quantity"
+    t.integer  "quantity",         default: 1
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -81,6 +81,8 @@ ActiveRecord::Schema.define(version: 20130801210615) do
     t.string   "image"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "quantity"
+    t.string   "description"
   end
 
   create_table "shopping_carts", force: true do |t|
@@ -89,14 +91,15 @@ ActiveRecord::Schema.define(version: 20130801210615) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "user_id"
+    t.string   "user"
   end
 
   create_table "toppings", force: true do |t|
     t.string   "name"
     t.string   "color"
     t.integer  "cupcake_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.text     "image"
   end
 
@@ -114,8 +117,8 @@ ActiveRecord::Schema.define(version: 20130801210615) do
     t.string   "name"
     t.boolean  "admin"
     t.integer  "total_score",            default: 0
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
     t.string   "confirmation_token"
     t.string   "unconfirmed_email"
     t.datetime "confirmation_sent_at"
@@ -126,3 +129,4 @@ ActiveRecord::Schema.define(version: 20130801210615) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+end
