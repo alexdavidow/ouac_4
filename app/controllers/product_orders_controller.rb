@@ -26,6 +26,7 @@ class ProductOrdersController < ApplicationController
   end
 
   def update
+    redirect_to :back
   end
 
   def destroy
