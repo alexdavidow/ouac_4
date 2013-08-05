@@ -1,15 +1,17 @@
 function selectItem(itemId){
   // use item id as data-attribute to find item in db for AJAX call
-  // $('.menu_item [data-id='+@products.id+']')
+  // attr('data-id') as well as data('id') are both returning undefined in rails console. not sure how to find find element by data-id right now.
+  var item_id = $('.menu_item').attr('data-id');
+  
   $.ajax({
-    type:"GET", 
-    data: {"id": $("menu_item").data("id")},
-    url: "/products/"+data.id+"",
-    success: function(data){
-      $("#cupcake_display_div").html(data).removeClass('hidden');
-    }
-
+    type: "GET", 
+    data: {"id": $('.menu_item').attr('data-id')},
+    dataType: 'script',
+    url: 'products/:'+item_id
   })
+  // error is Started GET "/products/:undefined?_=1375674219610"
+  // also says ActiveRecord::RecordNotFound - Couldn't find Product with id=:undefined:
+
   // empty the current picture div for the cupcake display
   // repopulate the display with the image attr of the selected cupcake
   // create price div and update it with the price attr of the selected cupcake
