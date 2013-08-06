@@ -45,34 +45,19 @@ class ProductOrdersController < ApplicationController
   end
 
   def stripe_payment
-    # Stripe.api_key = Rails.configuration.stripe[:secret_key]
+     Stripe.api_key = Rails.configuration.stripe[:secret_key]
 
-    # token = params[:stripeToken]
-    # @decimal_amount = 25
-    # @payment = (@decimal_amount * 100).to_i
-
-    # customer = Stripe::Customer.create(
-    #   :email => current_user.email,
-    #   :card  => params[:stripeToken]
-    # )
-
-    # begin
-    #   charge = Stripe::Charge.create(
-    #     :customer => customer.id,
-    #     :amount => @payment,
-    #     :currency => "usd",
-    #     :card => token,
-    #     :description => "Rails Stripe customer"
-    #   )
-    #   redirect_to contact_path
-    # rescue Stripe::CardError => e
-    #   flash[:error] = e.message
-    #   redirect_to products_path
-    # end
+     token = params[:stripeToken]
+     @decimal_amount = 25
+     @payment = (@decimal_amount * 100).to_i
 
     begin
-      customer = Stripe::Customer.create(email: current_user.email, card: params[:token])
-      Stripe::Charge.create(customer: customer.id, amount: 4400, description: "blah", currency: 'usd')
+      charge = Stripe::Charge.create(
+        :amount => @payment,
+        :currency => "usd",
+        :card => token,
+        :description => "#{current_user.email}"
+      )
       redirect_to contact_path
     rescue Stripe::CardError => e
       flash[:error] = e.message
