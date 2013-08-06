@@ -61,5 +61,11 @@ class ProductOrdersController < ApplicationController
       flash[:error] = e.message
       redirect_to products_path
     end
+
+    # begin
+    #   customer = Stripe::Customer.create(email: 'example@stripe.com', card: params[:token])
+    #   Stripe::Charge.create(customer: customer.id, amount: 2200, description: "blah", currency: 'usd')
+    # rescue Stripe::CardError => e
+    # end
   end
 end
