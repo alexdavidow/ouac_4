@@ -11,4 +11,7 @@ class ProductsController < ApplicationController
       format.js
     end
   end
+
+  def custom_creator
+  end
 end
