@@ -14,7 +14,8 @@
 .row#all_menu_items
   - @products.each do |p|
     .small-3.columns.menu_item{:"data-product_id" => "#{p.id}"}
-      %img{:src => "#{p.image}"}
+      %a
+        %img{:src => "#{p.image}"}
       %h4 #{p.name}
       %p.hidden.description #{p.description}
       %p.hidden #{p.id}
