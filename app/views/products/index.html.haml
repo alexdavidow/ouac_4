@@ -10,7 +10,7 @@
   %button{:id => 'buy-button', :class => 'button', :"data-product_id" => 0}
     Buy Item
   %i.general.foundicon-up-arrow
-  %i.general.foundicon-down-arrow  
+  %i.general.foundicon-down-arrow
  
 .row#all_menu_items
   - @products.each do |p|
@@ -23,7 +23,14 @@
 .row
   .small-12.columns
     %p (GF/DF) - These flavors use ingredients that are entirely gluten and/or dairy free, though they are produced in the same facility and with the same equipment as gluten and dairy.
+  .small-8.columns
+    %h5 Minimum order is one dozen per flavor.
   .small-4.columns  
-    %p **Custom flavors available upon request!
-  .small-4.columns
-    %p ***Price available upon request. Minimum order 1 dozen.      
+    %h5 $25/dozen.
+.row  
+  .small-6.columns  
+    %a{:href => "/products"}
+      %h5 Get Creative! Create your own flavor! 
+  .small-6.columns   
+    %a{:href => "/contact"}
+      %h5 Contact us for special requests!

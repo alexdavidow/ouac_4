@@ -24,6 +24,12 @@
   display: none;
 }
 
+.creator_ingredient_display{
+  width: 250px;
+  height: 90px;
+  vertical-align: bottom;
+}
+
 #logo {
   padding: 2px;
 }
@@ -52,11 +58,6 @@
   height: 25px;
   color: white;
   padding-left: 22px;
-}
-
-#instructions h4 {
-  padding-left: 15px;
-  padding-right: 15px;
 }
 
 #ice_cream_model {
@@ -168,10 +169,11 @@
   border: none;
 }
 
-/*h4 {
-  color: #006ab5;
+#instructions h4 {
+  padding-left: 15px;
+  padding-right: 15px;
+}
 
-}*/
 .square {
   height: 500px;
   margin: 0 auto;
