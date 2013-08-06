@@ -1,0 +1,43 @@
+function start_level_1() {
+  $('#start_creator').remove()
+  $('#creator_instructions').remove()
+  $('.step_1_div').removeClass('hidden')
+
+}
+
+function start_level_2(e) {
+  // $('#start_creator').remove()
+  // $('#creator_instructions').remove()
+  e.preventDefault();
+  $('.step_1_div').addClass('hidden')
+  $('.step_2_div').removeClass('hidden')
+  $('.step_1_instruction').addClass('hidden')
+  $('.step_2_instruction').removeClass('hidden')
+
+}
+
+function start_level_3(e) {
+  e.preventDefault();
+  $('.step_2_div').addClass('hidden')
+  $('.step_3_div').removeClass('hidden')
+  $('.step_2_instruction').addClass('hidden')
+  $('.step_3_instruction').removeClass('hidden')
+}
+
+function start_level_4(e) {
+  e.preventDefault();
+  $('.step_3_div').addClass('hidden')
+  $('.step_4_div').removeClass('hidden')
+  $('.step_3_instruction').addClass('hidden')
+  $('.step_4_instruction').removeClass('hidden')
+
+}
+
+
+$(document).ready(function(){
+  $("#start_creator").on('click', start_level_1)
+  $('.step_1_button').on('click', start_level_2)
+  $('.step_2_button').on('click', start_level_3)
+  $('.step_3_button').on('click', start_level_4)
+
+})

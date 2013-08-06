@@ -1,11 +1,14 @@
+%script
+  = render partial: 'partials/js/custom_creator.js'
+
 .row
   .small-5.columns
     %h4 Design your own ice cream cupcake!
   .small-7.columns
-    %h4.step_1 Step 1: Choose a cookie base!
-    %h4.step_2.hidden Step 2: Choose an ice cream!
-    %h4.step_3.hidden Step 3: Choose a frosting!
-    %h4.step_4.hidden Step 4: Choose a topping!
+    %h4.step_1_instruction Step 1: Choose a cookie base!
+    %h4.step_2_instruction.hidden Step 2: Choose an ice cream!
+    %h4.step_3_instruction.hidden Step 3: Choose a frosting!
+    %h4.step_4_instruction.hidden Step 4: Choose a topping!
 
 .row
   .small-5.columns.creator_display
@@ -16,8 +19,8 @@
   .small-7.columns
     %h5#creator_instructions Instructions for what to do, user capabilities once they have finished(order custom creation, name it and/or share it on facebook). Any restrictions on quantity and required time window for placing a custom order.
     %button.large#start_creator "Let's Make An Ice Cream Cupcake!"
-  .small-7.columns.step_1.hidden
-    %form.step_1{:method => "post"}
+  .small-7.columns.step_1_div.hidden
+    %form.step_1{method: "post"}
       .step_1{:align => "center"}
         %h5 Cookie Base Choices
         %input.step_1{:checked => "", :name => "step_1", :type => "radio", :"data-value" => "Chocolate Chip Cookie"} Chocolate Chip Cookie
@@ -30,9 +33,9 @@
         %input.step_1{:name => "step_1", :type => "radio", :"data-value" => "Flourless Chocolate Cake"} Flourless Chocolate Cake
         %br/
         %input.step_1{:name => "step_1", :type => "radio", :"data-value" => "Flourless Peanut Butter Cookie"} Flourless Peanut Butter Cookie
-        %button.step_1 "Make Cookie Selection"
+        %button.step_1_button "Make Cookie Selection"
 
-  .small-7.columns.step_2.hidden
+  .small-7.columns.step_2_div.hidden
     %form.step_2{:method => "post"}
       .step_2{:align => "center"}
         %h5 Ice Cream Choices
@@ -48,9 +51,10 @@
         %input.step_2{:name => "step_2", :type => "radio", :"data-value" => "Chocolate Sorbet"} Chocolate Sorbet
         %br/
         %input.step_2{:name => "step_2", :type => "radio", :"data-value" => "Vanilla Frozen Yogurt"} Vanilla Frozen Yogurt
-        %button.step_2 "Make Ice Cream Selection"
+        %br/
+        %button.step_2_button "Make Ice Cream Selection"
 
-  .small-7.columns.step_3.hidden
+  .small-7.columns.step_3_div.hidden
     %form.step_3{:method => "post"}
       .step_3{:align => "center"}
         %h5 Frosting Choices
@@ -69,9 +73,9 @@
         %br/
         %input.step_3{:name => "step_3", :type => "radio", :"data-value" => "Chocolate Peanut Butter Soy Whipped Cream"} Chocolate Peanut Butter Soy Whipped Cream
         %p *All frosting choices are gluten-free
-        %button.step_3 "Make Frosting Selection"
+        %button.step_3_button "Make Frosting Selection"
 
-  .small-7.columns.step_4.hidden
+  .small-7.columns.step_4_div.hidden
     %form.step_4{:method => "post"}
       .step_4{:align => "center"}
         %h5 Topping Choices
@@ -89,7 +93,7 @@
         %br/
         %input.step_4{:name => "step_4", :type => "radio", :"data-value" => "Candied Lemon Peel"} Candied Lemon Peel
         %br/
-        %button.step_4 "Make Topping Selection"        
+        %button.step_4_button "Make Topping Selection"        
 
 
 
