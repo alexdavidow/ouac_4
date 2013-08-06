@@ -24,7 +24,9 @@ class ShoppingCart < ActiveRecord::Base
     self.product_orders.each do |po|
       po.product_id
       product = Product.find po.product_id
-      cart_total << product.price
+      product_quantity = po.quantity
+      po_total_amount = product * product_quantity
+      cart_total << po_total_amount
       total = cart_total.reduce(:+)
       p product.name
     end
