@@ -1,7 +1,7 @@
 function start_level_1() {
-  $('#start_creator').remove()
-  $('#creator_instructions').remove()
-  $('.step_1_div').removeClass('hidden')
+  $('#start_creator').remove();
+  $('#creator_instructions').remove();
+  $('.step_1_div').toggleClass('hidden');
 
 }
 
@@ -9,10 +9,10 @@ function start_level_2(e) {
   // $('#start_creator').remove()
   // $('#creator_instructions').remove()
   e.preventDefault();
-  $('.step_1_div').addClass('hidden')
-  $('.step_2_div').removeClass('hidden')
-  $('.step_1_instruction').addClass('hidden')
-  $('.step_2_instruction').removeClass('hidden')
+  $('.step_1_div').toggleClass('hidden');
+  $('.step_2_div').toggleClass('hidden');
+  $('.step_1_instruction').toggleClass('hidden');
+  $('.step_2_instruction').toggleClass('hidden');
 
 }
 
@@ -33,11 +33,15 @@ function start_level_4(e) {
 
 }
 
+function createCustomCupcake(e){
+  e.preventDefault();
+}
+
 
 $(document).ready(function(){
-  $("#start_creator").on('click', start_level_1)
-  $('.step_1_button').on('click', start_level_2)
-  $('.step_2_button').on('click', start_level_3)
-  $('.step_3_button').on('click', start_level_4)
-
+  $("#start_creator").on('click', start_level_1);
+  $('.step_1_button').on('click', start_level_2);
+  $('.step_2_button').on('click', start_level_3);
+  $('.step_3_button').on('click', start_level_4);
+  $('.step_4_button').on('click', createCustomCupcake);
 })
