@@ -56,7 +56,7 @@ class ProductOrdersController < ApplicationController
         :amount => @payment,
         :currency => "usd",
         :card => token,
-        :description => "payinguser@example.com"
+        :description => "#{current_user.email}"
       )
       redirect_to contact_path
     rescue Stripe::CardError => e
