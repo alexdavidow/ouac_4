@@ -48,7 +48,7 @@ class ProductOrdersController < ApplicationController
      Stripe.api_key = Rails.configuration.stripe[:secret_key]
 
      token = params[:stripeToken]
-     @decimal_amount = 25
+     @decimal_amount = params[:total_price]
      @payment = (@decimal_amount * 100).to_i
 
     begin
