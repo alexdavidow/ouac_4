@@ -45,11 +45,11 @@ class ProductOrdersController < ApplicationController
   end
 
   def stripe_payment
-    Stripe.api_key = Rails.configuration.stripe[:secret_key]
+     Stripe.api_key = Rails.configuration.stripe[:secret_key]
 
-    token = params[:stripeToken]
-    @decimal_amount = 25
-    @payment = (@decimal_amount * 100).to_i
+     token = params[:stripeToken]
+     @decimal_amount = 25
+     @payment = (@decimal_amount * 100).to_i
 
     begin
       charge = Stripe::Charge.create(
