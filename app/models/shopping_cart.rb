@@ -17,7 +17,7 @@ class ShoppingCart < ActiveRecord::Base
     end
     current_item
   end
-
+  
   def total_up_cart
     total = 0
     cart_total = []
@@ -30,5 +30,4 @@ class ShoppingCart < ActiveRecord::Base
     end
     total
   end
-
 end

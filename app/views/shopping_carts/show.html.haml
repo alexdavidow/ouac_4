@@ -1,19 +1,19 @@
-
+%script
+  = render partial: 'partials/js/cart.js'
 - unless @cart.product_orders.empty?
-  - @cart.product_orders.each do |item|
-
-    %table
-      %thead
-        %th
-        %th
-          Item Name
-        %th
-          Price (per Dozen)
-        %th
-          Quantity
-        %th
-      %tbody
-        %tr
+  %table
+    %thead
+      %th
+      %th
+        Item Name
+      %th
+        Price (per Dozen)
+      %th
+        Quantity
+      %th
+    %tbody
+      - @cart.product_orders.each do |item|
+        %tr.orders{id: item.id}
           %td
             Item Image
           %td
@@ -30,4 +30,7 @@
   %h3
     You have no items in your cart.
 
+- @cart.total_up_cart
+%p
+  = @cart.total_price
 = button_to "Checkout", new_product_order_path, method: 'get'

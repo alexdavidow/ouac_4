@@ -1,0 +1,26 @@
+function updateQuantity(e){
+  e.preventDefault();
+  params = {
+      id: $(this).parent().parent().parent().attr('id'),
+      quantity: $(this).siblings("input[name='quantity']").val()
+  }
+
+  $.ajax({
+   type: 'PUT',
+   url: '/product_orders/' + params['id'],
+   data: params,
+   dataType: 'JSON',
+   success: function(){
+    console.log('UPDATED SUCCESSFULLY!');
+   }
+  })
+}
+
+
+
+$(function(){
+ $(".orders input[name='commit']").on('click', updateQuantity); 
+});
+
+
+
