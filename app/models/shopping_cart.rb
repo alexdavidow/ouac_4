@@ -1,6 +1,6 @@
 class ShoppingCart < ActiveRecord::Base
   attr_accessible :user_id, :user, :total_price, :num_of_items
-  has_on :user
+  has_one :user
   has_many :product_orders, dependent: :destroy
 
   def add_item(product_id)
@@ -17,6 +17,17 @@ class ShoppingCart < ActiveRecord::Base
     end
     current_item
   end
-
-
+  
+  def total_up_cart
+    total = 0
+    cart_total = []
+    self.product_orders.each do |po|
+      po.product_id
+      product = Product.find po.product_id
+      cart_total << product.price
+      total = cart_total.reduce(:+)
+      p product.name
+    end
+    total
+  end
 end
