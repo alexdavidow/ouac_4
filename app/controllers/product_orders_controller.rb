@@ -28,12 +28,14 @@ class ProductOrdersController < ApplicationController
   def update
     order = ProductOrder.find(params[:id])
     order.quantity = params[:quantity]
-    if order.save
-      redirect_to :back
-      flash[:notice] = "You have updated the quantity"
-    else
-      redirect_to :back
-      flash[:error] = "You did not update the quantity successfully."
+    respond_to do |format|
+      if order.save
+        format.html { redirect_to :back, flash[:notice] = "You have updated the quantity"}
+        format.json { render :js => "You have successfully updated the quantity of #{order.product.name}" }
+      else
+        redirect_to :back
+        flash[:error] = "You did not update the quantity successfully."
+      end
     end
   end
 

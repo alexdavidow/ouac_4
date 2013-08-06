@@ -1,33 +1,36 @@
-
+%script
+  = render partial: 'partials/js/cart.js'
 - unless @cart.product_orders.empty?
-
-    %table
-      %thead
-        %th
-        %th
-          Item Name
-        %th
-          Price (per Dozen)
-        %th
-          Quantity
-        %th
-      %tbody
-        - @cart.product_orders.each do |item|
-          %tr
-            %td
-              Item Image
-            %td
-              = item.product.name
-            %td
-              = item.product.price
-            %td
-              = form_tag(product_order_path(:id => item.id), method: "patch") do
-                = text_field_tag :quantity, item.quantity
-                = submit_tag :"update quantity"
-            %td
-              = button_to "Delete Item", product_order_path(:id => item.id), method: :delete
+  %table
+    %thead
+      %th
+      %th
+        Item Name
+      %th
+        Price (per Dozen)
+      %th
+        Quantity
+      %th
+    %tbody
+      - @cart.product_orders.each do |item|
+        %tr.orders{id: item.id}
+          %td
+            Item Image
+          %td
+            = item.product.name
+          %td
+            = item.product.price
+          %td
+            = form_tag(product_order_path(:id => item.id), method: "patch") do
+              = text_field_tag :quantity, item.quantity
+              = submit_tag :"update quantity"
+          %td
+            = button_to "Delete Item", product_order_path(:id => item.id), method: :delete
 - else
   %h3
     You have no items in your cart.
 
+- @cart.total_up_cart
+%p
+  = @cart.total_price
 = button_to "Checkout", new_product_order_path, method: 'get'
