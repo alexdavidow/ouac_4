@@ -33,7 +33,7 @@ ic2 = IceCream.create(name: 'coffee', color: 'brown', image: "https://www.dropbo
 ic3 = IceCream.create(name: 'toasted marshmallow', color: 'white', image: "https://www.dropbox.com/sh/f8bj10tfye3rhcr/MEWXChzOBA#f:IMG_0805.JPG")
 ic4 = IceCream.create(name: 'chocolate', color: 'brown', image: "https://www.dropbox.com/sh/f8bj10tfye3rhcr/MEWXChzOBA#f:IMG_0805.JPG")
 
-icc1 = Product.create(name: 'Cookies and Cream', price: 25, quantity: 10, description: "Crumbled Oreo base, cookies and cream ice cream, whipped cream and crumbled Oreos.", image: "/pearl_mini.jpg")
+icc1 = Product.create(name: 'Cookies and Cream', price: 25, quantity: 10, description: "Crumbled Oreo base\n cookies and cream ice cream\n whipped cream\n crumbled Oreos.", image: "/pearl_mini.jpg")
 icc2 = Product.create(name: 'Rice Krispy Treat', price: 25, quantity: 10, description: "Rice krispy treat base, vanilla bean ice cream, marshmallow fluff and rice krispy treat cluster.", image: "/pearl_mini.jpg")
 icc3 = Product.create(name: 'Chocolate Raspberry (GF/DF)', price: 25, quantity: 10, description: "Flourless chocolate cake base, chocolate raspberry sorbet, chocolate soy whipped cream and raspberry jam.", image: "/pearl_mini.jpg")
 icc4 = Product.create(name: 'Fro-Yo Parfait', price: 25, quantity: 10, description: "granola base, vanilla frozen yogurt, mixed berry whipped cream and granola.", image: "/pearl_mini.jpg")
