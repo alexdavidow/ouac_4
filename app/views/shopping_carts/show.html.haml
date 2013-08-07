@@ -12,6 +12,8 @@
         Quantity
       %th
     %tbody
+      .blah
+        = @cart.id
       - @cart.product_orders.each do |item|
         %tr.orders{id: item.id}
           %td
