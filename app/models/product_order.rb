@@ -1,5 +1,5 @@
 class ProductOrder < ActiveRecord::Base
-  attr_accessible :shopping_cart_id, :product_id, :product, :quantity, :price
+  attr_accessible :order_id, :product_id, :product, :quantity, :price
   belongs_to :order, dependent: :destroy
   belongs_to :product
 

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130807162047) do
+ActiveRecord::Schema.define(version: 20130807163503) do
 
   create_table "cookies", force: true do |t|
     t.string   "name"
@@ -69,17 +69,18 @@ ActiveRecord::Schema.define(version: 20130807162047) do
     t.boolean  "payment_made"
     t.string   "phone_number"
     t.date     "delivery_date"
+    t.integer  "shopping_cart_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "product_orders", force: true do |t|
-    t.integer  "shopping_cart_id"
     t.integer  "product_id"
-    t.integer  "quantity",         default: 1
+    t.integer  "quantity",   default: 1
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.decimal  "price",            default: 0.99
+    t.decimal  "price",      default: 0.99
+    t.integer  "order_id"
   end
 
   create_table "products", force: true do |t|

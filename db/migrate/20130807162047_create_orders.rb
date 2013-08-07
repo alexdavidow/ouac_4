@@ -5,6 +5,7 @@ class CreateOrders < ActiveRecord::Migration
       t.boolean :payment_made
       t.string :phone_number
       t.date :delivery_date
+      t.integer :shopping_cart_id
 
       t.timestamps
     end
