@@ -15,7 +15,7 @@
     %th
       = button_to 'Back to Cart', shopping_cart_path(current_user.shopping_cart.id), method: 'get'
   %tbody
-    - @cart.product_orders.each do |item|
+    - @cart.order.product_orders.each do |item|
       %tr.orders{id: item.id}
         %td
           Item Image
@@ -48,18 +48,19 @@
     %td
       = current_user.email
     %td
-      = current_user.phone    
+      = current_user.shopping_cart.order.phone_number    
     %td
-      = current_user.address
+      = current_user.shopping_cart.order.mailing_address
     %td
-      %input{name: "Date", type: "date", min: (Date.today+4), placeholder: (Date.today+4)}          
+      / %input{name: "Date", type: "date", min: (Date.today+4), placeholder: (Date.today+4)} 
+      = current_user.shopping_cart.order.delivery_date         
 
 = form_tag(stripe_payment_product_orders_path, type: 'application/json', remote: true) do
   = hidden_field_tag :authenticity_token, form_authenticity_token
-  = hidden_field_tag :total_price, current_user.shopping_cart.total_up_cart.to_i  
+  = hidden_field_tag :total_price, current_user.shopping_cart.order.order_sum.to_i  
   %article
     %label.amount
       %span
-        Amount: #{number_to_currency(current_user.shopping_cart.total_up_cart)}
+        Amount: #{number_to_currency(current_user.shopping_cart.order.order_sum)}
 
-  %script.stripe-button{ :src => "https://checkout.stripe.com/v2/checkout.js", :"data-amount" => "#{current_user.shopping_cart.total_up_cart * 100}", :"data-description" => "A month's subscription", :"data-key" => Rails.configuration.stripe[:publishable_key], :"data-currency" => "usd" }
+  %script.stripe-button{ :src => "https://checkout.stripe.com/v2/checkout.js", :"data-amount" => "#{current_user.shopping_cart.order.order_sum * 100}", :"data-description" => "A month's subscription", :"data-key" => Rails.configuration.stripe[:publishable_key], :"data-currency" => "usd" }

@@ -1,13 +1,17 @@
 /*#container {
-  background: url('/cupcakes2.jpg') center center no-repeat;
-  background-size: cover;
+  height: 67px;
 }*/
 
 #navbar {
-  height: 67px;
+  height: 90px !important;
   width: 0 auto;
   text-align: center;
   background-color: #00a1cf;
+}
+
+#nav_img {
+  position: relative;
+  height: 100%;
 }
 #title_nav a{
   color: #ffe105;
@@ -20,7 +24,7 @@
   height: 120px; 
 }
 
-.hidden{
+.hidden {
   display: none;
 }
 
