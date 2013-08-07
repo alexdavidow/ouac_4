@@ -1,7 +1,7 @@
 class ShoppingCart < ActiveRecord::Base
   attr_accessible :user_id, :user, :total_price, :num_of_items
   has_one :user
-  has_many :product_orders, dependent: :destroy
+  has_one :order, dependent: :destroy
 
   def add_item(product_id)
     # find the current item
