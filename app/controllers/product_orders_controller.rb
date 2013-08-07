@@ -31,8 +31,8 @@ class ProductOrdersController < ApplicationController
     order.quantity = params[:quantity]
     respond_to do |format|
       if order.save
-        format.html { redirect_to :back, flash[:notice] = "You have updated the quantity"}
-        format.json { render :js => "You have successfully updated the quantity of #{order.product.name}" }
+        #format.html { redirect_to :back, flash[:notice] = "You have updated the quantity"}
+        format.json { render :json => "You have successfully updated the quantity of #{order.product.name}" }
       else
         redirect_to :back
         flash[:error] = "You did not update the quantity successfully."

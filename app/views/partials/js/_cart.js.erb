@@ -10,16 +10,21 @@ function updateQuantity(e){
     url: '/product_orders/' + params['id'],
     data: params,
     dataType: 'JSON',
-    success: function(data){
+    success: function(){
       console.log('UPDATED SUCCESSFULLY!');
       newDiv = $('<div>').addClass('notice');
       newDiv.text('You have successfully updated your cart.');
       newDiv.appendTo('#container');
       newDiv.fadeOut(12000);
       newDiv.remove();
-      $('#order-total').text('<%= @order.order_sum %>')
+      $('#order-total').text(<%= @order.order_sum %>);
     },
-    error: function(data){
+    error: function(){
+      newDiv = $('<div>').addClass('error');
+      newDiv.text('There was a problem updating your cart.');
+      newDiv.appendTo('#container');
+      newDiv.fadeOut(12000);
+      newDiv.remove();
     }
   })
 }
