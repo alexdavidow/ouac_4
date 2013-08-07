@@ -24,6 +24,7 @@ Ouac4::Application.routes.draw do
   end
   resources :products
   get 'custom_creator' => 'products#custom_creator'
+  post 'custom_creator' => 'products#new_custom_creator', :as => 'create_custom_cupcake'
 
   delete 'users/delete/.:id' => 'users#destroy', as: 'delete_user'
   get 'win' => 'cupcakes#win'

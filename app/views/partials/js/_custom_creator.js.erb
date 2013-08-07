@@ -48,6 +48,12 @@ function retrieveDataImage(dom_object){
   image_data = $(dom_object).data('image');
   return image_data
 }
+
+function retrieveSelectedValue(form_input_group_name){
+  // Select input fields from form
+  form_input = $(form_input_group_name)
+}
+
 function changeTopping(){
   console.log('Changing topping');
   $('#topping').css('backgroundColor', retrieveDataImage($(this)));
@@ -72,22 +78,33 @@ function createCustomCupcake(e){
   e.preventDefault();
   //Select only the true radio buttons in each form
   //Set the descriptions to each true radio button's data value
-  params =
-      cookie_desc,
-      filling_desc,
-      frosting_desc,
-      topping_desc
+  params = {
+      description: {
+        cookie: $('input[name="step_1"]:checked').data('value'),
+        filling: $('input[name="step_2"]:checked').data('value'),
+        frosting: $('input[name="step_3"]:checked').data('value'),
+        topping: $('input[name="step_4"]:checked').data('value')
     }
   }
-  console.log('Added item to cart!')
   $.ajax({
     type: 'POST',
     dataType: 'JSON',
-    url: <%= custom_creator_path %>,
+    url: "<%= create_custom_cupcake_path %>",
     data: params,
     success: function(data){
+      console.log('Added item to cart!');
+      newDiv = $('<div>').addClass('notice');
+      newDiv.text('You have successfully added your cupcake to your cart.');
+      newDiv.appendTo('#container');
+      newDiv.fadeOut(12000);
+      newDiv.remove();
     },
     error: function(data){
+      errorDiv = $('<div>').addClass('error');
+      errorDiv.text('There was an error adding the item to your cart. Please try again later.');
+      errorDiv.appendTo('#container'); 
+      errorDiv.fadeOut(12000);
+      errorDiv.remove();
     }
   });
 }
