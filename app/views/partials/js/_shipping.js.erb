@@ -1,0 +1,18 @@
+function updateAddress(e){
+  e.preventDefault();
+  
+  var address = $("textarea[name='Address']").val()
+  var name = $("textarea[name='Name']").val()
+  var email = $("textarea[name='Email']").val()
+  var phone = $("textarea[name='Phone']").val()
+
+  $.ajax({
+    type: 'PATCH',
+    url: "/users/<%= current_user.id %>",
+    data: {user: {address: address, name: name, email: email, phone: phone}}
+  })
+}
+
+$(function(){
+  $('#update_user_button').on('click', updateAddress);
+})
