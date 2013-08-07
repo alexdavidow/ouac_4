@@ -6,13 +6,20 @@ function updateQuantity(e){
   }
 
   $.ajax({
-   type: 'PUT',
-   url: '/product_orders/' + params['id'],
-   data: params,
-   dataType: 'JSON',
-   success: function(){
-    console.log('UPDATED SUCCESSFULLY!');
-   }
+    type: 'PUT',
+    url: '/product_orders/' + params['id'],
+    data: params,
+    dataType: 'JSON',
+    success: function(data){
+      console.log('UPDATED SUCCESSFULLY!');
+      newDiv = $('<div>').addClass('notice');
+      newDiv.text('You have successfully updated your cart.');
+      newDiv.appendTo('#container');
+      newDiv.fadeOut(12000);
+      newDiv.remove();
+    },
+    error: function(data){
+    }
   })
 }
 
