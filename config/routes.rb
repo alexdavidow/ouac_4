@@ -5,11 +5,11 @@ Ouac4::Application.routes.draw do
 
   devise_for :users, :controllers => {:omniauth_callbacks => "users/omniauth_callbacks"}
 
-  # scope shallow_path: "user" do
+  scope shallow_path: "user" do
     resources :users, only: [:show, :destroy, :update, :create] do
       resources :shopping_carts, only: [:show], shallow: true
     end
-  # end
+  end
   resources :cupcakes
   resources :cookies, :only => [:index, :new, :create, :destroy]
   resources :frostings, :only => [:index, :new, :create, :destroy]
@@ -19,9 +19,10 @@ Ouac4::Application.routes.draw do
   resources :product_orders, :only => [:new, :create, :destroy, :update] do
     collection do
       post 'stripe_payment' => 'product_orders#stripe_payment'
-      patch 'shipping' => 'product_orders#shipping', as: 'shipping'
     end
   end
+  resources :orders, :only => [:show, :create, :update, :destroy]
+  
   resources :products
   get 'custom_creator' => 'products#custom_creator'
   post 'custom_creator' => 'products#new_custom_creator', :as => 'create_custom_cupcake'
