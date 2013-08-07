@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-  
+
   def index
     @products = Product.all
   end
@@ -13,18 +13,36 @@ class ProductsController < ApplicationController
   end
 
   def custom_creator
-    # Take in parameters of the descriptions
-      ## cookie_desc = params['descriptions']['cookie']
-      ## icecream_desc = params['descriptions']['icecream']
-      ## frosting_desc = params['descriptions']['frosting']
-      ## topping_desc = params['descriptions']['topping']
+  end
+
+  def new_custom_creator
+    # Take in parameters of the descriptions'
+    puts "PARAMS"
+    puts params
+    puts "---------------------------------------"
+      cookie_desc = params["description"]["cookie"]
+      icecream_desc = params[:description][:filling]
+      frosting_desc = params[:description][:frosting]
+      topping_desc = params[:description][:topping]
     # assemble all descriptions into one string
-      ## description = cookie_desc + icecream_desc + frosting_desc + topping_desc
+      description = "The customer ordered a cupcake with a #{cookie_desc} cookie base, a #{icecream_desc} ice cream filling, #{frosting_desc} frosting, and #{topping_desc} toppings."
+    puts "Description"
+    puts description
+    puts "----------------------------------------"
     # Create new product order associated with a custom product model
     # Assign params[:descriptions] to the new product's description
-      ## custom_cupcake = Product.new(description: description)
-      ## custom_order = ProductOrder.new(product: custom_cupcake)
+      custom_cupcake = Product.new(description: description)
+      custom_order = ProductOrder.new(product: custom_cupcake)
+    # If the user is not signed in, authenticate them first
     # Throw custom order into current user's cart
-      ## current_user.shopping_cart.add_item(custom_order)
+      if user_signed_in?
+        current_user.shopping_cart.add_item(custom_order)
+      else
+        :authenticate_user!
+      end
+    # Respond to the ajax call
+    respond_to do |format|
+      format.json {cupcake: custom_cupcake, order: custom_order }
+    end
   end
 end

@@ -27,8 +27,8 @@
   .small-7.columns
     %h5#creator_instructions Instructions for what to do, user capabilities once they have finished(order custom creation, name it and/or share it on facebook). Any restrictions on quantity and required time window for placing a custom order.
     %button.large#start_creator "Let's Make An Ice Cream Cupcake!"
-  .small-7.columns.step_1_div.hidden
-    %form.step_1{method: "post"}
+  %form.step_1{method: "post"}
+    .small-7.columns.step_1_div.hidden
       .step_1{:align => "center"}
         %h5 Cookie Base Choices
         %input.step_1_radio{:checked => "", :name => "step_1", :type => "radio", :"data-value" => "Chocolate Chip Cookie",:"data-image" => '#333333'} Chocolate Chip Cookie
@@ -43,8 +43,7 @@
         %input.step_1_radio{:name => "step_1", :type => "radio", :"data-value" => "Flourless Peanut Butter Cookie", :"data-image" => '#A6952B'} Flourless Peanut Butter Cookie
         %button.step_1_button "Make Cookie Selection"
 
-  .small-7.columns.step_2_div.hidden
-    %form.step_2{:method => "post"}
+    .small-7.columns.step_2_div.hidden
       .step_2{:align => "center"}
         %h5 Ice Cream Choices
         %input.step_2_radio{:checked => "", :name => "step_2", :type => "radio", :"data-value" => "Mint Chocolate Chip"} Mint Chocolate Chip
@@ -62,8 +61,7 @@
         %br/
         %button.step_2_button "Make Ice Cream Selection"
 
-  .small-7.columns.step_3_div.hidden
-    %form.step_3{:method => "post"}
+    .small-7.columns.step_3_div.hidden
       .step_3{:align => "center"}
         %h5 Frosting Choices
         %input.step_3_radio{:checked => "", :name => "step_3", :type => "radio", :"data-value" => "Whipped Cream", :"data-image" => '#9E8600'} Whipped Cream
@@ -83,8 +81,7 @@
         %p *All frosting choices are gluten-free
         %button.step_3_button "Make Frosting Selection"
 
-  .small-7.columns.step_4_div.hidden
-    %form.step_4{:method => "post"}
+    .small-7.columns.step_4_div.hidden
       .step_4{:align => "center"}
         %h5 Topping Choices
         %input.step_4_radio{:checked => "", :name => "step_4", :type => "radio", :"data-value" => "Crumbled Oreo", :"data-image" => '#9E8600'} Crumbled Oreo
