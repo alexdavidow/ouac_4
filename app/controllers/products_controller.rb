@@ -38,7 +38,7 @@ class ProductsController < ApplicationController
     # Respond to the ajax call
     respond_to do |format|
       if user_signed_in?
-        current_user.shopping_cart.add_item(custom_order)
+        current_user.shopping_cart.order.add_item(custom_order)
         format.json {render :json => custom_order }
       else
        h = {redirect_url: new_user_session_path.to_s}
