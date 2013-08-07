@@ -35,14 +35,15 @@ class ProductsController < ApplicationController
       custom_order = ProductOrder.new(product: custom_cupcake)
     # If the user is not signed in, authenticate them first
     # Throw custom order into current user's cart
-      if user_signed_in?
-        current_user.shopping_cart.add_item(custom_order)
-      else
-        :authenticate_user!
-      end
     # Respond to the ajax call
     respond_to do |format|
-      format.json {cupcake: custom_cupcake, order: custom_order }
+      if user_signed_in?
+        current_user.shopping_cart.add_item(custom_order)
+        format.json {render :json => custom_order }
+      else
+        format.html { redirect_to new_user_session_path }
+        format.json { redirect_to new_user_session_path }
+      end
     end
   end
 end

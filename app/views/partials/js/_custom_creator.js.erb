@@ -86,13 +86,18 @@ function createCustomCupcake(e){
         topping: $('input[name="step_4"]:checked').data('value')
     }
   }
-  console.log('Added item to cart!')
   $.ajax({
     type: 'POST',
     dataType: 'JSON',
     url: "<%= create_custom_cupcake_path %>",
     data: params,
     success: function(data){
+      console.log('Added item to cart!');
+      newDiv = $('<div>').addClass('notice');
+      newDiv.text('You have successfully added your cupcake to your cart.');
+      newDiv.appendTo('#container');
+      newDiv.fadeOut(12000);
+      newDiv.remove();
     },
     error: function(data){
       errorDiv = $('<div>').addClass('error');
