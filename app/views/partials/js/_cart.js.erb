@@ -9,7 +9,6 @@ function updateQuantity(e){
     type: 'PUT',
     url: '/product_orders/' + params['id'],
     data: params,
-    dataType: 'JSON',
     success: function(){
       console.log('UPDATED SUCCESSFULLY!');
       newDiv = $('<div>').addClass('notice');
