@@ -32,7 +32,9 @@
     %td
       %input{name: "Date", type: "date", min: (Date.today+4), placeholder: (Date.today+4)}
     %td
-      = button_to "Update Shipping Address", url: 'users#update', method: 'patch', remote: true     
+      / This button isn't working. I want it to be an ajax call to update user attrs
+      / ActiveRecord::RecordNotFound - Couldn't find User with id=edit:
+      = button_to "Update Shipping Address", edit_user_registration_path, method: 'patch', remote: true     
 
     / = form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :patch }, remote: true) do |f|
     /   %td  
