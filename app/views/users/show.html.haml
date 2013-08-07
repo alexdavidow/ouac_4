@@ -8,11 +8,19 @@
           Name
         %th
           Email
+        %th
+          Phone
+        %th
+          Shipping Address    
       %tbody
-        %tr
+        %td
           = current_user.name
-        %tr
+        %td
           = current_user.email
+        %td
+          = current_user.phone
+        %td
+          = current_user.address    
   #user-button-list
     = link_to 'Edit Account', edit_user_registration_path, class: 'button'
     = link_to 'Delete Account', delete_user_path(current_user.id), method: :delete, confirm: 'Are you sure you want to permanently delete your account? You cannot recover it at a later date.', class: 'button'

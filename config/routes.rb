@@ -19,6 +19,7 @@ Ouac4::Application.routes.draw do
   resources :product_orders, :only => [:new, :create, :destroy, :update] do
     collection do
       post 'stripe_payment' => 'product_orders#stripe_payment'
+      patch 'shipping' => 'product_orders#shipping', as: 'shipping'
     end
   end
   resources :products

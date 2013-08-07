@@ -52,6 +52,6 @@ icc15 = Product.create(name: 'Arnold Palmer', price: 25, quantity: 10, descripti
 icc16 = Product.create(name: 'Watermelon Mergarita', price: 25, quantity: 10, description: "Watermelon cake, watermelon lime sorbet, whipped cream and candied lime peel", image: "/pearl_mini.jpg")
 
 u1 = User.create(name: 'alex', email: 'Example@Example.com', password: '12345678', password_confirmation: '12345678')
-alex = User.create(name: 'alex davidow', email: 'alex.davidow@gmail.com', password: 'password', password_confirmation: 'password', admin: true)
+alex = User.create(name: 'alex davidow', email: 'alex.davidow@gmail.com', password: 'password', password_confirmation: 'password', phone: 2032737374, address: "383 grand st., apt. m1604 New York, NY 10002", admin: true)
 
 sc1 = ShoppingCart.create(user_id: "#{u1.id}", user: u1 )

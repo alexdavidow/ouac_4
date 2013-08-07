@@ -33,4 +33,5 @@
 - @cart.total_up_cart
 %p
   = @cart.total_price
-= button_to "Checkout", new_product_order_path, method: 'get'
+  = button_to "Checkout", shipping_product_orders_path, method: 'patch'
+/ = button_to "Checkout", new_product_order_path, method: 'get'

@@ -1,36 +1,4 @@
 
-%h4
-  Confirm Your Order
-
-%table
-  %thead
-    %th
-      Name
-    %th  
-      Phone  
-    %th
-      Email    
-    %th  
-      Shipping Address
-    %th
-      Delivery Date
-  %tbody
-    %td  
-      %input.large{name: "Name"}
-    %td
-      %input{name: "Phone"}    
-    %td
-      %input{type: "email", name: "Email"}
-    %td
-      %textarea{name: "Address", rows: 3}
-    %td
-      %input{name: "Date", type: "date", min: (Date.today+4), placeholder: (Date.today+4)}         
-
-
-%p 
-  Please note that, currently, delivery is only available within Manhattan. All orders must be placed at least four (4) days in advance. So, if you orderd today, the earliest delivery date you could choose will be
-  - date = Date.today+4 
-  = "#{date.strftime("%b %d, %Y")}"
 
 / = form_tag product_orders_path, :remote => true do
  
