@@ -4,15 +4,16 @@ class ProductOrdersController < ApplicationController
 
   def new
     @user = current_user
-    @items = current_cart.product_orders.all
+    @items = current_cart.order.product_orders.all
+    @order = current_cart.order
     @cart = current_cart
   end
 
   def create
     if current_cart
-      cart = current_cart
+      order = current_cart.order
       product = Product.find(params[:product_id])
-      item = cart.add_item(product.id) 
+      item = order.add_item(product.id) 
       respond_to do |format|
       if item.save!
           #format.html { redirect_to shopping_cart_path(current_cart.id)}#, flash[:notice]= ("You have successfully added #{product.name} to your cart.") }
@@ -23,9 +24,6 @@ class ProductOrdersController < ApplicationController
       end
     end
   end
-  end
-
-  def edit
   end
 
   def update
