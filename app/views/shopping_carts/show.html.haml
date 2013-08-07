@@ -39,5 +39,5 @@
   = "#{date.strftime("%b %d, %Y")}"
 %p
   = @cart.total_price
-  = button_to "Checkout", shipping_product_orders_path, method: 'patch'
+  = button_to "Checkout", {action: "/orders/<%= order.id %>"}, method: 'get'
 / = button_to "Checkout", new_product_order_path, method: 'get'
