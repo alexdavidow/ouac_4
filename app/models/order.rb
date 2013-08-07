@@ -5,7 +5,7 @@ class Order < ActiveRecord::Base
 
   def add_item(product_order)
     # find the current item
-      current_item = product_orders.find_by_product_id(product_id)
+      current_item = product_orders.find_by_product_id(product_order)
     # check if it exists
     if current_item
     # if it does, increase quantity by 1
@@ -16,6 +16,15 @@ class Order < ActiveRecord::Base
     # return the item
     end 
       current_item
+  end
+
+
+  def check_for_duplicates(product_order)
+    if self.product_orders.include?(product_order)
+      product_order.quantity += 1
+    else
+      self.product_orders << product_order
+    end
   end
 
 

@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-  include ApplicationHelper
+  include ShoppingCartHelper
   protect_from_forgery with: :exception
 
   def stored_location_for(resource)

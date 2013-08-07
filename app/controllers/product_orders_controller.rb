@@ -13,11 +13,11 @@ class ProductOrdersController < ApplicationController
     if current_cart
       order = current_cart.order
       product = Product.find(params[:product_id])
-      item = order.add_item(product.id) 
+      product_order = ProductOrder.create(product_id: product.id)
       respond_to do |format|
-      if item.save!
-          #format.html { redirect_to shopping_cart_path(current_cart.id)}#, flash[:notice]= ("You have successfully added #{product.name} to your cart.") }
-          format.json { render js: "console.log('hi')" } 
+      if product_order.save!
+        order.check_for_duplicates(product_order)
+        format.json { render js: "console.log('hi')" } 
       else
         format.html { render :index }
         flash[:error] = "There was a problem adding the item to your cart. Please refresh and try again."
@@ -31,8 +31,8 @@ class ProductOrdersController < ApplicationController
     order.quantity = params[:quantity]
     respond_to do |format|
       if order.save
-        format.html { redirect_to :back, flash[:notice] = "You have updated the quantity"}
-        format.json { render :js => "You have successfully updated the quantity of #{order.product.name}" }
+        #format.html { redirect_to :back, flash[:notice] = "You have updated the quantity"}
+        format.json { render :json => "You have successfully updated the quantity of #{order.product.name}" }
       else
         redirect_to :back
         flash[:error] = "You did not update the quantity successfully."
@@ -49,7 +49,7 @@ class ProductOrdersController < ApplicationController
      Stripe.api_key = Rails.configuration.stripe[:secret_key]
 
      token = params[:stripeToken]
-     @decimal_amount = current_user.shopping_cart.order.order_sum
+     @decimal_amount = current_user.shopping_cart.total_up_cart
      @payment = (@decimal_amount * 100).to_i
 
     begin
@@ -64,6 +64,7 @@ class ProductOrdersController < ApplicationController
       flash[:error] = e.message
       redirect_to products_path
     end
+
 
   end
 
