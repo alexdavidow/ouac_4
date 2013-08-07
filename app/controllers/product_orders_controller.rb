@@ -49,7 +49,7 @@ class ProductOrdersController < ApplicationController
      Stripe.api_key = Rails.configuration.stripe[:secret_key]
 
      token = params[:stripeToken]
-     @decimal_amount = current_user.shopping_cart.total_up_cart
+     @decimal_amount = current_user.shopping_cart.order.order_sum
      @payment = (@decimal_amount * 100).to_i
 
     begin
@@ -64,7 +64,6 @@ class ProductOrdersController < ApplicationController
       flash[:error] = e.message
       redirect_to products_path
     end
-
 
   end
 

@@ -1,0 +1,46 @@
+%script
+  = render partial: 'partials/js/shipping.js'
+
+%h4
+  Please enter or confirm your shipping and delivery information
+
+%table
+  %thead
+    %th
+      Name
+    %th
+      Email
+    %th  
+      Phone      
+    %th  
+      Shipping Address
+    %th
+      Delivery Date
+  %tbody
+    %td  
+      %textarea{name: "Name"}
+        = current_user.name
+    %td
+      %textarea{type: "email", name: "Email"}
+        = current_user.email
+    %td
+      %textarea{name: "Phone"}
+        = current_user.phone    
+    %td
+      %textarea{name: "Address", rows: 3}
+        = current_user.address
+    %td
+      %input{name: "Date", type: "date", min: (Date.today+4), placeholder: (Date.today+4)}
+        = @cart.order.delivery_date
+    %td
+      / This button isn't working. I want it to be an ajax call to update user attrs
+      / ActiveRecord::RecordNotFound - Couldn't find User with id=edit:
+      #update_user_button 
+        = button_to "Update Shipping Address", class: 'button'
+
+= button_to "Checkout", new_product_order_path, method: 'get'
+
+%p 
+  Please note that, currently, delivery is only available within Manhattan. All orders must be placed at least four (4) days in advance. So, if you orderd today, the earliest delivery date you could choose will be
+  - date = Date.today+4 
+  = "#{date.strftime("%b %d, %Y")}"
