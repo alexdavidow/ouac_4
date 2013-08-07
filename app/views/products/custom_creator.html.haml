@@ -11,11 +11,19 @@
     %h4.step_4_instruction.hidden Step 4: Choose a topping!
 
 .row
-  .small-5.columns.creator_display
-    %img.creator_ingredient_display{:src => "toppings.jpg"}
-    %img.creator_ingredient_display{:src => "frosting.jpg"}
-    %img.creator_ingredient_display{:src => "ice_cream.jpg"}
-    %img.creator_ingredient_display{:src => "cookie.jpg"}
+  .small-5.columns#creator_display
+    /%img.creator_ingredient_display{:src => "toppings.jpg"}
+    /%img.creator_ingredient_display{:src => "frosting.jpg"}
+    /%img.creator_ingredient_display{:src => "ice_cream.jpg"}
+    /%img.creator_ingredient_display{:src => "cookie.jpg"}
+    #topping
+      Topping
+    #frosting
+      Frosting
+    #icecream
+      Filling
+    #cookie
+      Crust
   .small-7.columns
     %h5#creator_instructions Instructions for what to do, user capabilities once they have finished(order custom creation, name it and/or share it on facebook). Any restrictions on quantity and required time window for placing a custom order.
     %button.large#start_creator "Let's Make An Ice Cream Cupcake!"
@@ -23,34 +31,34 @@
     %form.step_1{method: "post"}
       .step_1{:align => "center"}
         %h5 Cookie Base Choices
-        %input.step_1{:checked => "", :name => "step_1", :type => "radio", :"data-value" => "Chocolate Chip Cookie"} Chocolate Chip Cookie
+        %input.step_1_radio{:checked => "", :name => "step_1", :type => "radio", :"data-value" => "Chocolate Chip Cookie",:"data-image" => '#333333'} Chocolate Chip Cookie
         %br/
-        %input.step_1{:name => "step_1", :type => "radio", :"data-value" => "Crumbled Oreo"} Crumbled Oreo
+        %input.step_1_radio{:name => "step_1", :type => "radio", :"data-value" => "Crumbled Oreo", :"data-image" => 'black'} Crumbled Oreo
         %br/
-        %input.step_1{:name => "step_1", :type => "radio", :"data-value" => "Graham Cracker"} Graham Cracker
+        %input.step_1_radio{:name => "step_1", :type => "radio", :"data-value" => "Graham Cracker", :"data-image" => '#9E8600'} Graham Cracker
         %hr/ 
         %h5 Gluten-Free Options
-        %input.step_1{:name => "step_1", :type => "radio", :"data-value" => "Flourless Chocolate Cake"} Flourless Chocolate Cake
+        %input.step_1_radio{:name => "step_1", :type => "radio", :"data-value" => "Flourless Chocolate Cake", :"data-image" => '#C2680E'} Flourless Chocolate Cake
         %br/
-        %input.step_1{:name => "step_1", :type => "radio", :"data-value" => "Flourless Peanut Butter Cookie"} Flourless Peanut Butter Cookie
+        %input.step_1_radio{:name => "step_1", :type => "radio", :"data-value" => "Flourless Peanut Butter Cookie", :"data-image" => '#A6952B'} Flourless Peanut Butter Cookie
         %button.step_1_button "Make Cookie Selection"
 
   .small-7.columns.step_2_div.hidden
     %form.step_2{:method => "post"}
       .step_2{:align => "center"}
         %h5 Ice Cream Choices
-        %input.step_2{:checked => "", :name => "step_2", :type => "radio", :"data-value" => "Mint Chocolate Chip"} Mint Chocolate Chip
+        %input.step_2_radio{:checked => "", :name => "step_2", :type => "radio", :"data-value" => "Mint Chocolate Chip"} Mint Chocolate Chip
         %br/
-        %input.step_2{:name => "step_2", :type => "radio", :"data-value" => "Vanilla Bean"} Vanilla Bean
+        %input.step_2_radio{:name => "step_2", :type => "radio", :"data-value" => "Vanilla Bean"} Vanilla Bean
         %br/
-        %input.step_2{:name => "step_2", :type => "radio", :"data-value" => "Toasted Marshmallow"} Toasted Marshmallow
+        %input.step_2_radio{:name => "step_2", :type => "radio", :"data-value" => "Toasted Marshmallow"} Toasted Marshmallow
         %br/
-        %input.step_2{:name => "step_2", :type => "radio", :"data-value" => "Peanut Butter Banana"} Peanut Butter Banana
+        %input.step_2_radio{:name => "step_2", :type => "radio", :"data-value" => "Peanut Butter Banana"} Peanut Butter Banana
         %hr/ 
         %h5 Dairy-Free Options
-        %input.step_2{:name => "step_2", :type => "radio", :"data-value" => "Chocolate Sorbet"} Chocolate Sorbet
+        %input.step_2_radio{:name => "step_2", :type => "radio", :"data-value" => "Chocolate Sorbet"} Chocolate Sorbet
         %br/
-        %input.step_2{:name => "step_2", :type => "radio", :"data-value" => "Vanilla Frozen Yogurt"} Vanilla Frozen Yogurt
+        %input.step_2_radio{:name => "step_2", :type => "radio", :"data-value" => "Vanilla Frozen Yogurt"} Vanilla Frozen Yogurt
         %br/
         %button.step_2_button "Make Ice Cream Selection"
 
@@ -58,20 +66,20 @@
     %form.step_3{:method => "post"}
       .step_3{:align => "center"}
         %h5 Frosting Choices
-        %input.step_3{:checked => "", :name => "step_3", :type => "radio", :"data-value" => "Whipped Cream"} Whipped Cream
+        %input.step_3_radio{:checked => "", :name => "step_3", :type => "radio", :"data-value" => "Whipped Cream"} Whipped Cream
         %br/
-        %input.step_3{:name => "step_3", :type => "radio", :"data-value" => "Mascarpone Whipped Cream"} Mascarpone Whipped Cream
+        %input.step_3_radio{:name => "step_3", :type => "radio", :"data-value" => "Mascarpone Whipped Cream"} Mascarpone Whipped Cream
         %br/
-        %input.step_3{:name => "step_3", :type => "radio", :"data-value" => "Tea-Infused Whipped Cream"} Tea-Infused Whipped Cream
+        %input.step_3_radio{:name => "step_3", :type => "radio", :"data-value" => "Tea-Infused Whipped Cream"} Tea-Infused Whipped Cream
         %hr/ 
         %h5 Dairy-Free Options
-        %input.step_3{:name => "step_3", :type => "radio", :"data-value" => "Fluff"} Fluff
+        %input.step_3_radio{:name => "step_3", :type => "radio", :"data-value" => "Fluff"} Fluff
         %br/
-        %input.step_3{:name => "step_3", :type => "radio", :"data-value" => "Chocolate Fluff"} Chocolate Fluff
+        %input.step_3_radio{:name => "step_3", :type => "radio", :"data-value" => "Chocolate Fluff"} Chocolate Fluff
         %br/
-        %input.step_3{:name => "step_3", :type => "radio", :"data-value" => "Chocolate Soy Whipped Cream"} Chocolate Soy Whipped Cream
+        %input.step_3_radio{:name => "step_3", :type => "radio", :"data-value" => "Chocolate Soy Whipped Cream"} Chocolate Soy Whipped Cream
         %br/
-        %input.step_3{:name => "step_3", :type => "radio", :"data-value" => "Chocolate Peanut Butter Soy Whipped Cream"} Chocolate Peanut Butter Soy Whipped Cream
+        %input.step_3_radio{:name => "step_3", :type => "radio", :"data-value" => "Chocolate Peanut Butter Soy Whipped Cream"} Chocolate Peanut Butter Soy Whipped Cream
         %p *All frosting choices are gluten-free
         %button.step_3_button "Make Frosting Selection"
 
@@ -79,19 +87,19 @@
     %form.step_4{:method => "post"}
       .step_4{:align => "center"}
         %h5 Topping Choices
-        %input.step_4{:checked => "", :name => "step_4", :type => "radio", :"data-value" => "Crumbled Oreo"} Crumbled Oreo
+        %input.step_4_radio{:checked => "", :name => "step_4", :type => "radio", :"data-value" => "Crumbled Oreo"} Crumbled Oreo
         %br/
-        %input.step_4{:name => "step_4", :type => "radio", :"data-value" => "Rice Krispy Treat Cluster"} Rice Krispy Treat Cluster
+        %input.step_4_radio{:name => "step_4", :type => "radio", :"data-value" => "Rice Krispy Treat Cluster"} Rice Krispy Treat Cluster
         %br/
-        %input.step_4{:name => "step_4", :type => "radio", :"data-value" => "Raspberry Drizzle"} Raspberry Drizzle
+        %input.step_4_radio{:name => "step_4", :type => "radio", :"data-value" => "Raspberry Drizzle"} Raspberry Drizzle
         %br/
-        %input.step_4{:name => "step_4", :type => "radio", :"data-value" => "Chocolate Shavings"} Chocolate Shavings
+        %input.step_4_radio{:name => "step_4", :type => "radio", :"data-value" => "Chocolate Shavings"} Chocolate Shavings
         %br/
-        %input.step_4{:name => "step_4", :type => "radio", :"data-value" => "Salted Caramel Drizzle"} Salted Caramel Drizzle
+        %input.step_4_radio{:name => "step_4", :type => "radio", :"data-value" => "Salted Caramel Drizzle"} Salted Caramel Drizzle
         %br/
-        %input.step_4{:name => "step_4", :type => "radio", :"data-value" => "Homemade Peanut Butter Cup Piece"} Homemade Peanut Butter Cup Piece
+        %input.step_4_radio{:name => "step_4", :type => "radio", :"data-value" => "Homemade Peanut Butter Cup Piece"} Homemade Peanut Butter Cup Piece
         %br/
-        %input.step_4{:name => "step_4", :type => "radio", :"data-value" => "Candied Lemon Peel"} Candied Lemon Peel
+        %input.step_4_radio{:name => "step_4", :type => "radio", :"data-value" => "Candied Lemon Peel"} Candied Lemon Peel
         %br/
         %button.step_4_button "Add this to my cart!" 
 

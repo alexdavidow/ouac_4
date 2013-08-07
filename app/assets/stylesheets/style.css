@@ -251,3 +251,29 @@
   height: 200px;
   width: 200px;
 }
+
+#topping{
+  height: 50px;
+  width: 200px;
+  background-color: gray;
+  opacity: 0.5;
+  z-index: 1;
+}
+
+#frosting{
+  height: 50px;
+  width: 200px;
+  background-color: #64D987;
+}
+
+#icecream{
+  height: 50px;
+  width: 200px;
+  background-color: #8A6707;
+}
+
+#cookie{
+  height: 50px;
+  width: 200px;
+  background-color: #40390B;
+}

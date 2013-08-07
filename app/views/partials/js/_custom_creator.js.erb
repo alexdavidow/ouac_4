@@ -33,15 +33,61 @@ function start_level_4(e) {
 
 }
 
+function retrieveDataImage(dom_object){
+  // Refactor to ensure that dom_object is a valid dom object
+  image_data = $(dom_object).data('image');
+  return image_data
+}
+function changeTopping(){
+  console.log('Changing topping');
+  //Find target of event & retrieve data-image attribute from that event
+  // Select topping container div
+  // Change topping div background color to data-image value
+  $('#topping').css('backgroundColor', retrieveDataImage($(this)));
+}
+
+function changeFrosting(){
+  console.log('Changing frosting');
+  //Find target of event & retrieve data-image attribute from that event
+  // Select topping container div
+  // Change frosting div background color to data-image value
+  $('#frosting').css('backgroundColor', retrieveDataImage($(this)));
+}
+
+function changeFilling(){
+  console.log('Changing filling');
+  //Find target of event & retrieve data-image attribute from that event
+  // Select topping container div
+  // Change filling div background color to data-image value
+  $('#icecream').css('backgroundColor', retrieveDataImage($(this)));
+}
+
+function changeCookie(){
+  console.log('Changing cookie');
+  //Find target of event & retrieve data-image attribute from that event
+  // Select topping container div
+  // Change topping div background color to data-image value
+  $('#cookie').css('backgroundColor', retrieveDataImage($(this)));
+}
+
 function createCustomCupcake(e){
   e.preventDefault();
+  console.log('Added item to cart!')
 }
 
 
 $(document).ready(function(){
   $("#start_creator").on('click', start_level_1);
+
+  $('.step_1_radio').on('click', changeCookie);
   $('.step_1_button').on('click', start_level_2);
+
+  $('.step_2_radio').on('click', changeFrosting);
   $('.step_2_button').on('click', start_level_3);
+
+  $('.step_3_radio').on('click', changeFilling);
   $('.step_3_button').on('click', start_level_4);
+
+  $('.step_4_radio').on('click', changeTopping);
   $('.step_4_button').on('click', createCustomCupcake);
 })
