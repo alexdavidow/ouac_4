@@ -2,7 +2,7 @@
 
 
 %h4
-  Confirm Your Order
+  Please enter or confirm your shipping and delivery information
 
 %table
   %thead
@@ -18,15 +18,35 @@
       Delivery Date
   %tbody
     %td  
-      %input.large{name: "Name"}
+      %textarea{name: "Name"}
+        = current_user.name
     %td
-      %input{type: "email", name: "Email"}
+      %textarea{type: "email", name: "Email"}
+        = current_user.email
     %td
-      %input{name: "Phone"}    
+      %textarea{name: "Phone"}
+        = current_user.phone    
     %td
       %textarea{name: "Address", rows: 3}
+        = current_user.address
     %td
-      %input{name: "Date", type: "date", min: (Date.today+4), placeholder: (Date.today+4)}   
+      %input{name: "Date", type: "date", min: (Date.today+4), placeholder: (Date.today+4)}
+    %td
+      = button_to "Update Shipping Address", edit_user_registration_path, method: 'patch', remote: true     
+
+    / = form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :patch }, remote: true) do |f|
+    /   %td  
+    /     = f.text_field :name
+    /   %td
+    /     = f.email_field :email
+    /   %td
+    /     = f.telephone_field :phone   
+    /   %td
+    /     = f.text_area :address
+    /   %td
+    /     %input{name: "Date", type: "date", min: (Date.today+4), placeholder: (Date.today+4)}
+    /   %td
+    /     = f.submit "Confirm Shipping Address"
 
 
 = button_to "Checkout", new_product_order_path, method: 'get'

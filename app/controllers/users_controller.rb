@@ -8,4 +8,16 @@ class UsersController < ApplicationController
   def destroy
     User.find(params[:id]).delete
   end
+
+  def update
+    @user = User.find(params[:id])
+    if @user.update_attributes(params[:user])
+      redirect_to user_path
+    else 
+      @user.errors.each do |e|
+        puts e
+      end
+      render 'edit'
+    end
+  end
 end

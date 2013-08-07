@@ -31,6 +31,10 @@
     You have no items in your cart.
 
 - @cart.total_up_cart
+%p 
+  Please note that, currently, delivery is only available within Manhattan. All orders must be placed at least four (4) days in advance. So, if you orderd today, the earliest delivery date you could choose will be
+  - date = Date.today+4 
+  = "#{date.strftime("%b %d, %Y")}"
 %p
   = @cart.total_price
   = button_to "Checkout", shipping_product_orders_path, method: 'patch'

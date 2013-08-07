@@ -64,4 +64,8 @@ class ProductOrdersController < ApplicationController
       redirect_to products_path
     end
   end
+
+  def shipping
+    # @user = User.find(params[:id])
+  end
 end
