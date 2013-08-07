@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text.html; charset=UTF-8" http-equiv="Content-type">
+  </head>
+  <body>
+    <h2>Someone just submitted an order!</h2>
+    <p> Username: <%= @user.name %> </p>
+    <p> User email: <%= @user.email %> </p>
+    <p> User phone number: <%= @cart.order.phone_number %> </p>
+    <p> Delivery Address: <%= @cart.order.mailing_address %> </p>
+    <h4> Requested Delivery Date: <%= @cart.order.delivery_date.strftime("%b %d, %Y") %> </h4>
+      <h4>
+        <% @cart.order.product_orders.each do |item| %>
+           <br/><%= item.quantity %> <%= item.product.name %> -<%= item.product.description %>
+        <% end %>
+      </h4>  
+        <h3> for a total of $<%= @cart.order.order_sum %> </h3>
+
+  </body>

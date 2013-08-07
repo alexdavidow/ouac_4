@@ -1,6 +1,8 @@
 %h3 We would love to hear from you!
 
-= form_tag(contact_path, method: "post", remote: true) do 
+/ %form{onsubmit: "$('input').val('');"}
+
+= form_tag(contact_path, method: "post", remote: true, onsubmit: "this.reset();") do 
   = label_tag :name
   = text_field_tag :name
   = label_tag :company

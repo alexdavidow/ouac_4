@@ -20,13 +20,4 @@ class HomeController < ApplicationController
     MessageMailer.contact_submit(params).deliver
   end
 
-  # def contact_submit(params)
-  #   @name = params[:name]
-  #   @company = params[:company]
-  #   @email = params[:email]
-  #   @phone_number = params[:phone_number]
-  #   @comments = params[:comments]
-  #   mail(to: 'onceuponacupcakenyc@gmail.com', subject: 'New Contact Submission')
-  # end
-
 end

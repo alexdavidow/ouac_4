@@ -1,6 +1,6 @@
 class MessageMailer < ActionMailer::Base
   default from: "onceuponacupcakenyc@gmail.com"
-  default to: "onceuponacupcakenyc@gmail.com"
+  # default to: "onceuponacupcakenyc@gmail.com"
 
   def contact_submit(params)
     @name = params[:name]
@@ -13,9 +13,23 @@ class MessageMailer < ActionMailer::Base
     image_url = Rails.root + 'public/ouac-logo.png'
     attachments.inline['ouac-logo.png'] = File.read(image_url)
     mail(to: 'onceuponacupcakenyc@gmail.com', subject: 'New Feedback Submission')
-    # attachments["ouac-logo.png"] = File.read("#{Rails.root}/public/images/ouac-logo.png")
-    # the Rails.root bit may be extranneous but what ryan bates did. Also, see above.
   end
+
+  def order_confirmation(current_user, cart)
+    @user = current_user
+    @cart = cart
+    image_url = Rails.root + 'public/ouac-logo.png'
+    attachments.inline['ouac-logo.png'] = File.read(image_url)
+    mail(to: @user.email, subject: 'Thank you for your order')
+  end
+
+  def admin_receives_order(current_user, cart)
+    @user = current_user
+    @cart = cart
+
+    mail(to: 'onceuponacupcakenyc@gmail.com', subject: 'New Website Order Received')
+  end
+
 
   def receive(email)
     page = Page.find_by_address(email.to.default)

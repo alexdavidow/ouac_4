@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text.html; charset=UTF-8" http-equiv="Content-type">
+  </head>
+  <body>
+    <h2>Thank you for your order!</h2>
+    <p> Hi <%= @user.name %>!
+
+      <p> Thank you for your order of
+        <% @cart.order.product_orders.each do |item| %>
+           <%= item.quantity %> <%= item.product.name %>,
+        <% end %>
+        <p> for a total of $<%= @cart.order.order_sum %>
+        </p>
+      </p>
+      <p> Your order will be shipped to <%= @cart.order.mailing_address %> and you selected a delivery date of <%= @cart.order.delivery_date.strftime("%b %d, %Y") %> </p>
+  </body>
