@@ -1,6 +1,6 @@
 class ProductOrder < ActiveRecord::Base
-  attr_accessible :shopping_cart_id, :product_id, :product, :quantity, :price, :date
-  belongs_to :shopping_cart
+  attr_accessible :shopping_cart_id, :product_id, :product, :quantity, :price
+  belongs_to :order, dependent: :destroy
   belongs_to :product
 
   # Only want to validate current_users attrs once they hit product_orders/new
