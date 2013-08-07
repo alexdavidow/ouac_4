@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130807002334) do
+ActiveRecord::Schema.define(version: 20130807043454) do
 
   create_table "cookies", force: true do |t|
     t.string   "name"
@@ -122,8 +122,8 @@ ActiveRecord::Schema.define(version: 20130807002334) do
     t.datetime "confirmation_sent_at"
     t.datetime "confirmed_at"
     t.integer  "shopping_cart_id"
-    t.integer  "phone"
     t.text     "address"
+    t.string   "phone"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

@@ -1,7 +1,57 @@
+%h4 Order Confirmation
 
+%table
+  %thead
+    %th
+      Your Cupcake Order
+    %th
+      Item Name
+    %th
+      Price (per Dozen)
+    %th
+      Quantity
+    %th
+      Total Price
+  %tbody
+    - @cart.product_orders.each do |item|
+      %tr.orders{id: item.id}
+        %td
+          Item Image
+        %td
+          = item.product.name
+        %td
+          = item.product.price
+        %td
+          = item.quantity
+        %td
+          - total_price = (item.product.price * item.quantity)
+          = number_to_currency(total_price)
+= button_to 'Back to Cart', shopping_cart_path(current_user.shopping_cart.id), method: 'get'
 
-/ = form_tag product_orders_path, :remote => true do
- 
+%h4 Shipping Confirmation
+%table
+  %thead
+    %th
+      Name
+    %th
+      Email
+    %th  
+      Phone      
+    %th  
+      Shipping Address
+    %th
+      Delivery Date
+  %tbody
+    %td  
+      = current_user.name
+    %td
+      = current_user.email
+    %td
+      = current_user.phone    
+    %td
+      = current_user.address
+    %td
+      %input{name: "Date", type: "date", min: (Date.today+4), placeholder: (Date.today+4)}          
 
 = form_tag(stripe_payment_product_orders_path, type: 'application/json', remote: true) do
   = hidden_field_tag :authenticity_token, form_authenticity_token
