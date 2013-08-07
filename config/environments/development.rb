@@ -27,7 +27,7 @@ Ouac4::Application.configure do
   # number of complex assets.
   config.assets.debug = true
 
-  config.action_mailer.default_url_options = { :host => 'http://once-upon-a-cupcake.herokuapp.com/contact' }
+  config.action_mailer.default_url_options = { :host => 'http://once-upon-a-cupcake.herokuapp.com' }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = true
