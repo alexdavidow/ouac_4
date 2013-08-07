@@ -84,7 +84,7 @@ function createCustomCupcake(e){
         filling: $('input[name="step_2"]:checked').data('value'),
         frosting: $('input[name="step_3"]:checked').data('value'),
         topping: $('input[name="step_4"]:checked').data('value')
-    }
+      }
   }
   $.ajax({
     type: 'POST',
@@ -93,11 +93,13 @@ function createCustomCupcake(e){
     data: params,
     success: function(data){
       console.log('Added item to cart!');
+      console.log(data);
       newDiv = $('<div>').addClass('notice');
       newDiv.text('You have successfully added your cupcake to your cart.');
       newDiv.appendTo('#container');
       newDiv.fadeOut(12000);
       newDiv.remove();
+      window.location.href = data.redirect_url
     },
     error: function(data){
       errorDiv = $('<div>').addClass('error');

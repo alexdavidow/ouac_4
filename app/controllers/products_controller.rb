@@ -41,8 +41,8 @@ class ProductsController < ApplicationController
         current_user.shopping_cart.add_item(custom_order)
         format.json {render :json => custom_order }
       else
-        format.html { redirect_to new_user_session_path }
-        format.json { redirect_to new_user_session_path }
+       h = {redirect_url: new_user_session_path.to_s}
+       format.json {render json: h }
       end
     end
   end
