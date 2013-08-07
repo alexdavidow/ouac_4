@@ -72,5 +72,7 @@ class ProductOrdersController < ApplicationController
 
   def shipping
     @user = current_user
+    # @product_order = ProductOrder.find(params[:product_order][:id])
+    # render :json => @user.to_json
   end
 end

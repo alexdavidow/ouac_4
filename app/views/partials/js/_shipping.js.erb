@@ -5,12 +5,36 @@ function updateAddress(e){
   var name = $("textarea[name='Name']").val()
   var email = $("textarea[name='Email']").val()
   var phone = $("textarea[name='Phone']").val()
+  var date = $("textarea[name='Date']").val()
 
-  $.ajax({
-    type: 'PATCH',
-    url: "/users/<%= current_user.id %>",
-    data: {user: {address: address, name: name, email: email, phone: phone}}
-  })
+  if (name === "" || email === "" || address === "" || phone === "" || date === "") {
+    alert("No fields can be blank")
+  } else {
+
+    var params = {
+        user: {
+          address: address, 
+          name: name, 
+          email: email, 
+          phone: phone
+        },
+        product_order: {
+          date: date,
+          // this will be a variable later.
+          id: 3
+        }
+      }
+
+    $.ajax({
+      type: 'PATCH',
+      url: "/users/<%= current_user.id %>",
+      data: params 
+    })
+
+    //second ajax call that updates the order
+
+
+  }
 }
 
 $(function(){
