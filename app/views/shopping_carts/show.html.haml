@@ -26,16 +26,19 @@
               = submit_tag :"update quantity"
           %td
             = button_to "Delete Item", product_order_path(:id => item.id), method: :delete
+      %tr
+        %td{colspan: 4}
+          Total:
+        %td#order-total
+          = @order.order_sum
+
 - else
   %h3
     You have no items in your cart.
 
-- @order.order_sum
 %p 
   Please note that, currently, delivery is only available within Manhattan. All orders must be placed at least four (4) days in advance. So, if you orderd today, the earliest delivery date you could choose will be
   - date = Date.today+4 
   = "#{date.strftime("%b %d, %Y")}"
-%p
-  = @order.order_sum
-  = link_to "Checkout", order_path(@order.id), class: 'button'
+= link_to "Checkout", order_path(@order.id), class: 'button'
 
