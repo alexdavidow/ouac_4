@@ -31,14 +31,17 @@ class ProductsController < ApplicationController
     puts "----------------------------------------"
     # Create new product order associated with a custom product model
     # Assign params[:descriptions] to the new product's description
-      custom_cupcake = Product.new(description: description)
+      custom_cupcake = Product.new(description: description, name: "Custom Order", price: 30)
       custom_order = ProductOrder.create(product: custom_cupcake)
+    puts "CUSTOM ORDER"
+    puts custom_order.id
+    puts "-----------------------------------------"
     # If the user is not signed in, authenticate them first
     # Throw custom order into current user's cart
     # Respond to the ajax call
     respond_to do |format|
       if user_signed_in?
-        current_user.shopping_cart.order.add_item(custom_order)
+        current_user.shopping_cart.order.product_orders << custom_order
         format.json {render :json => custom_order }
       else
        h = {redirect_url: new_user_session_path.to_s}

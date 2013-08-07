@@ -17,6 +17,7 @@ function updateQuantity(e){
       newDiv.appendTo('#container');
       newDiv.fadeOut(12000);
       newDiv.remove();
+      $('#order-total').text('<%= @order.order_sum %>')
     },
     error: function(data){
     }
@@ -28,6 +29,3 @@ function updateQuantity(e){
 $(function(){
  $(".orders input[name='commit']").on('click', updateQuantity); 
 });
-
-
-
