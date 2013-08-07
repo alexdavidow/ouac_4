@@ -33,6 +33,16 @@ function start_level_4(e) {
 
 }
 
+
+/*
+  --------------------* Cupcake click event logic *------------------------
+
+  Find target of event & retrieve data-image attribute from that event
+  Select topping container div
+  Change topping div background color to data-image value
+
+*/
+
 function retrieveDataImage(dom_object){
   // Refactor to ensure that dom_object is a valid dom object
   image_data = $(dom_object).data('image');
@@ -40,39 +50,46 @@ function retrieveDataImage(dom_object){
 }
 function changeTopping(){
   console.log('Changing topping');
-  //Find target of event & retrieve data-image attribute from that event
-  // Select topping container div
-  // Change topping div background color to data-image value
   $('#topping').css('backgroundColor', retrieveDataImage($(this)));
 }
 
 function changeFrosting(){
   console.log('Changing frosting');
-  //Find target of event & retrieve data-image attribute from that event
-  // Select topping container div
-  // Change frosting div background color to data-image value
   $('#frosting').css('backgroundColor', retrieveDataImage($(this)));
 }
 
 function changeFilling(){
   console.log('Changing filling');
-  //Find target of event & retrieve data-image attribute from that event
-  // Select topping container div
-  // Change filling div background color to data-image value
   $('#icecream').css('backgroundColor', retrieveDataImage($(this)));
 }
 
 function changeCookie(){
   console.log('Changing cookie');
-  //Find target of event & retrieve data-image attribute from that event
-  // Select topping container div
-  // Change topping div background color to data-image value
   $('#cookie').css('backgroundColor', retrieveDataImage($(this)));
 }
 
 function createCustomCupcake(e){
   e.preventDefault();
+  //Select only the true radio buttons in each form
+  //Set the descriptions to each true radio button's data value
+  params =
+      cookie_desc,
+      filling_desc,
+      frosting_desc,
+      topping_desc
+    }
+  }
   console.log('Added item to cart!')
+  $.ajax({
+    type: 'POST',
+    dataType: 'JSON',
+    url: <%= custom_creator_path %>,
+    data: params,
+    success: function(data){
+    },
+    error: function(data){
+    }
+  });
 }
 
 
