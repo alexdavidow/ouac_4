@@ -3,6 +3,9 @@ class ProductOrdersController < ApplicationController
   include CurrentCart
 
   def new
+    @user = current_user
+    @items = current_cart.product_orders.all
+    @cart = current_cart
   end
 
   def create
@@ -63,9 +66,11 @@ class ProductOrdersController < ApplicationController
       flash[:error] = e.message
       redirect_to products_path
     end
+
+
   end
 
   def shipping
-    # @user = User.find(params[:id])
+    @user = current_user
   end
 end
