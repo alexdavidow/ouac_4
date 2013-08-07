@@ -31,7 +31,10 @@ function addItemToCart(){
     dataType: 'script',
     url: "<%= product_orders_path %>",
     success: function(){
-      console.log('AJAX SUCCESS');
+       successDiv = $('<div>').addClass('notice');
+       successDiv.text('Added item to your cart.');
+       successDiv.appendTo('#container');
+       successDiv.fadeOut(12000);
      }
    });
 }

@@ -88,18 +88,17 @@ function createCustomCupcake(e){
   }
   $.ajax({
     type: 'POST',
-    dataType: 'JSON',
     url: "<%= create_custom_cupcake_path %>",
     data: params,
     success: function(data){
-      console.log('Added item to cart!');
-      console.log(data);
       newDiv = $('<div>').addClass('notice');
       newDiv.text('You have successfully added your cupcake to your cart.');
       newDiv.appendTo('#container');
       newDiv.fadeOut(12000);
       newDiv.remove();
-      window.location.href = data.redirect_url
+      if (data.redirect_url != null){
+        window.location.href = data.redirect_url
+      }
     },
     error: function(data){
       errorDiv = $('<div>').addClass('error');
