@@ -26,7 +26,8 @@
         %td
           - total_price = (item.product.price * item.quantity)
           = number_to_currency(total_price)
-= button_to 'Back to Cart', shopping_cart_path(current_user.shopping_cart.id), method: 'get'
+        %td
+          = button_to 'Back to Cart', shopping_cart_path(current_user.shopping_cart.id), method: 'get'
 
 %h4 Shipping Confirmation
 %table

@@ -15,7 +15,14 @@ class User < ActiveRecord::Base
   has_many :cupcakes
   has_one :shopping_cart, dependent: :destroy
 
-  validates_presence_of :total_score
+  # Having these validations below, screw up our new user sign up.
+  # Only want to validate current_users attrs once they hit product_orders/new
+  # validates_presence_of :name
+  # validates_presence_of :email
+  # validates_presence_of :phone
+  # validates_presence_of :address
+
+
 
   # Before creation of a new user, create a new shopping cart and associate them
   after_create :create_cart
