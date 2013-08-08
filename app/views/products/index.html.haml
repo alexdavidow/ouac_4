@@ -13,21 +13,21 @@
   - @products.each do |p|
     .small-3.columns.menu_item{:"data-product_id" => "#{p.id}"}
       = image_tag("#{p.image}")
-      %h6 #{p.name}
+      %h6.gabriela #{p.name}
       %p.hidden.description #{p.description}
       %p.hidden #{p.id}
 
   .small-5.columns
-    %h5 Minimum order is one dozen per flavor.
+    %h5.gabriela Minimum order is one dozen per flavor.
   .small-4.columns  
-    %h5 $25/dozen.
+    %h5.gabriela $25/dozen.
 .row  
   .small-9.columns
-    %p (GF/DF) - These flavors use ingredients that are entirely gluten and/or dairy free, though they are produced in the same facility and with the same equipment as gluten and dairy.
+    %p.gabriela (GF/DF) - These flavors use ingredients that are entirely gluten and/or dairy free, though they are produced in the same facility and with the same equipment as gluten and dairy.
 .row  
   .small-6.columns  
     = link_to products_path do
-      %h5 Get Creative! Create your own flavor! 
+      %h5.gabriela Get Creative! Create your own flavor! 
   .small-6.columns   
     = link_to contact_path do
-      %h5 Contact us for special requests!
+      %h5.gabriela Contact us for special requests!
