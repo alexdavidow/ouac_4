@@ -2,9 +2,9 @@ function updateAddress(e){
   e.preventDefault();
   
   var address = $("textarea[name='Address']").val()
-  var name = $("textarea[name='Name']").val()
-  var email = $("textarea[name='Email']").val()
-  var phone_number = $("textarea[name='Phone']").val()
+  var name = $("input[name='Name']").val()
+  var email = $("input[name='Email']").val()
+  var phone_number = $("input[name='Phone']").val()
   var date = $("input[name='Date']").val()
 
   if (name === "" || email === "" || address === "" || phone_number === "" || date === "") {
