@@ -3,7 +3,7 @@
 
 .row
   .small-4.columns.cupcake_display_div
-    %img{:src => "/cupcake_platter.png"}
+    = image_tag("/cupcake_platter.jpg")
     %h4 
   .small-8.columns.display_desc Everything they do is so dramatic and flamboyant. It just makes me want to set myself on fire. I know what an erection feels like, Michael. No, it's the opposite. It's like my heart is getting hard. The only thing I found in the fridge was a dead dove in a bag. Gob: You didn't eat that, did you? She wanted to look 48. I nearly airbrushed her into oblivion. Ended up checking "albino" on the form.
   %button{:id => 'buy-button', :class => 'button', :"data-product_id" => 0}
@@ -12,23 +12,22 @@
 .row#all_menu_items
   - @products.each do |p|
     .small-3.columns.menu_item{:"data-product_id" => "#{p.id}"}
-      %a
-        %img{:src => "#{p.image}"}
+      = image_tag("#{p.image}")
       %h6 #{p.name}
       %p.hidden.description #{p.description}
       %p.hidden #{p.id}
 
-.row
-  .small-12.columns
-    %p (GF/DF) - These flavors use ingredients that are entirely gluten and/or dairy free, though they are produced in the same facility and with the same equipment as gluten and dairy.
-  .small-8.columns
+  .small-5.columns
     %h5 Minimum order is one dozen per flavor.
   .small-4.columns  
     %h5 $25/dozen.
 .row  
+  .small-9.columns
+    %p (GF/DF) - These flavors use ingredients that are entirely gluten and/or dairy free, though they are produced in the same facility and with the same equipment as gluten and dairy.
+.row  
   .small-6.columns  
-    %a{:href => "/products"}
+    = link_to products_path do
       %h5 Get Creative! Create your own flavor! 
   .small-6.columns   
-    %a{:href => "/contact"}
+    = link_to contact_path do
       %h5 Contact us for special requests!
