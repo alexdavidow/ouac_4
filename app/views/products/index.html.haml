@@ -14,7 +14,7 @@
     .small-3.columns.menu_item{:"data-product_id" => "#{p.id}"}
       - unless p.name == "Custom Order"
         = image_tag("#{p.image}")
-        %h6.gabriela #{p.name}
+        %h6.serif #{p.name}
         %p.hidden.description #{p.description}
         %p.hidden #{p.id}
   .small-5.columns
