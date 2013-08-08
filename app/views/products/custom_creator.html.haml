@@ -3,12 +3,12 @@
 
 .row
   .small-5.columns
-    %h4 Design your own ice cream cupcake!
+    %h4.serif Design your own ice cream cupcake!
   .small-7.columns
-    %h4.step_1_instruction Step 1: Choose a cookie base!
-    %h4.step_2_instruction.hidden Step 2: Choose an ice cream!
-    %h4.step_3_instruction.hidden Step 3: Choose a frosting!
-    %h4.step_4_instruction.hidden Step 4: Choose a topping!
+    %h4.step_1_instruction.serif Step 1: Choose a cookie base!
+    %h4.step_2_instruction.hidden.serif Step 2: Choose an ice cream!
+    %h4.step_3_instruction.hidden.serif Step 3: Choose a frosting!
+    %h4.step_4_instruction.hidden.serif Step 4: Choose a topping!
 
 .row
   .small-5.columns#creator_display
@@ -17,19 +17,19 @@
     = image_tag('cupcake_creator/starter_ic.jpg', id: "icecream")
     = image_tag('cupcake_creator/starter_cookie_base.jpg', id: "cookie")
   .small-7.columns
-    %h5#creator_instructions Instructions for what to do, user capabilities once they have finished(order custom creation, name it and/or share it on facebook). Any restrictions on quantity and required time window for placing a custom order.
-    %button.large#start_creator Let's Make An Ice Cream Cupcake!
+    %h5#creator_instructions.serif Instructions for what to do, user capabilities once they have finished(order custom creation, name it and/or share it on facebook). Any restrictions on quantity and required time window for placing a custom order.
+    %button.large#start_creator.button Let's Make An Ice Cream Cupcake!
   %form.step_1{method: "post"}
     .small-7.columns.step_1_div.hidden
       .step_1{:align => "center"}
-        %h5 Cookie Base Choices
+        %h5.serif Cookie Base Choices
         %input.step_1_radio{:checked => "", :name => "step_1", :type => "radio", :"data-value" => "Chocolate Chip Cookie",:"data-image" => image_path('starter_cookie_base.jpg')} Chocolate Chip Cookie
         %br/
         %input.step_1_radio{:name => "step_1", :type => "radio", :"data-value" => "Crumbled Oreo", :"data-image" => image_path('oreo_base.jpg')} Crumbled Oreo
         %br/
         %input.step_1_radio{:name => "step_1", :type => "radio", :"data-value" => "Graham Cracker", :"data-image" => image_path('graham_cracker_base.jpg')} Graham Cracker
         %hr/ 
-        %h5 Gluten-Free Options
+        %h5.serif Gluten-Free Options
         %input.step_1_radio{:name => "step_1", :type => "radio", :"data-value" => "Flourless Chocolate Cake", :"data-image" => image_path('choc_cake_base.jpg')} Flourless Chocolate Cake
         %br/
         %input.step_1_radio{:name => "step_1", :type => "radio", :"data-value" => "Flourless Peanut Butter Cookie", :"data-image" => image_path('peanut_butter_base.jpg')} Flourless Peanut Butter Cookie
@@ -37,7 +37,7 @@
 
     .small-7.columns.step_2_div.hidden
       .step_2{:align => "center"}
-        %h5 Ice Cream Choices
+        %h5.serif Ice Cream Choices
         %input.step_2_radio{:checked => "", :name => "step_2", :type => "radio", :"data-value" => "Mint Chocolate Chip", :"data-image" => image_path('mint_choc_ic.jpg')} Mint Chocolate Chip
         %br/
         %input.step_2_radio{:name => "step_2", :type => "radio", :"data-value" => "Vanilla Bean", :"data-image" => image_path('starter_ic.jpg')} Vanilla Bean
@@ -46,24 +46,24 @@
         %br/
         %input.step_2_radio{:name => "step_2", :type => "radio", :"data-value" => "Peanut Butter Banana", :"data-image" => image_path('peanut_butter_banana_ic.jpg')} Peanut Butter Banana
         %hr/ 
-        %h5 Dairy-Free Options
+        %h5.serif Dairy-Free Options
         %input.step_2_radio{:name => "step_2", :type => "radio", :"data-value" => "Chocolate Sorbet", :"data-image" => image_path('choc_sorbet_ic.jpg')} Chocolate Sorbet
         %br/
         %input.step_2_radio{:name => "step_2", :type => "radio", :"data-value" => "Vanilla Frozen Yogurt", :"data-image" => image_path('starter_ic.jpg')} Vanilla Frozen Yogurt
         %br/
-        %button.step_2_button Make Ice Cream Selection
-        %button.step_2_back Back
+        %button.step_2_button.button Make Ice Cream Selection
+        %button.step_2_back.button Back
 
     .small-7.columns.step_3_div.hidden
       .step_3{:align => "center"}
-        %h5 Frosting Choices
+        %h5.serif Frosting Choices
         %input.step_3_radio{:checked => "", :name => "step_3", :type => "radio", :"data-value" => "Whipped Cream", :"data-image" => image_path('starter_frosting.jpg')} Whipped Cream
         %br/
         %input.step_3_radio{:name => "step_3", :type => "radio", :"data-value" => "Mascarpone Whipped Cream", :"data-image" => image_path('marscapone_frosting.jpg')} Mascarpone Whipped Cream
         %br/
         %input.step_3_radio{:name => "step_3", :type => "radio", :"data-value" => "Tea-Infused Whipped Cream", :"data-image" => image_path('tea_infused_frosting.jpg')} Tea-Infused Whipped Cream
         %hr/ 
-        %h5 Dairy-Free Options
+        %h5.serif Dairy-Free Options
         %input.step_3_radio{:name => "step_3", :type => "radio", :"data-value" => "Fluff", :"data-image" => image_path('fluff.jpg')} Fluff
         %br/
         %input.step_3_radio{:name => "step_3", :type => "radio", :"data-value" => "Chocolate Fluff", :"data-image" => image_path('choc_fluff.jpg')} Chocolate Fluff
@@ -72,12 +72,12 @@
         %br/
         %input.step_3_radio{:name => "step_3", :type => "radio", :"data-value" => "Chocolate Peanut Butter Soy Whipped Cream", :"data-image" => image_path('choc_pb_soy_whipped.jpg')} Chocolate Peanut Butter Soy Whipped Cream
         %p *All frosting choices are gluten-free
-        %button.step_3_button Make Frosting Selection
-        %button.step_3_back Back
+        %button.step_3_button.button Make Frosting Selection
+        %button.step_3_back.button Back
 
     .small-7.columns.step_4_div.hidden
       .step_4{:align => "center"}
-        %h5 Topping Choices
+        %h5.serif Topping Choices
         %input.step_4_radio{:checked => "", :name => "step_4", :type => "radio", :"data-value" => "Crumbled Oreo", :"data-image" => image_path('starter_topping.jpg')} Crumbled Oreo
         %br/
         %input.step_4_radio{:name => "step_4", :type => "radio", :"data-value" => "Rice Krispy Treat Cluster", :"data-image" => image_path('rice_krispy_topping.jpg')} Rice Krispy Treat Cluster
@@ -92,8 +92,8 @@
         %br/
         %input.step_4_radio{:name => "step_4", :type => "radio", :"data-value" => "Candied Lemon Peel", :"data-image" => image_path('lemon_peel_topping.jpg')} Candied Lemon Peel
         %br/
-        %button.step_4_button Add this to my cart!
-        %button.step_4_back Back
+        %button.step_4_button.button Add this to my cart!
+        %button.step_4_back.button Back
 
 
 
