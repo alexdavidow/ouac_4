@@ -3,25 +3,22 @@
   .large-12.columns
     %ul#slider{'data-orbit' => true}
       %li
-        %img{src:"/IMG_0676.JPG"}
+        = image_tag("/slider_1_8x6.jpg")
       %li
-        %img{src: "/pretty-cupcake.jpg"}/
+        = image_tag("/slider_2_8x7.jpg")
       %li
-        %img{src:"/cupcake_cross_section.jpeg"}
+        = image_tag("/platter_8x6.jpg")
 
 .row
   .large-4.columns        
-    %a{:href => "/products"}
-      %img{:src => "/cupcake_platter.png"}
-        %a{:href => "/products"}
-          %h4 This will be seasonal menu
+    = link_to products_path do
+      = image_tag("/menu_8x6.jpg")
+      %h4 Summer 2013 Menu
   .large-4.columns
-    %a{:href => "/custom_creator"}        
-      %img{:src => "/cupcake-size.jpg"}
-        %a{:href => "/custom_creator"} 
-          %h4 This will be cupcake creator game
+    = link_to custom_creator_path do
+      = image_tag("/icc_cross_section_index.jpg")
+      %h4 Create Your Own Ice Cream Cupcake!
   .large-4.columns        
-    %a{:href => "/cupcakes"}
-      %img{:src => "/cupcake_cross_section.jpeg"}
-        %a{:href => "/cupcakes"}
-          %h4 This will be falling cupcake game        
+    = link_to cupcakes_path do
+      = image_tag("/falling_icc.jpg")
+      %h4 Play Our Cascading Cupcakes Game!        
