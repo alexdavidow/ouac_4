@@ -12,14 +12,10 @@
 
 .row
   .small-5.columns#creator_display
-    #topping
-      Topping
-    #frosting
-      Frosting
-    #icecream
-      Ice Cream
-    #cookie
-      Base
+    = image_tag('cupcake_creator/starter_topping.jpg', id: "topping")
+    = image_tag('cupcake_creator/starter_frosting.jpg', id: "frosting")
+    = image_tag('cupcake_creator/starter_ic.jpg', id: "icecream")
+    = image_tag('cupcake_creator/starter_cookie_base.jpg', id: "cookie")
   .small-7.columns
     %h5#creator_instructions Instructions for what to do, user capabilities once they have finished(order custom creation, name it and/or share it on facebook). Any restrictions on quantity and required time window for placing a custom order.
     %button.large#start_creator Let's Make An Ice Cream Cupcake!
@@ -27,16 +23,16 @@
     .small-7.columns.step_1_div.hidden
       .step_1{:align => "center"}
         %h5 Cookie Base Choices
-        %input.step_1_radio{:checked => "", :name => "step_1", :type => "radio", :"data-value" => "Chocolate Chip Cookie",:"data-image" => '#333333'} Chocolate Chip Cookie
+        %input.step_1_radio{:checked => "", :name => "step_1", :type => "radio", :"data-value" => "Chocolate Chip Cookie",:"data-image" => 'assets/cupcake_creator/starter_cookie_base.jpg'} Chocolate Chip Cookie
         %br/
-        %input.step_1_radio{:name => "step_1", :type => "radio", :"data-value" => "Crumbled Oreo", :"data-image" => 'black'} Crumbled Oreo
+        %input.step_1_radio{:name => "step_1", :type => "radio", :"data-value" => "Crumbled Oreo", :"data-image" => 'assets/cupcake_creator/oreo_base.jpg'} Crumbled Oreo
         %br/
-        %input.step_1_radio{:name => "step_1", :type => "radio", :"data-value" => "Graham Cracker", :"data-image" => '#9E8600'} Graham Cracker
+        %input.step_1_radio{:name => "step_1", :type => "radio", :"data-value" => "Graham Cracker", :"data-image" => 'assets/cupcake_creator/graham_cracker_base.jpg' } Graham Cracker
         %hr/ 
         %h5 Gluten-Free Options
-        %input.step_1_radio{:name => "step_1", :type => "radio", :"data-value" => "Flourless Chocolate Cake", :"data-image" => '#C2680E'} Flourless Chocolate Cake
+        %input.step_1_radio{:name => "step_1", :type => "radio", :"data-value" => "Flourless Chocolate Cake", :"data-image" => 'assets/cupcake_creator/oreo_base.jpg'} Flourless Chocolate Cake
         %br/
-        %input.step_1_radio{:name => "step_1", :type => "radio", :"data-value" => "Flourless Peanut Butter Cookie", :"data-image" => '#A6952B'} Flourless Peanut Butter Cookie
+        %input.step_1_radio{:name => "step_1", :type => "radio", :"data-value" => "Flourless Peanut Butter Cookie", :"data-image" => 'assets/cupcake_creator/oreo_base.jpg'} Flourless Peanut Butter Cookie
         %button.step_1_button Make Cookie Selection
 
     .small-7.columns.step_2_div.hidden
