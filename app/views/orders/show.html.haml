@@ -1,7 +1,7 @@
 %script
   = render partial: 'partials/js/shipping.js'
 
-%h4
+%h4.serif
   Please enter or confirm your shipping and delivery information
 
 .row
@@ -21,7 +21,7 @@
     #update_user_button
       = button_to "Update Shipping Information", class: 'button large'
 
-%p#delivery_disclaimer 
+%p#delivery_disclaimer.serif 
   Please note that, currently, delivery is only available within Manhattan. All orders must be placed at least four (4) days in advance. So, if you orderd today, the earliest delivery date you could choose will be
   - date = Date.today+4 
   = "#{date.strftime("%b %d, %Y")}"
