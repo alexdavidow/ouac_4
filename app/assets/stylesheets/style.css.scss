@@ -242,6 +242,9 @@ $error_background: #FF0700;
   background-image: url('cupcake-size.jpg');
 }
 
+.orbit-container ul {
+  min-height: 600px;
+}
 
 /*img {
   border: 1px solid black;
@@ -271,9 +274,10 @@ $error_background: #FF0700;
 }
 
 #user-button-list {
-  border: 1px dashed black;
+  display: inline-block;
+/*  border: 1px dashed black;
   height: 200px;
-  width: 200px;
+  width: 200px;*/
 }
 
 #topping{
