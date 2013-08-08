@@ -1,10 +1,10 @@
 $serif: 'Gabriela';
-$notice_background: #01B2E3;
+$notice_background: white;
 $error_background: #FF0700;
 
 @mixin pop-up {
   position: absolute;
-  opacity: 0.6;
+  opacity: 0.3;
   width: 35%;
   height: 10%;
   z-index: 1;
@@ -23,11 +23,6 @@ $error_background: #FF0700;
 #title_nav a{
   color: #ffe105;
   text-decoration: none;
-}
-
-.nav{
-  background-color: white;
-  padding-top: 30px;
 }
 
 .menu_items{
@@ -272,7 +267,6 @@ $error_background: #FF0700;
   @include pop-up;
   @include rounded-borders;
   background-color: $notice-background;
-  border: 2px solid #009393;
 }
 
 .error {
@@ -282,14 +276,23 @@ $error_background: #FF0700;
   border: 2px solid #A60400;
 }
 
-.nav.top-bar {
-  height: 90px;
-  width: 0 auto;
-  text-align: center;
+.nav{
   background-color: white;
+}
+div.top-bar-section.right{
+  padding-top: 40px;
 }
 
-.right {
+
+.top-bar-section li.nav_buttons a{
   background-color: white;
   color: black;
+  font-size: 1.1em;
 }
+
+.top-bar-section .right li a{
+  background-color: white;
+  color: black;
+  font-size: 0.9em;
+}
+

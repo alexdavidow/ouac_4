@@ -3,7 +3,7 @@
 %table
   %thead
     %th
-      Your Cupcake Order
+      Modify Order
     %th
       Item Name
     %th
@@ -12,13 +12,12 @@
       Quantity
     %th
       Total Price
-    %th
-      = button_to 'Back to Cart', shopping_cart_path(current_user.shopping_cart.id), method: 'get'
+
   %tbody
     - @cart.order.product_orders.each do |item|
       %tr.orders{id: item.id}
         %td
-          Item Image
+          = button_to 'Modify Order', shopping_cart_path(current_user.shopping_cart.id), method: 'get'
         %td
           = item.product.name
         %td

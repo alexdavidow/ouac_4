@@ -3,25 +3,25 @@
     %li
       = link_to root_path do
         = image_tag("OUAC-thumbnail_white.jpg", id: "nav_img")
-    %li.divider
+    
   .top-bar-section.right
     %ul.inline-list
-      %li.divider
+      
       %li.nav_buttons.serif
         = link_to 'Summer 2013 Menu', products_path
-      %li.divider
+      
       %li.nav_buttons.serif
         = link_to "Cupcake Creator", custom_creator_path
-      %li.divider
+      
       %li.nav_buttons.serif
         = link_to 'Cupcake Game!', cupcakes_path
-      %li.divider
+      
       %li.nav_buttons.serif
         = link_to 'About', about_path
-      %li.divider
+      
       %li.nav_buttons.serif
         = link_to 'Contact', contact_path
-      %li.divider
+      
     %ul.right
       - if user_signed_in? 
         %li.has-dropdown.serif
@@ -30,9 +30,10 @@
           %ul.dropdown
             %li.serif
               = link_to('My Account', user_path(current_user.id))
-            %li.divider
+            
             %li.serif
               = link_to 'Sign Out', destroy_user_session_path, method: :delete 
+
         %li.serif
           = link_to 'Cart', shopping_cart_path(current_cart.id)
       - else
