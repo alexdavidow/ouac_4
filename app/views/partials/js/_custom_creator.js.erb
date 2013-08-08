@@ -96,22 +96,22 @@ function retrieveSelectedValue(form_input_group_name){
 
 function changeTopping(){
   console.log('Changing topping');
-  $('#topping').css('backgroundColor', retrieveDataImage($(this)));
+  $('#topping').attr('src', retrieveDataImage($(this)));
 }
 
 function changeFrosting(){
   console.log('Changing frosting');
-  $('#frosting').css('backgroundColor', retrieveDataImage($(this)));
+  $('#frosting').attr('src', retrieveDataImage($(this)));
 }
 
 function changeFilling(){
   console.log('Changing filling');
-  $('#icecream').css('backgroundColor', retrieveDataImage($(this)));
+  $('#icecream').attr('src', retrieveDataImage($(this)));
 }
 
 function changeCookie(){
   console.log('Changing cookie');
-  $('#cookie').css('backgroundColor', retrieveDataImage($(this)));
+  $('#cookie').attr('src', retrieveDataImage($(this)));
 }
 
 function createCustomCupcake(e){
