@@ -4,37 +4,22 @@
 %h4
   Please enter or confirm your shipping and delivery information
 
-%table
-  %thead
-    %th
-      Name
-    %th
-      Email
-    %th  
-      Phone      
-    %th  
-      Shipping Address
-    %th
-      Delivery Date
-  %tbody
-    %td  
-      %textarea{name: "Name"}
-        = current_user.name
-    %td
-      %textarea{type: "email", name: "Email"}
-        = current_user.email
-    %td
-      %textarea{name: "Phone"}
-        = current_user.phone    
-    %td
-      %textarea{name: "Address", rows: 3}
-        = current_user.address
-    %td
-      %input{name: "Date", type: "date", min: (Date.today+4), placeholder: (Date.today+4)}
-
-    %td
-      #update_user_button 
-        = button_to "Update Shipping Address", class: 'button'
+.row
+  .large-4.columns
+    = label_tag 'Name'
+    = text_field_tag('Name', current_user.name)
+    = label_tag 'Email'
+    = email_field_tag('Email', current_user.email)
+    = label_tag 'Phone'
+    = phone_field_tag('Phone', current_user.phone)
+  .large-4.columns
+    = label_tag 'Shipping Address'
+    = text_area_tag('Address', current_user.address, rows: '3')
+  .large-4.columns
+    = label_tag 'Delivery Date'
+    = date_field_tag('Date', Date.today+4, min: Date.today+4)
+    #update_user_button
+      = button_to "Update Shipping Information", class: 'button large'
 
 %p#delivery_disclaimer 
   Please note that, currently, delivery is only available within Manhattan. All orders must be placed at least four (4) days in advance. So, if you orderd today, the earliest delivery date you could choose will be
