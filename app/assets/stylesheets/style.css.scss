@@ -1,6 +1,4 @@
-/*#container {
-  height: 67px;
-}*/
+$serif: 'Gabriela';
 
 .nav.top-bar {
   height: 90px !important;
@@ -29,15 +27,8 @@
   height: 120px; 
 }
 
-.display_desc {
-  font-family: 'Gabriela', serif;
-}
-
-#about_text {
-  font-family: 'Gabriela', serif;
-}
-.gabriela {
-  font-family: 'Gabriela', serif;
+.serif {
+  font-family: $serif, serif;
 }
 
 .menu_item {
