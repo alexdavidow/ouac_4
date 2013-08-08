@@ -25,8 +25,13 @@ function updateAddress(e){
     $.ajax({
       type: 'PATCH',
       url: "/orders/<%= @order.id %>",
-      
-      data: params
+      data: params,
+      success: function(){
+        updatedDiv = $('<div>').addClass('notice');
+        updatedDiv.text('Shipping Information Saved')
+        updatedDiv.prependTo('#delivery_disclaimer');
+        updatedDiv.fadeOut(4000);
+      }
     })
   }
 }

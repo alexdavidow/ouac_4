@@ -2,11 +2,16 @@
   height: 67px;
 }*/
 
-#navbar {
+.nav.top-bar {
   height: 90px !important;
   width: 0 auto;
   text-align: center;
-  background-color: #00a1cf;
+  background-color: white;
+}
+
+.right {
+  background-color: white !important;
+  color: black;
 }
 
 #nav_img {
