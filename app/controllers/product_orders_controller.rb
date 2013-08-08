@@ -65,6 +65,8 @@ class ProductOrdersController < ApplicationController
     puts "order recevied"
     MessageMailer.order_confirmation(current_user, current_cart).deliver
     MessageMailer.admin_receives_order(current_user, current_cart).deliver
+    current_cart.empty_cart
+    flash[:notice] = "You have successfully placed an order through Once Upon A Cupcake! Thank you for shopping with us!"
 
   end
 
