@@ -12,19 +12,11 @@
 .row#all_menu_items
   - @products.each do |p|
     .small-3.columns.menu_item{:"data-product_id" => "#{p.id}"}
-<<<<<<< HEAD
       - unless p.name == "Custom Order"
         = image_tag("#{p.image}")
         %h6.gabriela #{p.name}
         %p.hidden.description #{p.description}
         %p.hidden #{p.id}
-=======
-      = image_tag(p.image)
-      %h6.serif #{p.name}
-      %p.hidden.description #{p.description}
-      %p.hidden #{p.id}
->>>>>>> f78e01b3cf27b295742040c2fab5a9454650940c
-
   .small-5.columns
     %h5.serif Minimum order is one dozen per flavor.
   .small-4.columns  
