@@ -3,7 +3,7 @@
 
 .row
   .small-4.columns.cupcake_display_div
-    = image_tag("/cupcake_platter.jpg")
+    = image_tag('cupcake_platter.jpg')
     %h4 
   .small-8.columns.display_desc Everything they do is so dramatic and flamboyant. It just makes me want to set myself on fire. I know what an erection feels like, Michael. No, it's the opposite. It's like my heart is getting hard. The only thing I found in the fridge was a dead dove in a bag. Gob: You didn't eat that, did you? She wanted to look 48. I nearly airbrushed her into oblivion. Ended up checking "albino" on the form.
   %button{:id => 'buy-button', :class => 'button', :"data-product_id" => 0}
@@ -12,7 +12,8 @@
 .row#all_menu_items
   - @products.each do |p|
     .small-3.columns.menu_item{:"data-product_id" => "#{p.id}"}
-      = image_tag("#{p.image}")
+      = image_tag(p.image)
+      = p.image
       %h6.gabriela #{p.name}
       %p.hidden.description #{p.description}
       %p.hidden #{p.id}

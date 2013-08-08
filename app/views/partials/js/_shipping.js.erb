@@ -24,7 +24,7 @@ function updateAddress(e){
 
     $.ajax({
       type: 'PATCH',
-      url: "/orders/<%= @order.id %>",
+      url: "<%= order_path(@order) %>",
       data: params,
       success: function(){
         updatedDiv = $('<div>').addClass('notice');
