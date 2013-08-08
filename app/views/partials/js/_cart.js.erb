@@ -1,10 +1,11 @@
 function updateQuantity(e){
   e.preventDefault();
-  order_sum = <%= @order.order_sum %>
   params = {
       id: $(this).parent().parent().parent().attr('id'),
       quantity: $(this).siblings("input[name='quantity']").val()
   }
+
+  order_sum = $('td').data('price');
 
   $.ajax({
     type: 'PUT',
@@ -12,6 +13,7 @@ function updateQuantity(e){
     dataType: 'script',
     data: params,
     success: function(){
+      console.log(order_sum);
       newDiv = $('<div>').addClass('notice');
       divText = $('<p>').text('You have successfully updated your cart.');
       divText.appendTo(newDiv);
