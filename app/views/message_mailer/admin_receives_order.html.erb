@@ -5,8 +5,8 @@
   </head>
   <body>
     <h2>Someone just submitted an order!</h2>
-    <p> Username: <%= @user.name %> </p>
-    <p> User email: <%= @user.email %> </p>
+    <p> Username: <%= @cart.order.name %> </p>
+    <p> User email: <%= @cart.order.email %> </p>
     <p> User phone number: <%= @cart.order.phone_number %> </p>
     <p> Delivery Address: <%= @cart.order.mailing_address %> </p>
     <h4> Requested Delivery Date: <%= @cart.order.delivery_date.strftime("%b %d, %Y") %> </h4>

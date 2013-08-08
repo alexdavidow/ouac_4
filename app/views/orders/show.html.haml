@@ -33,8 +33,6 @@
       %input{name: "Date", type: "date", min: (Date.today+4), placeholder: (Date.today+4)}
 
     %td
-      / This button isn't working. I want it to be an ajax call to update user attrs
-      / ActiveRecord::RecordNotFound - Couldn't find User with id=edit:
       #update_user_button 
         = button_to "Update Shipping Address", class: 'button'
 

@@ -44,9 +44,9 @@
       Delivery Date
   %tbody
     %td  
-      = current_user.name
+      = current_user.shopping_cart.order.name
     %td
-      = current_user.email
+      = current_user.shopping_cart.order.email
     %td
       = current_user.shopping_cart.order.phone_number    
     %td

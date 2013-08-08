@@ -11,7 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130807192132) do
+ActiveRecord::Schema.define(version: 20130808015805) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "cookies", force: true do |t|
     t.string   "name"
@@ -73,6 +76,7 @@ ActiveRecord::Schema.define(version: 20130807192132) do
     t.datetime "updated_at"
     t.integer  "shopping_cart_id"
     t.string   "email"
+    t.string   "name"
   end
 
   create_table "product_orders", force: true do |t|
