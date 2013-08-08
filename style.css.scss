@@ -278,11 +278,13 @@
 }
 
 #topping{
+  position: absolute;
   height: 50px;
   width: 200px;
   background-color: gray;
   opacity: 0.5;
   z-index: 1;
+  margin-top: -25px;
 }
 
 #frosting{
@@ -301,4 +303,33 @@
   height: 50px;
   width: 200px;
   background-color: #40390B;
+}
+
+#creator_display{
+  margin-top: 50px;
+}
+
+.nav_buttons {
+}
+
+.notice {
+  opacity: 0.6;
+  background-color: #01B2E3; 
+  width: 250px;
+  height: 60px;
+  padding: 15px;
+  border: 2px solid #007394;
+  border-radius: 5px;
+  z-index: 1;
+  position: absolute;
+}
+
+
+
+.error {
+  opacity: 0.6;
+  background-color: #FF0700;
+  width: 175px;
+  height: 60px;
+  padding: 15px;
 }

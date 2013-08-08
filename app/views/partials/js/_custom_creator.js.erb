@@ -4,21 +4,17 @@
 * to the previous level of the form and hide the current level.
 * -----------------------------------------*/
 function start_level_1() {
-  $('#start_creator').remove();
-  $('#creator_instructions').remove();
+  $('#start_creator').toggleClass('hidden');
+  $('#creator_instructions').toggleClass('hidden');
   $('.step_1_div').toggleClass('hidden');
-
 }
 
 function start_level_2(e) {
-  // $('#start_creator').remove()
-  // $('#creator_instructions').remove()
   e.preventDefault();
   $('.step_1_div').toggleClass('hidden');
   $('.step_2_div').toggleClass('hidden');
   $('.step_1_instruction').toggleClass('hidden');
   $('.step_2_instruction').toggleClass('hidden');
-
 }
 
 function start_level_3(e) {
@@ -35,9 +31,48 @@ function start_level_4(e) {
   $('.step_4_div').removeClass('hidden')
   $('.step_3_instruction').addClass('hidden')
   $('.step_4_instruction').removeClass('hidden')
-
 }
 
+/*
+* ------------- Back Button Events --------------
+*/
+
+function hide_lvl_2(e){
+  e.preventDefault(); 
+  $('.step_1_div').removeClass('hidden')
+  $('.step_2_div').addClass('hidden')
+  $('.step_1_instruction').removeClass('hidden')
+  $('.step_2_instruction').addClass('hidden')
+}
+
+function hide_lvl_3(e){
+  e.preventDefault(); 
+  $('.step_2_div').removeClass('hidden')
+  $('.step_3_div').addClass('hidden')
+  $('.step_2_instruction').removeClass('hidden')
+  $('.step_3_instruction').addClass('hidden')
+}
+
+function hide_lvl_4(e){
+  e.preventDefault(); 
+  $('.step_3_div').removeClass('hidden')
+  $('.step_4_div').addClass('hidden')
+  $('.step_3_instruction').removeClass('hidden')
+  $('.step_4_instruction').addClass('hidden')
+}
+
+/*
+*
+* This function uses a button click event to hide the current form and restart the creator process
+* Find the current level that the creator is currently on, and then hide that level
+* Show the first level and instructions of the creator.
+function restart_creator(e){
+  e.preventDefault();
+  $('#start_creator').removeClass('hidden');
+  $('#creator_instructions').removeClass('hidden');
+  $('.step_1_div').removeClass('hidden');
+}
+*/
 
 /*
   --------------------* Cupcake click event logic *------------------------
@@ -131,4 +166,8 @@ $(document).ready(function(){
 
   $('.step_4_radio').on('click', changeTopping);
   $('.step_4_button').on('click', createCustomCupcake);
+
+  $('.step_2_back').on('click', hide_lvl_2);
+  $('.step_3_back').on('click', hide_lvl_3);
+  $('.step_4_back').on('click', hide_lvl_4);
 })

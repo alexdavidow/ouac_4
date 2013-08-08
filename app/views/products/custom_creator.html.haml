@@ -12,10 +12,6 @@
 
 .row
   .small-5.columns#creator_display
-    /%img.creator_ingredient_display{:src => "toppings.jpg"}
-    /%img.creator_ingredient_display{:src => "frosting.jpg"}
-    /%img.creator_ingredient_display{:src => "ice_cream.jpg"}
-    /%img.creator_ingredient_display{:src => "cookie.jpg"}
     #topping
       Topping
     #frosting
@@ -26,7 +22,7 @@
       Base
   .small-7.columns
     %h5#creator_instructions Instructions for what to do, user capabilities once they have finished(order custom creation, name it and/or share it on facebook). Any restrictions on quantity and required time window for placing a custom order.
-    %button.large#start_creator "Let's Make An Ice Cream Cupcake!"
+    %button.large#start_creator Let's Make An Ice Cream Cupcake!
   %form.step_1{method: "post"}
     .small-7.columns.step_1_div.hidden
       .step_1{:align => "center"}
@@ -41,7 +37,7 @@
         %input.step_1_radio{:name => "step_1", :type => "radio", :"data-value" => "Flourless Chocolate Cake", :"data-image" => '#C2680E'} Flourless Chocolate Cake
         %br/
         %input.step_1_radio{:name => "step_1", :type => "radio", :"data-value" => "Flourless Peanut Butter Cookie", :"data-image" => '#A6952B'} Flourless Peanut Butter Cookie
-        %button.step_1_button "Make Cookie Selection"
+        %button.step_1_button Make Cookie Selection
 
     .small-7.columns.step_2_div.hidden
       .step_2{:align => "center"}
@@ -59,7 +55,8 @@
         %br/
         %input.step_2_radio{:name => "step_2", :type => "radio", :"data-value" => "Vanilla Frozen Yogurt", :"data-image" => '#9E8600'} Vanilla Frozen Yogurt
         %br/
-        %button.step_2_button "Make Ice Cream Selection"
+        %button.step_2_button Make Ice Cream Selection
+        %button.step_2_back Back
 
     .small-7.columns.step_3_div.hidden
       .step_3{:align => "center"}
@@ -79,7 +76,8 @@
         %br/
         %input.step_3_radio{:name => "step_3", :type => "radio", :"data-value" => "Chocolate Peanut Butter Soy Whipped Cream", :"data-image" => '#9E8600'} Chocolate Peanut Butter Soy Whipped Cream
         %p *All frosting choices are gluten-free
-        %button.step_3_button "Make Frosting Selection"
+        %button.step_3_button Make Frosting Selection
+        %button.step_3_back Back
 
     .small-7.columns.step_4_div.hidden
       .step_4{:align => "center"}
@@ -98,7 +96,8 @@
         %br/
         %input.step_4_radio{:name => "step_4", :type => "radio", :"data-value" => "Candied Lemon Peel", :"data-image" => '#9E8600'} Candied Lemon Peel
         %br/
-        %button.step_4_button "Add this to my cart!" 
+        %button.step_4_button Add this to my cart!
+        %button.step_4_back Back
 
 
 
