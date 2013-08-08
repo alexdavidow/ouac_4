@@ -19,17 +19,6 @@ $error_background: #FF0700;
   border-radius: $radius;
 }
 
-.nav.top-bar {
-  height: 90px !important;
-  width: 0 auto;
-  text-align: center;
-  background-color: white;
-}
-
-.right {
-  background-color: white !important;
-  color: black;
-}
 
 #nav_img {
   position: relative;
@@ -327,4 +316,16 @@ $error_background: #FF0700;
   @include rounded-borders;
   background-color: $error-background;
   border: 2px solid #A60400;
+}
+
+.nav.top-bar {
+  height: 90px;
+  width: 0 auto;
+  text-align: center;
+  background-color: white;
+}
+
+.right {
+  background-color: white;
+  color: black;
 }
