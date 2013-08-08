@@ -20,13 +20,14 @@ $error_background: #FF0700;
 }
 
 
-#nav_img {
-  position: relative;
-  height: 45px;
-}
 #title_nav a{
   color: #ffe105;
   text-decoration: none;
+}
+
+.nav{
+  background-color: white;
+  padding-top: 30px;
 }
 
 .menu_items{
@@ -57,6 +58,7 @@ $error_background: #FF0700;
 #logo {
   padding: 2px;
 }
+
 #login {
   text-align: left;
   background-color: #f4b6c3;
@@ -102,9 +104,6 @@ $error_background: #FF0700;
   height: 25px;
   font-size: 9px;
 }
-/*#cookie {
-  background-image:url('/cookie.jpg');
-}*/
 
 #life1 {
   height: 46px;
