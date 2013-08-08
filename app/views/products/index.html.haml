@@ -14,8 +14,8 @@
  
 .row#all_menu_items
   - @products.each do |p|
-    .small-3.columns.menu_item{:"data-product_id" => "#{p.id}"}
-      - unless p.name == "Custom Order"
+    - unless p.name == "Custom Order"
+      .small-3.columns.menu_item{:"data-product_id" => "#{p.id}"}
         = image_tag("#{p.image}")
         %h6.serif #{p.name}
         %p.hidden.description.serif #{p.description}
