@@ -283,12 +283,22 @@ $error_background: #FF0700;
 }
 div.top-bar-section.right{
   padding-top: 40px;
+
+  li {
+    &:hover{
+      color: #d4ea56;
+    }
+  }
 }
 
 .top-bar-section li.nav_buttons a{
   background-color: white;
   color: black;
   font-size: 1.1em;
+
+  &:hover{
+    color: #d4ea56;
+  }
 }
 
 .top-bar-section .right li a{

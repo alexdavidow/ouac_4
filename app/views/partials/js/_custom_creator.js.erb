@@ -129,6 +129,7 @@ function createCustomCupcake(e){
   $.ajax({
     type: 'POST',
     url: "<%= create_custom_cupcake_path %>",
+    dataType: 'json',
     data: params,
     success: function(data){
       newDiv = $('<div>').addClass('notice');

@@ -42,7 +42,7 @@ class ProductsController < ApplicationController
     respond_to do |format|
       if user_signed_in?
         current_user.shopping_cart.order.product_orders << custom_order
-        format.json {render :json => custom_order }
+        format.json {render js: "console.log('Added custom order. Thanks! :3')" }
       else
        h = {redirect_url: new_user_session_path.to_s}
        format.json {render json: h }
