@@ -36,15 +36,15 @@ function addItemToCart(){
        successDiv.addClass('center');
        successDiv.text('Added item to your cart.');
        successDiv.appendTo('#container');
-       successDiv.fadeOut(12000);
+       successDiv.fadeOut(5000);
      },
     error: function(){
       console.log('Error');
       errorDiv = $('<div>').addClass('error');
       errorDiv.addClass('center');
-      errorDiv.text('Failed to add item to the cart.');
+      errorDiv.text('Failed to add item to the cart. Please log in or try again later');
       errorDiv.appendTo('#container');
-      errorDiv.fadeOut(12000);
+      errorDiv.fadeOut(5000);
     }
    });
 }
