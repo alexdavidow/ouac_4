@@ -20,11 +20,16 @@ class Order < ActiveRecord::Base
   end
 
 
-  def check_for_duplicates(product_order)
-    if self.product_orders.include?(product_order)
-      product_order.quantity += 1
+  def add_without_duplication(product)
+    existing_po = self.product_orders.find_by_product_id(product.id)
+    if self.product_orders.include? existing_po
+      puts "I EXIST"
+      puts "----------------------"
+      puts existing_po.quantity
+      existing_po.quantity += 1
+      existing_po.save
     else
-      self.product_orders << product_order
+      self.product_orders << ProductOrder.new(product_id: product.id)
     end
   end
 

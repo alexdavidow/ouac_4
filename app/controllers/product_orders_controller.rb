@@ -13,11 +13,9 @@ class ProductOrdersController < ApplicationController
     if current_cart
       order = current_cart.order
       product = Product.find(params[:product_id])
-      product_order = ProductOrder.create(product_id: product.id)
       respond_to do |format|
-      if product_order.save!
-        order.check_for_duplicates(product_order)
-        format.json { render js: "console.log('hi')" } 
+      if order.add_without_duplication(product)
+        format.json { render json: "console.log('hi')" } 
       else
         format.html { render :index }
         flash[:error] = "There was a problem adding the item to your cart. Please refresh and try again."
