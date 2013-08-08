@@ -1,3 +1,8 @@
+/* ----------------------------------------
+* Button Click events for custom creator. Each click event should take the user to the next "level"
+* of the creator, and then hide the previous level. Additionally, the back buttons will take the user
+* to the previous level of the form and hide the current level.
+* -----------------------------------------*/
 function start_level_1() {
   $('#start_creator').remove();
   $('#creator_instructions').remove();
@@ -92,6 +97,7 @@ function createCustomCupcake(e){
     data: params,
     success: function(data){
       newDiv = $('<div>').addClass('notice');
+      newDiv.addClass('center');
       newDiv.text('You have successfully added your cupcake to your cart.');
       newDiv.appendTo('#container');
       newDiv.fadeOut(12000);
