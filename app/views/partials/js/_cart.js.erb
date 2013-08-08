@@ -1,5 +1,6 @@
 function updateQuantity(e){
   e.preventDefault();
+  order_sum = <%= @order.order_sum %>
   params = {
       id: $(this).parent().parent().parent().attr('id'),
       quantity: $(this).siblings("input[name='quantity']").val()
@@ -8,22 +9,23 @@ function updateQuantity(e){
   $.ajax({
     type: 'PUT',
     url: '/product_orders/' + params['id'],
+    dataType: 'script',
     data: params,
     success: function(){
-      console.log('UPDATED SUCCESSFULLY!');
       newDiv = $('<div>').addClass('notice');
-      newDiv.text('You have successfully updated your cart.');
+      divText = $('<p>').text('You have successfully updated your cart.');
+      divText.appendTo(newDiv);
       newDiv.appendTo('#container');
       newDiv.fadeOut(12000);
-      newDiv.remove();
-      $('#order-total').text(<%= @order.order_sum %>);
+      $('#order-total').text(order_sum.toString());
     },
     error: function(){
+      console.log('Error: AJAX call failed.');
       newDiv = $('<div>').addClass('error');
-      newDiv.text('There was a problem updating your cart.');
+      divText = $('<p>').text('There was an error updating your cart.');
+      divText.appendTo(newDiv);
       newDiv.appendTo('#container');
       newDiv.fadeOut(12000);
-      newDiv.remove();
     }
   })
 }
