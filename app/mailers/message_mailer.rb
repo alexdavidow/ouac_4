@@ -18,7 +18,8 @@ class MessageMailer < ActionMailer::Base
   def order_confirmation(current_user, cart)
     @user = current_user
     @cart = cart
-    image_url = Rails.root + 'public/ouac-logo.png'
+    #image_url = Rails.root + 'public/ouac-logo.png'
+    #image_url = asset_path('ouac-logo.png')
     attachments.inline['ouac-logo.png'] = File.read(image_url)
     mail(to: @user.email, subject: 'Thank you for your order')
   end

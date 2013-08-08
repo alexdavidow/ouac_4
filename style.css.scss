@@ -1,23 +1,6 @@
-$serif: 'Gabriela';
-$notice_background: #01B2E3;
-$error_background: #FF0700;
-
-@mixin pop-up {
-  position: absolute;
-  opacity: 0.6;
-  width: 35%;
-  height: 10%;
-  z-index: 1;
-}
-
-@mixin rounded-borders {
-  $radius: 5px;
-
-  -o-border-radius: $radius;
-  -moz-border-radius: $radius;
-  -webkit-border-radius: $radius;
-  border-radius: $radius;
-}
+/*#container {
+  height: 67px;
+}*/
 
 .nav.top-bar {
   height: 90px !important;
@@ -46,8 +29,15 @@ $error_background: #FF0700;
   height: 120px; 
 }
 
-.serif {
-  font-family: $serif, serif;
+.display_desc {
+  font-family: 'Gabriela', serif;
+}
+
+#about_text {
+  font-family: 'Gabriela', serif;
+}
+.gabriela {
+  font-family: 'Gabriela', serif;
 }
 
 .menu_item {
@@ -253,9 +243,6 @@ $error_background: #FF0700;
   background-image: url('cupcake-size.jpg');
 }
 
-.orbit-container ul {
-  min-height: 600px;
-}
 
 /*img {
   border: 1px solid black;
@@ -285,20 +272,19 @@ $error_background: #FF0700;
 }
 
 #user-button-list {
-  display: inline-block;
-/*  border: 1px dashed black;
+  border: 1px dashed black;
   height: 200px;
-  width: 200px;*/
+  width: 200px;
 }
 
 #topping{
+  position: absolute;
   height: 50px;
   width: 200px;
   background-color: gray;
   opacity: 0.5;
   z-index: 1;
-  position: absolute;
-  margin-top: 25px;
+  margin-top: -25px;
 }
 
 #frosting{
@@ -319,16 +305,31 @@ $error_background: #FF0700;
   background-color: #40390B;
 }
 
-.notice {
-  @include pop-up;
-  @include rounded-borders;
-  background-color: $notice-background;
-  border: 2px solid #009393;
+#creator_display{
+  margin-top: 50px;
 }
 
+.nav_buttons {
+}
+
+.notice {
+  opacity: 0.6;
+  background-color: #01B2E3; 
+  width: 250px;
+  height: 60px;
+  padding: 15px;
+  border: 2px solid #007394;
+  border-radius: 5px;
+  z-index: 1;
+  position: absolute;
+}
+
+
+
 .error {
-  @include pop-up;
-  @include rounded-borders;
-  background-color: $error-background;
-  border: 2px solid #A60400;
+  opacity: 0.6;
+  background-color: #FF0700;
+  width: 175px;
+  height: 60px;
+  padding: 15px;
 }
