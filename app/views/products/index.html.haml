@@ -5,7 +5,7 @@
   .small-4.columns.cupcake_display_div
     = image_tag('cupcake_platter.jpg')
     %h4 
-  .small-8.columns.serif.display_desc Everything they do is so dramatic and flamboyant. It just makes me want to set myself on fire. I know what an erection feels like, Michael. No, it's the opposite. It's like my heart is getting hard. The only thing I found in the fridge was a dead dove in a bag. Gob: You didn't eat that, did you? She wanted to look 48. I nearly airbrushed her into oblivion. Ended up checking "albino" on the form.
+  .small-8.columns.serif.display_desc Every season, Once Upon a Cupcake NYC introduces 3-5 flavors that highlight fresh, seasonal and when possible, local ingredients. We hope you enjoy eating them as much as we've enjoyed creating them!
   .large-4.columns  
     %button{:id => 'buy-button', :class => 'button', :"data-product_id" => 0}
       Buy Item
@@ -18,7 +18,7 @@
       - unless p.name == "Custom Order"
         = image_tag("#{p.image}")
         %h6.serif #{p.name}
-        %p.hidden.description #{p.description}
+        %p.hidden.description.serif #{p.description}
         %p.hidden #{p.id}
   .small-5.columns
     %h5.serif Minimum order is one dozen per flavor.
