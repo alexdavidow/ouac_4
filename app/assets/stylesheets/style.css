@@ -29,6 +29,17 @@
   height: 120px; 
 }
 
+.display_desc {
+  font-family: 'Gabriela', serif;
+}
+
+#about_text {
+  font-family: 'Gabriela', serif;
+}
+.gabriela {
+  font-family: 'Gabriela', serif;
+}
+
 .menu_item {
   display: inline-block;
   height: 12em;
