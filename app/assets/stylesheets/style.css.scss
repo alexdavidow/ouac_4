@@ -1,4 +1,23 @@
 $serif: 'Gabriela';
+$notice_background: #01B2E3;
+$error_background: #FF0700;
+
+@mixin pop-up {
+  position: absolute;
+  opacity: 0.6;
+  width: 35%;
+  height: 10%;
+  z-index: 1;
+}
+
+@mixin rounded-borders {
+  $radius: 5px;
+
+  -o-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -webkit-border-radius: $radius;
+  border-radius: $radius;
+}
 
 .nav.top-bar {
   height: 90px !important;
@@ -274,6 +293,8 @@ $serif: 'Gabriela';
   background-color: gray;
   opacity: 0.5;
   z-index: 1;
+  position: absolute;
+  margin-top: 25px;
 }
 
 #frosting{
@@ -292,4 +313,18 @@ $serif: 'Gabriela';
   height: 50px;
   width: 200px;
   background-color: #40390B;
+}
+
+.notice {
+  @include pop-up;
+  @include rounded-borders;
+  background-color: $notice-background;
+  border: 2px solid #009393;
+}
+
+.error {
+  @include pop-up;
+  @include rounded-borders;
+  background-color: $error-background;
+  border: 2px solid #A60400;
 }

@@ -32,10 +32,17 @@ function addItemToCart(){
     url: "<%= product_orders_path %>",
     success: function(){
        successDiv = $('<div>').addClass('notice');
+       successDiv.addClass('center');
        successDiv.text('Added item to your cart.');
        successDiv.appendTo('#container');
        successDiv.fadeOut(12000);
-     }
+     },
+    error: function(){
+      errorDiv = $('<div>').addClass('error');
+      errorDiv.addClass('center');
+      errorDiv.appendTo('#container');
+      errorDiv.fadeOut(12000);
+    }
    });
 }
 
