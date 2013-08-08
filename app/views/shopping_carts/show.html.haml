@@ -18,7 +18,7 @@
             Item Image
           %td
             = item.product.name
-          %td
+          %td.price{:"data-price" => item.product.price}
             = item.product.price
           %td
             = form_tag(product_order_path(:id => item.id), method: "patch") do
@@ -31,6 +31,7 @@
           Total:
         %td#order-total
           = @order.order_sum
+  = link_to "Checkout", order_path(@order.id), class: 'button'
 
 - else
   %h3
@@ -40,5 +41,4 @@
   Please note that, currently, delivery is only available within Manhattan. All orders must be placed at least four (4) days in advance. So, if you orderd today, the earliest delivery date you could choose will be
   - date = Date.today+4 
   = "#{date.strftime("%b %d, %Y")}"
-= link_to "Checkout", order_path(@order.id), class: 'button'
 

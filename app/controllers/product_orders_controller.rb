@@ -15,7 +15,7 @@ class ProductOrdersController < ApplicationController
       product = Product.find(params[:product_id])
       respond_to do |format|
       if order.add_without_duplication(product)
-        format.json { render json: "console.log('hi')" } 
+        format.json { render json: "console.log('Added item. :3')" } 
       else
         format.html { render :index }
         flash[:error] = "There was a problem adding the item to your cart. Please refresh and try again."
@@ -29,11 +29,9 @@ class ProductOrdersController < ApplicationController
     order.quantity = params[:quantity]
     respond_to do |format|
       if order.save
-        #format.html { redirect_to :back, flash[:notice] = "You have updated the quantity"}
-        format.json { render :json => "You have successfully updated the quantity of #{order.product.name}" }
+        format.js { render js: "console.log('You have successfully updated the quantity of your item.');" }
       else
         redirect_to :back
-        flash[:error] = "You did not update the quantity successfully."
       end
     end
   end
@@ -70,11 +68,5 @@ class ProductOrdersController < ApplicationController
     flash[:notice] = "You have successfully placed an order through Once Upon A Cupcake! Thank you for shopping with us!"
     puts "stripe complete"
 
-  end
-
-  def shipping
-    # @user = current_user
-    # @product_order = ProductOrder.find(params[:product_order][:id])
-    # render :json => @user.to_json
   end
 end

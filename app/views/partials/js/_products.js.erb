@@ -31,6 +31,7 @@ function addItemToCart(){
     dataType: 'script',
     url: "<%= product_orders_path %>",
     success: function(){
+       console.log('Success');
        successDiv = $('<div>').addClass('notice');
        successDiv.addClass('center');
        successDiv.text('Added item to your cart.');
@@ -38,8 +39,10 @@ function addItemToCart(){
        successDiv.fadeOut(12000);
      },
     error: function(){
+      console.log('Error');
       errorDiv = $('<div>').addClass('error');
       errorDiv.addClass('center');
+      errorDiv.text('Failed to add item to the cart.');
       errorDiv.appendTo('#container');
       errorDiv.fadeOut(12000);
     }

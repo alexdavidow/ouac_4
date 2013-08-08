@@ -19,17 +19,6 @@ $error_background: #FF0700;
   border-radius: $radius;
 }
 
-.nav.top-bar {
-  height: 90px !important;
-  width: 0 auto;
-  text-align: center;
-  background-color: white;
-}
-
-.right {
-  background-color: white !important;
-  color: black;
-}
 
 #nav_img {
   position: relative;
@@ -253,17 +242,6 @@ $error_background: #FF0700;
   background-image: url('cupcake-size.jpg');
 }
 
-.orbit-container ul {
-  min-height: 600px;
-}
-
-/*img {
-  border: 1px solid black;
-  float: left;
-  height: 150px;
-  width: 150px;
-}*/
-
 .timer {
   font-weight: bold;
   color: #cc1e3f;
@@ -285,10 +263,9 @@ $error_background: #FF0700;
 }
 
 #user-button-list {
-  display: inline-block;
-/*  border: 1px dashed black;
+  border: 1px dashed black;
   height: 200px;
-  width: 200px;*/
+  width: 200px;
 }
 
 #topping{
@@ -331,4 +308,16 @@ $error_background: #FF0700;
   @include rounded-borders;
   background-color: $error-background;
   border: 2px solid #A60400;
+}
+
+.nav.top-bar {
+  height: 90px;
+  width: 0 auto;
+  text-align: center;
+  background-color: white;
+}
+
+.right {
+  background-color: white;
+  color: black;
 }
