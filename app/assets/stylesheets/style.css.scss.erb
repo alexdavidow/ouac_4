@@ -20,6 +20,9 @@ $error_background: #FF0700;
   border-radius: $radius;
 }
 
+body {
+  background-image: url("<%= asset_path 'subtle_white_feathers.png' %>");
+}
 
 #title_nav a{
   color: #ffe105;
@@ -278,11 +281,13 @@ $error_background: #FF0700;
   border: 2px solid #A60400;
 }
 
-.nav{
+.nav {
   background-color: white;
 }
+
 div.top-bar-section.right{
-  padding-top: 40px;
+  padding-top: 20px;
+  padding-bottom: 40px;
 
   li {
     &:hover{
@@ -314,6 +319,9 @@ div.top-bar-section.right{
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
   border-radius: 5px;
+}
 
+#update_user_button{
+  text-align: center;
 }
 

@@ -6,10 +6,14 @@
     = image_tag('cupcake_platter.jpg')
     %h4 
   .small-8.columns.serif.display_desc Every season, Once Upon a Cupcake NYC introduces 3-5 flavors that highlight fresh, seasonal and when possible, local ingredients. We hope you enjoy eating them as much as we've enjoyed creating them!
-  .large-4.columns  
+  .large-4.columns
+    %br
+    %br  
     %button{:id => 'buy-button', :class => 'button', :"data-product_id" => 0}
       Buy Item
-  .large-4.columns    
+  .large-4.columns 
+    %br 
+    %br  
     = button_to "Checkout", shopping_cart_path(:id => current_cart.id), method: :get, class: 'button'
  
 .row#all_menu_items

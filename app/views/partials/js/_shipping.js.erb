@@ -29,8 +29,8 @@ function updateAddress(e){
       success: function(){
         updatedDiv = $('<div>').addClass('notice');
         updatedDiv.text('Shipping Information Saved')
-        updatedDiv.prependTo('#delivery_disclaimer');
-        updatedDiv.fadeOut(4000);
+        updatedDiv.appendTo('#delivery_disclaimer');
+        updatedDiv.fadeOut(6000);
       }
     })
   }

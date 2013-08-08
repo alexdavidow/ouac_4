@@ -18,8 +18,10 @@
   .large-4.columns
     = label_tag 'Delivery Date'
     = date_field_tag('Date', Date.today+4, min: Date.today+4)
-    #update_user_button
-      = button_to "Update Shipping Information", class: 'button'
+  .large-8.columns#update_user_button
+    %br
+    %br
+    = button_to "Update Shipping Information", nil, class: 'button'
 
 %p#delivery_disclaimer.serif 
   Please note that, currently, delivery is only available within Manhattan. All orders must be placed at least four (4) days in advance. So, if you orderd today, the earliest delivery date you could choose will be
