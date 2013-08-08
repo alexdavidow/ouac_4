@@ -11,7 +11,7 @@ class MessageMailer < ActionMailer::Base
     # @url = 'http://once-upon-a-cupcake.herokuapp.com/'
     # if i want an attachment
     #image_url = Rails.root + 'app/assets/images/ouac-logo.png'
-    attachments.inline['ouac-logo.png'] = File.read('assets/images/ouac-logo.png')
+    attachments.inline['ouac-logo.png'] = File.read('app/assets/images/ouac-logo.png')
     mail(to: 'onceuponacupcakenyc@gmail.com', subject: 'New Feedback Submission')
   end
 
@@ -19,7 +19,7 @@ class MessageMailer < ActionMailer::Base
     @user = current_user
     @cart = cart
     #image_url = Rails.root + 'app/assets/images/ouac-logo.png'
-    attachments.inline['ouac-logo.png'] = File.read('assets/images/ouac-logo.png')
+    attachments.inline['ouac-logo.png'] = File.read('app/assets/images/ouac-logo.png')
     mail(to: @user.email, subject: 'Thank you for your order')
   end
 
