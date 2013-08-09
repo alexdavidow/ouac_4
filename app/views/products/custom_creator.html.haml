@@ -17,7 +17,7 @@
     = image_tag('cupcake_creator/starter_ic.jpg', id: "icecream")
     = image_tag('cupcake_creator/starter_cookie_base.jpg', id: "cookie")
   .small-7.columns
-    %h5#creator_instructions.serif Instructions for what to do, user capabilities once they have finished(order custom creation, name it and/or share it on facebook). Any restrictions on quantity and required time window for placing a custom order.
+    %h5#creator_instructions.serif Build an ice cream cupcake just the way you want it! Mix and match your favorite ingredients and see a real-time preview of what your custom creation would look like! Once you are done, you can buy a dozen or more of your newly created flavor or just play again! Click the button below to start!
     %button.large#start_creator.button Let's Make An Ice Cream Cupcake!
   %form.step_1{method: "post"}
     .small-7.columns.step_1_div.hidden
@@ -99,6 +99,8 @@
           = link_to "Add to cart", "user/shopping_carts/#{current_user.shopping_cart.id}", class: 'button step_4_button'
         - else
           = link_to "Add to cart", new_user_session_path, class: 'button'
+        %br
+        = link_to "Build Another!", custom_creator_path, method: 'get', class: 'button'
         
 
 
