@@ -4,7 +4,6 @@
   %table
     %thead.serif
       %th
-      %th
         Item Name
       %th
         Price (per Dozen)
@@ -14,8 +13,6 @@
     %tbody
       - @order.product_orders.each do |item|
         %tr.orders{id: item.id}
-          %td
-            Item Image
           %td
             = item.product.name
           %td.price{:"data-price" => item.product.price}
