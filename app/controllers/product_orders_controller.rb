@@ -55,7 +55,7 @@ class ProductOrdersController < ApplicationController
         :card => token,
         :description => "#{current_user.email}"
       )
-      redirect_to contact_path
+      redirect_to root_path
     rescue Stripe::CardError => e
       flash[:error] = e.message
       redirect_to products_path

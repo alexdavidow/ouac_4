@@ -135,7 +135,7 @@ function createCustomCupcake(e){
       newDiv.addClass('center');
       newDiv.text('You have successfully added your cupcake to your cart.');
       newDiv.appendTo('#container');
-      newDiv.fadeOut(12000);
+      newDiv.fadeOut(8000);
       newDiv.remove();
       if (data.redirect_url != null){
         window.location.href = data.redirect_url
@@ -145,7 +145,7 @@ function createCustomCupcake(e){
       errorDiv = $('<div>').addClass('error');
       errorDiv.text('There was an error adding the item to your cart. Please try again later.');
       errorDiv.appendTo('#container'); 
-      errorDiv.fadeOut(12000);
+      errorDiv.fadeOut(8000);
       errorDiv.remove();
     }
   });
