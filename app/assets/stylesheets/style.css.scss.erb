@@ -22,7 +22,7 @@ $error_background: #FF0700;
 
 body {
   background-image: url("<%= asset_path 'subtle_white_feathers.png' %>");
-
+  min-height: 100%;
 }
 
 #title_nav a{
@@ -175,10 +175,9 @@ body {
 #content {
   width: 850px;
   margin: 0 auto;
-  height: 600px;
+  height: auto;
   background-color: rgba(255,250,250,0.5);
   padding: 20px;
-
 }
 
 #instructions {
@@ -330,12 +329,16 @@ div.top-bar-section.right{
   text-align: center;
 }
 
+html{
+  height: 100%;
+}
+
 #footer {
   width: 100%;
-  height: 50px;
+  height: 40px;
   background-color: #FFB2B2;
-  position: relative;
-  margin-top: 0px;
+  position: absolute;
+  bottom: -20px;
   text-align: right;
 }
 
