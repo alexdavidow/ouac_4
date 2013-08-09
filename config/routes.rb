@@ -15,7 +15,7 @@ Ouac4::Application.routes.draw do
   resources :frostings, :only => [:index, :new, :create, :destroy]
   resources :toppings, :only => [:index, :new, :create, :destroy]
   resources :ice_creams, :only => [:index, :new, :create, :destroy]
-  resources :shopping_cart, :only => [:show, :create, :new, :destroy]
+  resources :shopping_carts, :only => [:show, :create, :destroy]
   resources :product_orders, :only => [:new, :create, :destroy, :update] do
     collection do
       post 'stripe_payment' => 'product_orders#stripe_payment'
@@ -23,7 +23,7 @@ Ouac4::Application.routes.draw do
   end
   resources :orders, :only => [:show, :create, :update, :destroy]
   
-  resources :products
+  resources :products, except: [:new]
   get 'custom_creator' => 'products#custom_creator'
   post 'custom_creator' => 'products#new_custom_creator', :as => 'create_custom_cupcake'
 

@@ -95,7 +95,10 @@
         %input.step_4_radio{:name => "step_4", :type => "radio", :"data-value" => "Candied Lemon Peel", :"data-image" => image_path('lemon_peel_topping.jpg')} Candied Lemon Peel
         %br/
         %button.step_4_back.button Back
-        %button.step_4_button.button Add this to my cart!
+        - if current_user
+          = link_to "Add to cart", "user/shopping_carts/#{current_user.shopping_cart.id}", class: 'button step_4_button'
+        - else
+          = link_to "Add to cart", new_user_session_path, class: 'button'
         
 
 
