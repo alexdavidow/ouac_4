@@ -282,13 +282,7 @@ $error_background: #FF0700;
   background-color: white;
 }
 div.top-bar-section.right{
-  padding-top: 40px;
-
-  li {
-    &:hover{
-      color: #d4ea56;
-    }
-  }
+  padding-bottom: 40px;
 }
 
 .top-bar-section li.nav_buttons a{
@@ -297,7 +291,7 @@ div.top-bar-section.right{
   font-size: 1.1em;
 
   &:hover{
-    color: #d4ea56;
+    color: #F7004B;
   }
 }
 
@@ -316,4 +310,3 @@ div.top-bar-section.right{
   border-radius: 5px;
 
 }
-

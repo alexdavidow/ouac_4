@@ -9,8 +9,9 @@
   .large-4.columns  
     %button{:id => 'buy-button', :class => 'button', :"data-product_id" => 0}
       Buy Item
-  .large-4.columns    
-    = button_to "Checkout", shopping_cart_path(:id => current_cart.id), method: :get, class: 'button'
+  - if current_user
+    .large-4.columns    
+      = button_to "Checkout", shopping_cart_path(:id => current_cart.id), method: :get, class: 'button'
  
 .row#all_menu_items
   - @products.each do |p|
