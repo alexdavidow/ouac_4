@@ -3,8 +3,6 @@
 %table
   %thead
     %th
-      Modify Order
-    %th
       Item Name
     %th
       Price (per Dozen)
@@ -17,8 +15,6 @@
     - @cart.order.product_orders.each do |item|
       %tr.orders{id: item.id}
         %td
-          = button_to 'Modify Order', shopping_cart_path(current_user.shopping_cart.id), method: 'get'
-        %td
           = item.product.name
         %td
           = item.product.price
@@ -27,6 +23,8 @@
         %td
           - total_price = (item.product.price * item.quantity)
           = number_to_currency(total_price)
+
+= button_to 'Modify Order', shopping_cart_path(current_user.shopping_cart.id), class: 'button', method: 'get'
 
 %h4.serif Shipping Confirmation
 %table

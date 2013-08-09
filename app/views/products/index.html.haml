@@ -6,13 +6,16 @@
     = image_tag('cupcake_platter.jpg')
     %h4 
   .small-8.columns.serif.display_desc Every season, Once Upon a Cupcake NYC introduces 3-5 flavors that highlight fresh, seasonal and when possible, local ingredients. We hope you enjoy eating them as much as we've enjoyed creating them!
-  .large-4.columns  
+  .large-4.columns
+    %br
+    %br  
     %button{:id => 'buy-button', :class => 'button', :"data-product_id" => 0}
       Buy Item
   - if current_user
+    %br
+    %br
     .large-4.columns    
       = button_to "Checkout", shopping_cart_path(:id => current_cart.id), method: :get, class: 'button'
- 
 .row#all_menu_items
   - @products.each do |p|
     - unless p.name == "Custom Order"
@@ -21,13 +24,14 @@
         %h6.serif #{p.name}
         %p.hidden.description.serif #{p.description}
         %p.hidden #{p.id}
+  .small-9.columns
+    %p.serif (GF/DF) - These flavors use ingredients that are entirely gluten and/or dairy free, though they are produced in the same facility and with the same equipment as gluten and dairy.
+
+.row  
   .small-5.columns
     %h5.serif Minimum order is one dozen per flavor.
   .small-4.columns  
     %h5.serif $25/dozen.
-.row  
-  .small-9.columns
-    %p.serif (GF/DF) - These flavors use ingredients that are entirely gluten and/or dairy free, though they are produced in the same facility and with the same equipment as gluten and dairy.
 .row  
   .small-6.columns  
     = link_to products_path do
