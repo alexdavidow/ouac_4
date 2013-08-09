@@ -5,13 +5,12 @@ $error_background: #FF0700;
 @mixin pop-up {
   position: absolute;
   opacity: 0.6;
-  width: 25%;
+  width: 40%;
   height: 5%;
   z-index: 1;
   color: black;
-  margin-left: 450px;
-  margin-top: -50px;
-  padding: 15px;
+  margin: -50px 0 0 30%;
+  padding: 20px;
   text-align: center;
 }
 
@@ -276,7 +275,7 @@ body {
   @include pop-up;
   @include rounded-borders;
   background-color: $notice-background;
-  border: 2px solid #777777;
+  border: 2px solid #2283a4;
 }
 
 .error {
