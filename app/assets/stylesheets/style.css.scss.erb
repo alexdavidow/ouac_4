@@ -22,6 +22,7 @@ $error_background: #FF0700;
 
 body {
   background-image: url("<%= asset_path 'subtle_white_feathers.png' %>");
+
 }
 
 #title_nav a{
@@ -282,7 +283,8 @@ body {
 }
 
 .nav {
-  background-color: white;
+  background-color: #FFB2B2;
+  height: 90px;
 }
 
 div.top-bar-section.right{
@@ -297,19 +299,22 @@ div.top-bar-section.right{
 }
 
 .top-bar-section li.nav_buttons a{
-  background-color: white;
+  background-color: #FFB2B2;
   color: black;
   font-size: 1.1em;
 
   &:hover{
-    color: #d4ea56;
+    color: #2283a4;
   }
 }
 
 .top-bar-section .right li a{
-  background-color: white;
+  background-color: #FFB2B2;
   color: black;
   font-size: 0.9em;
+  &:hover{
+    color: #2283a4;
+  }
 }
 
 .button{
@@ -323,5 +328,14 @@ div.top-bar-section.right{
 
 #update_user_button{
   text-align: center;
+}
+
+#footer {
+  width: 100%;
+  height: 50px;
+  background-color: #FFB2B2;
+  position: relative;
+  margin-top: 0px;
+  text-align: right;
 }
 

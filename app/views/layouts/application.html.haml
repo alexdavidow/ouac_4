@@ -14,7 +14,12 @@
       - if flash[:error]
         .error
           = flast[:error]
-    .row#content
+    .row#content#main-container
       = yield
+
+    %footer
+      #footer.serif
+        %p &copy; Alex Davidow & Frank Mendez
+
       :javascript
         $(document).foundation();
