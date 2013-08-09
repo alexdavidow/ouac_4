@@ -1,3 +1,5 @@
+%link{:href => "//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css", :rel => "stylesheet"}/
+
 %h3.serif We would love to hear from you!
 
 / %form{onsubmit: "$('input').val('');"}
@@ -16,8 +18,30 @@
   = submit_tag :"send message", class: 'button'
 
 
-#contact_info
-  %h5.serif e-mail us! onceuponacupcakenyc@gmail.com
-  %h5.serif call us! 917.579.3335
-  %h5.serif like us! www.facebook.com/OnceUponACupcakeNYC
-  %h5.serif follow us! @onceuponanyc
+
+.row
+  .large-1.columns
+    = link_to 'http://www.facebook.com/OnceUponACupcakeNYC', :target => '_blank' do
+      %i.icon-facebook.icon-2
+  .large-11.columns 
+    = link_to 'http://www.facebook.com/OnceUponACupcakeNYC', :target => '_blank' do   
+      %h5.serif like us! www.facebook.com/OnceUponACupcakeNYC
+.row
+  .large-1.columns
+    = link_to 'mailto:onceuponacupcakenyc@gmail.com' do
+      %i.icon-envelope-alt.icon-2
+  .large-11.columns 
+    = link_to 'mailto:onceuponacupcakenyc@gmail.com' do   
+      %h5.serif e-mail us! onceuponacupcakenyc@gmail.com
+.row
+  .large-1.columns
+    = link_to 'http://instagram.com/onceuponacupcakenyc', :target => '_blank' do
+      %i.icon-instagram.icon-2
+  .large-11.columns 
+    = link_to 'http://instagram.com/onceuponacupcakenyc', :target => '_blank' do   
+      %h5.serif follow us! @onceuponacupcakenyc 
+.row
+  .large-1.columns
+    %i.icon-phone.icon-2
+  .large-11.columns  
+    %h5.serif call us! 917.579.3335        
