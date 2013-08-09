@@ -1,14 +1,18 @@
 $serif: 'Gabriela';
-$notice_background: white;
+$notice_background: #AAAAAA;
 $error_background: #FF0700;
 
 @mixin pop-up {
   position: absolute;
-  opacity: 0.4;
-  width: 18%;
-  height: 10%;
+  opacity: 0.6;
+  width: 25%;
+  height: 5%;
   z-index: 1;
   color: black;
+  margin-left: 450px;
+  margin-top: -50px;
+  padding: 15px;
+  text-align: center;
 }
 
 @mixin rounded-borders {
@@ -272,6 +276,7 @@ body {
   @include pop-up;
   @include rounded-borders;
   background-color: $notice-background;
+  border: 2px solid #777777;
 }
 
 .error {
