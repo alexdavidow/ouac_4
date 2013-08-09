@@ -1,10 +1,11 @@
 #scoreboard
   #start_game
     %input#start{:type => "button", :value => "start"}/
-    #life_holder  
-      %img#life1(src= "cupcake1.jpg")
-      %img#life2(src= "cupcake2.jpg")
-      %img#life3(src= "cupcake3.jpg")
+    #life_holder
+      = image_tag('cupcake1.jpg', id: "life1")
+      = image_tag('cupcake2.jpg', id: "life2")
+      = image_tag('cupcake3.jpg', id: "life3")      
+
   #cupcake_image
     #topping_model Topping!
     #frosting_model Frosting!
@@ -20,7 +21,7 @@
     %h4#shapes
       To Make Your Cupcake, Click On A
 
-      %h5.cookie_text 
+      %h5.cookie_text
         %img#icon(src='cherry.jpg') &nbsp; Cookie Base
       %h5.ic_text 
         %img#icon(src='cherry.jpg') &nbsp; Ice Cream

@@ -99,7 +99,7 @@ function create_ingredient_element(){
     case (1):
       var rand_pick = Math.floor(Math.random()*4)+0
       ingredient.text(cookies_data_object[rand_pick].name); 
-      ingredient.css('background-image', cookies_data_object[rand_pick].image).addClass('falling_cookie');
+      ingredient.css('background-color', '#ec7124').addClass('falling_cookie');
       break;
     case (2): 
       var rand_pick = Math.floor(Math.random()*4)+0
@@ -109,7 +109,7 @@ function create_ingredient_element(){
     case (3):
       var rand_pick = Math.floor(Math.random()*4)+0
       ingredient.text(frostings_data_object[rand_pick].name);
-      ingredient.css('background-image', 'frostings_data_object[rand_pick].image').addClass('falling_frosting');
+      ingredient.css('background-color', '#00a384').addClass('falling_frosting');
       break;
     case (4): 
       var rand_pick = Math.floor(Math.random()*4)+0

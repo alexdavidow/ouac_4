@@ -1,7 +1,7 @@
 #winning
-  %h1#win  YOU WIN!
-  %img#baloons(src='/baloons.jpg')
+  %h1#win  
+    YOU WIN!
+    = image_tag('baloons.jpg', id: 'baloons')
   
-    / %img(src="/pretty-cupcake.jpg")
-    .restart= button_to 'Play Again', '/cupcakes', method: 'get'
+    .restart= button_to 'Play Again', '/cupcakes', method: 'get', class: 'button'
     / interpretting the above as a post request to cupcakes/new, don't know why. Guessing it has something to do with how we route to /lose page (l.15)
