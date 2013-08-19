@@ -35,10 +35,10 @@ function start_game() {
   nrlives = 3;
   score = 0;
   charIsFalling = false;
-  $("#instructions").remove()
+  $("#instructions").remove();
   //increase ms number for slower rate of fall, decrease for faster
   descend_ingredients_interval = setInterval(descend_ingredients, 100); //time
-  newly_created_element_interval = setInterval(create_ingredient_element, 800)
+  newly_created_element_interval = setInterval(create_ingredient_element, 800);
 
 }
 
@@ -65,6 +65,7 @@ var data_cookies = {
   fetch_data: function() {
     $.getJSON('/cookies',function(data){
       cookies_data_object = data;
+      //console.log(data)
     });
   },
 }
@@ -98,23 +99,38 @@ function create_ingredient_element(){
   switch (Math.floor(Math.random()*4)+1) {
     case (1):
       var rand_pick = Math.floor(Math.random()*4)+0
-      ingredient.text(cookies_data_object[rand_pick].name); 
-      ingredient.css('background-color', '#ec7124').addClass('falling_cookie');
+      // ingredient.text(cookies_data_object[rand_pick].cookie.name); 
+      ingredient.css({
+        'background-image': "url(images/"+cookies_data_object[rand_pick].cookie.image+")",
+        "background-size" : '40px'
+      }).addClass('falling_cookie');
       break;
     case (2): 
       var rand_pick = Math.floor(Math.random()*4)+0
-      ingredient.text(ice_creams_data_object[rand_pick].name);
-      ingredient.css('background-color', '#fbe400').addClass('falling_ic');
+      // ingredient.text(ice_creams_data_object[rand_pick].ice_cream.name);
+      ingredient.css({
+        'background-image': "url(images/"+ice_creams_data_object[rand_pick].ice_cream.image+")",
+        "background-size" : '40px'
+      }).addClass('falling_ic');
+      // ingredient.css('background-color', '#fbe400').addClass('falling_ic');
       break;
     case (3):
       var rand_pick = Math.floor(Math.random()*4)+0
-      ingredient.text(frostings_data_object[rand_pick].name);
-      ingredient.css('background-color', '#00a384').addClass('falling_frosting');
+      // ingredient.text(frostings_data_object[rand_pick].name);
+      ingredient.css({
+        'background-image': "url(images/"+frostings_data_object[rand_pick].frosting.image+")",
+        "background-size" : '40px'
+      }).addClass('falling_frosting');
+      // ingredient.css('background-color', '#00a384').addClass('falling_frosting');
       break;
     case (4): 
       var rand_pick = Math.floor(Math.random()*4)+0
-      ingredient.text(toppings_data_object[rand_pick].name);
-      ingredient.css('background-color', '#F17D92').addClass('falling_topping');
+      // ingredient.text(toppings_data_object[rand_pick].name);
+      ingredient.css({
+        'background-image': "url(images/"+toppings_data_object[rand_pick].topping.image+")",
+        "background-size" : '40px'
+      }).addClass('falling_topping');
+      // ingredient.css('background-color', '#F17D92').addClass('falling_topping');
       break;
   };
  
@@ -195,7 +211,7 @@ function add_ingredient_to_box(e) {
 
 $(document).ready(function() {
 
-  $('#start').on("click", start_game).on("click", clock_tick).on("click", set_timer)
+
   $('#points').text(current_points);
   data_toppings.fetch_data();
   data_cookies.fetch_data();

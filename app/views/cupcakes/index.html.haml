@@ -22,13 +22,17 @@
       To Make Your Cupcake, Click On A
 
       %h5.cookie_text
-        %img#icon(src='cherry.jpg') &nbsp; Cookie Base
-      %h5.ic_text 
-        %img#icon(src='cherry.jpg') &nbsp; Ice Cream
+        = image_tag('cherry.jpg', id: "icon")
+        &nbsp; Cookie Base
+      %h5.ic_text
+        = image_tag('cherry.jpg', id: "icon")
+        &nbsp; Ice Cream 
       %h5.frosting_text 
-        %img#icon(src='cherry.jpg') &nbsp; Frosting
+        = image_tag('cherry.jpg', id: "icon")
+        &nbsp; Frosting
       %h5.topping_text 
-        %img#icon(src='cherry.jpg') &nbsp; Topping
+        = image_tag('cherry.jpg', id: "icon") 
+        &nbsp; Topping
     %br
     %h4 Current Points
     %h4#points    
@@ -48,7 +52,8 @@
         %span{:style => "color:#F17D92;font-weight:bold"} pink
       the empty box on the left. Click on two of the same ingredient, and you lose a cupcake (which is the same as losing a life, amirite?). Lose three (3) lives or run out of time and the game is lost. Have fun!
 
-
-
-
+%script
+  $('#start').on("click", start_game);
+  $('#start').on("click", clock_tick);
+  $('#start').on("click", set_timer);
 
