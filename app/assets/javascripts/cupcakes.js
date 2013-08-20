@@ -6,7 +6,6 @@ var charIsFalling;
 var score;
 var nrlives;
 var current_time = 0;
-var current_points = 0;
 var current_amount = 0;
 var timer;
 var counter = 16;
@@ -20,11 +19,6 @@ function clock_tick() {
 }
 function set_timer(){
   timer = setInterval(clock_tick, 1000);
-}
-
-function increment_points_by(number) {
-  current_points += parseInt(number);
-  $('#points').text(current_points);
 }
 
 function start_game() {
@@ -146,7 +140,6 @@ function create_ingredient_element(){
     } else if (ingredient.hasClass("falling_topping")) {
       $(".topping_text").empty();
     }
-    increment_points_by(point_value);
   })
   var leftMargin = (Math.ceil(Math.random() * ($("#board").width()-50)));
   ingredient.css({ marginLeft: leftMargin + "px" });
@@ -205,9 +198,6 @@ function add_ingredient_to_box(e) {
 };
 
 $(document).ready(function() {
-
-
-  $('#points').text(current_points);
   data_toppings.fetch_data();
   data_cookies.fetch_data();
   data_ice_creams.fetch_data();
