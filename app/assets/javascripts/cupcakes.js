@@ -99,7 +99,7 @@ function create_ingredient_element(){
   switch (Math.floor(Math.random()*4)+1) {
     case (1):
       var rand_pick = Math.floor(Math.random()*4)+0
-      // ingredient.text(cookies_data_object[rand_pick].cookie.name); 
+      // ingredient.text(cookies_data_object[rand_pick].cookie.name);
       ingredient.css({
         'background-image': "url(images/"+cookies_data_object[rand_pick].cookie.image+")",
         "background-size" : '40px'
@@ -137,18 +137,13 @@ function create_ingredient_element(){
   ingredient.on('mousedown', function(e){
 
     add_ingredient_to_box(e);
-    var point_value = 0
     if (ingredient.hasClass("falling_cookie")) {
-      point_value = 100;
       $(".cookie_text").empty();
     } else if (ingredient.hasClass("falling_ic")) {
-      point_value = 100;
       $(".ic_text").empty();
     } else if (ingredient.hasClass("falling_frosting")) {
-      point_value = 100;
       $(".frosting_text").empty();
     } else if (ingredient.hasClass("falling_topping")) {
-      point_value = 100;
       $(".topping_text").empty();
     }
     increment_points_by(point_value);

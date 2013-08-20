@@ -10,7 +10,7 @@
     #topping_model Topping!
     #frosting_model Frosting!
     #ice_cream_model Ice Cream!
-    #cookie_model Cookie Base!
+    #cookie_model Cookie!
 
   #cupcake_in_progress
     #topping
@@ -18,12 +18,12 @@
     #ice_cream
     #cookie
   .score
-    %h4#shapes
-      To Make Your Cupcake, Click On A
+    %h5#shapes
+      Click On These Falling Ingredients!
 
       %h5.cookie_text
         = image_tag('cherry.jpg', id: "icon")
-        &nbsp; Cookie Base
+        &nbsp; Cookie!
       %h5.ic_text
         = image_tag('cherry.jpg', id: "icon")
         &nbsp; Ice Cream 
@@ -32,25 +32,24 @@
         &nbsp; Frosting
       %h5.topping_text 
         = image_tag('cherry.jpg', id: "icon") 
-        &nbsp; Topping
-    %br
-    %h4 Current Points
-    %h4#points    
+        &nbsp; Topping 
 
 .timer
 .square#board
   #instructions
     %h4
-      The goal is to build a cupcake! Add one ingredient of each color,
+      The goal is to build a cupcake by clicking on the falling images before they disappear. Click on 
+      %span{:style => "font-weight:bold;"} ONLY ONE 
+      of each type of ingredient: 
       = succeed ", " do
-        %span{:style => "color:#ec7124;font-weight:bold"} orange
+        %span{:style => "color:#ec7124;font-weight:bold;"} cookie
       = succeed ", " do
-        %span{:style => "color:#fbe400;font-weight:bold"} yellow
-      %span{:style => "color:#00a384;font-weight:bold"} green
+        %span{:style => "color:#fbe400;font-weight:bold;"} ice cream
+      %span{:style => "color:#00a384;font-weight:bold;"} frosting
       and
-      = succeed " to" do
-        %span{:style => "color:#F17D92;font-weight:bold"} pink
-      the empty box on the left. Click on two of the same ingredient, and you lose a cupcake (which is the same as losing a life, amirite?). Lose three (3) lives or run out of time and the game is lost. Have fun!
+      = succeed ". " do
+        %span{:style => "color:#F17D92;font-weight:bold"} topping  
+      Click on two of the same ingredient, and you lose a cupcake (which is the same as losing a life, amirite?). Lose three (3) lives or run out of time and the game is lost. Have fun!
 
 %script
   $('#start').on("click", start_game);
