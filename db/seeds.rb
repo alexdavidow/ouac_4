@@ -29,7 +29,7 @@ f3 = Frosting.create(name: 'tea whipped cream', color: 'brown', image: "falling_
 f4 = Frosting.create(name: 'chocolate whipped cream', color: 'brown', image: "falling_cc/frosting_choc_whipped_cream.jpg")
 
 ic1 = IceCream.create(name: 'raspberry sorbet', color: 'pink', image: "falling_cc/ic_raspberry_sorbet.jpg")
-ic2 = IceCream.create(name: 'coffee', color: 'brown', image: "falling_cc/ic_coffee.jpg")
+ic2 = IceCream.create(name: 'coffee', color: 'brown', image: "falling_cc/ic_coffee.jpg")  
 ic3 = IceCream.create(name: 'toasted marshmallow', color: 'white', image: "falling_cc/ic_vanilla.jpg")
 ic4 = IceCream.create(name: 'chocolate', color: 'brown', image: "falling_cc/ic_choc.jpg")
 
